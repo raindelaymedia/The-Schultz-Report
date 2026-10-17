@@ -32,6 +32,8 @@ schultz_report/
                                  (../../../index.html) — remove/replace for the shared version.
   build_fanatics_report_sr.py    SR × Fanatics monthly delivery report (+ fanatics_report_template_sr.py)
   sr_growth_snapshot.py, snapshot_sr_historical.py   one-off analysis scripts
+  audio_sr.py                    Audio tab — weekly Simplecast downloads from data_sr/audio_sr.csv
+  sponsors.py                    Sponsors section — one page per row in data_sr/sponsors.csv
   config_sr.py                   YouTube OAuth (gitignored — create locally)
   data_sr/
     socials_sr.csv               long format period,platform,metric,value (period = YYYY-MM)
@@ -40,6 +42,8 @@ schultz_report/
     fanatics_posts_sr.csv        every Fanatics-watermarked social post by URL (views refreshed at build)
     fanatics_history_sr.csv      one row per reported period (cumulative)
     reports/fanatics/            report HTML + saved inputs per period
+    sponsors.csv                 sponsor,sprout_tag,start,end,impression_goal,notes (Chime, Fanatics, Hims, Lowe's)
+    audio_sr.csv                 week_start,week_end,downloads,listeners,notes (Simplecast, entered weekly)
 common/
   yt_period_views.py             views DURING a period per video, for everything posted since a cutoff
   tiktok_auth.py                 TikTok connection + exact per-video stats (link / exchange / test / status / views)
@@ -99,6 +103,15 @@ common/
 - Generated files (dashboard HTML, tracker JSON) are rebuilt by the workflow — don't hand-edit them.
 - SR brand: deep blue `#11116b`, yellow `#E8C840`, Oswald (dashboard) / Barlow Condensed (report).
   Sticky table columns need solid backgrounds.
+
+## Dashboard structure
+
+Sidebar: Overview · YouTube · Audio · Socials (tabs: Show accounts | Jordan Schultz · show content) · Revenue ·
+**Sponsors** (one page per sponsors.csv row) · Tracker. Jordan's personal accounts come only through Sprout,
+filtered to show content = posts tagged with a sponsor tag (Chime, Fanatics, Hims, Lowe's) — confirm if the team
+marks show posts another way. Sponsor pages total campaigns from Sprout tags + our show-account pulls. Hims / Lowe's /
+Chime deal terms pending. Revenue page: decide whether it stays in the shared view.
+Simplecast has an analytics API (key from account settings) — worth checking once access is sorted.
 
 ## Open decisions
 
