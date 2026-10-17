@@ -14,6 +14,9 @@ import json
 import os
 from datetime import datetime
 
+from audio_sr import load_audio, audio_page
+from sponsors import load_sponsors, sponsor_pages
+
 
 # ─── Data loaders (same contract as RT) ──────────────────────────
 
@@ -304,7 +307,7 @@ def empty_state(message, sub=""):
 
 # ─── HTML builder ────────────────────────────────────────────────
 
-def build_html(d, revenue, socials, generated_at):
+def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, data_dir="."):
     has_yt   = bool(d['months'])
     has_rev  = bool(revenue.get('months'))
     has_soc  = bool(socials.get('months'))
@@ -521,14 +524,14 @@ def build_html(d, revenue, socials, generated_at):
                 if isinstance(v, (int, float)) and v > 0: return v
             return None
 
-        platform_cards = ''
+        platform_cards = {'show': '', 'personal': ''}
         for p in soc_platforms:
             color = PLATFORM_COLORS.get(p, '#6B7280')
             display = PLATFORM_DISPLAY.get(p, p.title())
             followers = soc_latest_for(p, 'FOLLOWERS')
             views = soc_latest_for(p, 'VIEWS') or soc_latest_for(p, 'VIEWS_VIDS')
             eng = soc_latest_for(p, 'ENGAGEMENTS')
-            platform_cards += (
+            platform_cards['personal' if p.startswith('JS_') else 'show'] += (
                 f'<div class="card soc-card">'
                 f'<div class="soc-card-head" style="border-color:{color}">'
                 f'<span class="soc-name">{display}</span>'
@@ -570,8 +573,17 @@ def build_html(d, revenue, socials, generated_at):
             soc_table += '</tr>'
         soc_table += '</tbody></table></div>'
 
+        personal = platform_cards['personal'] or (
+            '<div class="card"><div class="card-title">Waiting on Sprout Social</div>'
+            '<div class="metric-delta" style="color:var(--text2)">Jordan Schultz\'s Instagram, TikTok and X come through '
+            'the Sprout API, filtered to show content only: posts tagged Chime, Fanatics, Hims or Lowe\'s.</div></div>')
         socials_content = f"""
-    <div class="soc-grid">{platform_cards}</div>
+    <div class="soc-tabs">
+      <button class="soc-tab on" onclick="socTab('show',this)">Show accounts</button>
+      <button class="soc-tab" onclick="socTab('personal',this)">Jordan Schultz · show content</button>
+    </div>
+    <div class="soc-pane" id="soc-pane-show"><div class="soc-grid">{platform_cards['show']}</div></div>
+    <div class="soc-pane" id="soc-pane-personal" hidden><div class="soc-grid">{personal}</div></div>
     {soc_toolbar}
     <div id="soc-readonly">{soc_table}</div>
     <div id="soc-editable" style="display:none"></div>"""
@@ -579,6 +591,12 @@ def build_html(d, revenue, socials, generated_at):
         socials_content = soc_toolbar + '<div id="soc-readonly">' + empty_state(
             "No socials data yet",
             "Click ✎ Edit above to start entering numbers") + '</div><div id="soc-editable" style="display:none"></div>'
+
+    # ── Audio tab (Simplecast, weekly) ──
+    audio_content = audio_page(audio or [], fmt, empty_state)
+
+    # ── Sponsors section (one page per row in sponsors.csv) ──
+    sponsor_nav, sponsor_pages_html = sponsor_pages(sponsors or [], data_dir, fmt, empty_state)
 
     # ── Tracker tab ──
     if has_yt:
@@ -772,6 +790,11 @@ body > *{{position:relative;z-index:1}}
 .rev-commit-log div{{padding:2px 0;border-bottom:.5px solid var(--border)}}
 
 /* ── Socials ── */
+.soc-tabs{{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}}
+.soc-tab{{border:1px solid var(--border2);background:var(--surface);color:var(--text);padding:6px 14px;border-radius:999px;font:600 12px 'DM Sans',sans-serif;cursor:pointer}}
+.soc-tab.on{{background:var(--brand);border-color:var(--brand);color:#11116b}}
+.sponsor-dot{{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--brand);margin:0 9px 0 4px;flex:none}}
+[hidden]{{display:none!important}}
 .soc-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}}
 .soc-card{{padding:0;overflow:hidden}}
 .soc-card-head{{display:flex;justify-content:space-between;align-items:baseline;padding:14px 18px;border-bottom:2px solid}}
@@ -805,9 +828,6 @@ body > *{{position:relative;z-index:1}}
       <div class="logo-sub">Rain Delay Media</div>
     </div>
   </div>
-  <a href="../../../index.html" style="display:flex;align-items:center;gap:6px;padding:10px 18px;font-size:11px;color:var(--text3);text-decoration:none;border-bottom:1px solid var(--border);letter-spacing:.02em;font-weight:500;transition:color .12s" onmouseover="this.style.color='var(--brand)'" onmouseout="this.style.color='var(--text3)'">
-    ← RDM Network
-  </a>
   <div class="nav">
     <div class="nav-section">Analytics</div>
     <div class="nav-item active" onclick="showPage('overview',this)">
@@ -818,6 +838,10 @@ body > *{{position:relative;z-index:1}}
       <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" fill="currentColor" opacity=".2"/><path d="M6.5 5.5l4 2.5-4 2.5V5.5z" fill="currentColor"/></svg>
       <span>YouTube</span>
     </div>
+    <div class="nav-item" onclick="showPage('audio',this)">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="5.5" y="1.5" width="5" height="8" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 8a5 5 0 0010 0M8 13v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span>Audio</span>
+    </div>
     <div class="nav-item" onclick="showPage('socials',this)">
       <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M5 7a2 2 0 100-4 2 2 0 000 4zm6 6a2 2 0 100-4 2 2 0 000 4zm0-10a2 2 0 100 4 2 2 0 000-4zM6.6 8.5l3 2.5M9.4 5l-3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
       <span>Socials</span>
@@ -826,6 +850,8 @@ body > *{{position:relative;z-index:1}}
       <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M5 5h4.5a1.5 1.5 0 010 3h-3a1.5 1.5 0 000 3H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       <span>Revenue</span>
     </div>
+    <div class="nav-section" style="margin-top:14px">Sponsors</div>
+    {sponsor_nav}
     <div class="nav-section" style="margin-top:14px">Resources</div>
     <div class="nav-item" onclick="showPage('tracker',this)">
       <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1 5h14M5 5v10" stroke="currentColor" stroke-width="1.2"/></svg>
@@ -857,12 +883,21 @@ body > *{{position:relative;z-index:1}}
   {yt_content}
 </div>
 
+<!-- ═══ AUDIO ═══ -->
+<div class="page" id="page-audio">
+  <div class="page-header">
+    <div class="page-title">Audio</div>
+    <div class="page-sub">Podcast downloads · Simplecast · updated weekly</div>
+  </div>
+  {audio_content}
+</div>
+
 <!-- Socials editor GitHub modal -->
 <div class="rev-modal-bg" id="socGhModal" onclick="if(event.target===this)socCloseGh()">
   <div class="rev-modal">
     <h2>GitHub connection</h2>
     <p>Commits <code>socials_sr.csv</code> to the repo. Use a <b>fine-grained token</b> scoped to this repo with <b>Contents: Read and write</b>.</p>
-    <div class="rev-field"><label>Repository</label><input id="socGhRepo" value="raindelaymedia/roadtrippin" spellcheck="false"></div>
+    <div class="rev-field"><label>Repository</label><input id="socGhRepo" value="raindelaymedia/The-Schultz-Report" spellcheck="false"></div>
     <div class="rev-field"><label>Branch <span class="mut">(blank = auto-detect)</span></label><input id="socGhBranch" placeholder="auto-detect…" spellcheck="false"></div>
     <div class="rev-field"><label>File path</label><input id="socGhPath" value="schultz_report/data_sr/socials_sr.csv" spellcheck="false"></div>
     <div class="rev-field"><label>Access token</label><input id="socGhToken" type="password" placeholder="github_pat_…" spellcheck="false"></div>
@@ -892,6 +927,9 @@ body > *{{position:relative;z-index:1}}
   </div>
   {revenue_content}
 </div>
+
+<!-- ═══ SPONSORS ═══ -->
+{sponsor_pages_html}
 
 <!-- ═══ TRACKER ═══ -->
 <div class="page" id="page-tracker">
@@ -1099,7 +1137,7 @@ const SOC_EDIT_DATA = {js_soc_edit};
   function log(m){{ const l=$('socCommitLog'); const d=document.createElement('div'); d.textContent = new Date().toLocaleTimeString()+' — '+m; l.prepend(d); }}
   window.socOpenGh = function(){{
     const c=loadConn();
-    $('socGhRepo').value=c.repo||'raindelaymedia/roadtrippin';
+    $('socGhRepo').value=c.repo||'raindelaymedia/The-Schultz-Report';
     $('socGhBranch').value=c.branch||'';
     $('socGhPath').value=c.path||'schultz_report/data_sr/socials_sr.csv';
     $('socGhToken').value=c.token||'';
@@ -1143,6 +1181,11 @@ const SOC_EDIT_DATA = {js_soc_edit};
 }})();
 
 // ─── Navigation ──
+function socTab(which, el) {{
+  document.querySelectorAll('.soc-tab').forEach(b => b.classList.toggle('on', b === el));
+  document.querySelectorAll('.soc-pane').forEach(p => p.hidden = p.id !== 'soc-pane-' + which);
+}}
+
 function showPage(id, el) {{
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -1366,7 +1409,10 @@ def main():
     print(f"Revenue: {len(revenue['months'])} months from {revenue_path}")
     print(f"Socials: {len(socials['months'])} months × {len(socials['platforms'])} platforms from {socials_path}")
 
-    html = build_html(d, revenue, socials, generated_at)
+    audio = load_audio(os.path.join(data_dir, "audio_sr.csv"))
+    sponsors = load_sponsors(os.path.join(data_dir, "sponsors.csv"))
+    print(f"Audio:   {len(audio)} week(s) · Sponsors: {', '.join(x['sponsor'] for x in sponsors) or 'none'}")
+    html = build_html(d, revenue, socials, generated_at, audio, sponsors, data_dir)
     with open(out, 'w', encoding='utf-8') as f:
         f.write(html)
 
