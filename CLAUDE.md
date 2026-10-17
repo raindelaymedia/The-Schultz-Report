@@ -48,6 +48,7 @@ common/
   yt_period_views.py             views DURING a period per video, for everything posted since a cutoff
   tiktok_auth.py                 TikTok connection + exact per-video stats (link / exchange / test / status / views)
   sync_socials.py                Instagram account metrics → socials_sr.csv (SR only here)
+  sprout.py                      Sprout Social API client: status (profiles, tags) / daily / posts --tag
   config_socials.py              IG / TikTok / Sprout keys (gitignored — create locally)
 ```
 
@@ -59,6 +60,12 @@ common/
   graph.instagram.com v25.0; 60-day token, refreshed on use), `TT_CLIENT_KEY` / `TT_CLIENT_SECRET` (TikTok app
   **RDM SOCIALS**, sandbox keys start with `sb`), `TT_TOKEN_SR` (connected), `TT_TOKEN_JS` (Jordan — pending),
   later `SPROUT_TOKEN`.
+- `SPROUT_TOKEN` (+ optional `SPROUT_CUSTOMER_ID`): Sprout API token — long-lived, doesn't rotate, safe to use in
+  both repos. Start with `python common/sprout.py status` to get profile and tag IDs.
+- **Each repo runs its own daily workflow (decided Oct 2026).** This repo stores Schultz-side account data; RDM's
+  internal repo uses Sprout only for Fanatics reporting and can pull from here if needed. SR X (show account) is
+  manual input. Give this repo its OWN Instagram and TikTok logins (second IG token for theschultzreport;
+  connect TikTok sr again from here) so the two workflows never refresh the same token.
 - **Single-refresher rule — important.** Instagram and TikTok tokens are replaced every time they're refreshed. If
   this repo's workflow and the internal repo's workflow both refresh the same token, they invalidate each other.
   Only ONE place may refresh each token. Plan: make this repo the SR data source (it refreshes IG_TOKEN_SR /
