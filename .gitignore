@@ -1,3 +1,10 @@
+# RDM: keys and configs, never commit
+config*.py
+*config_socials*.py
+*.env
+client_secrets.json
+*tokens*.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
