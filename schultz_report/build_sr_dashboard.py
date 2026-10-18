@@ -16,6 +16,7 @@ from datetime import datetime
 
 from audio_sr import load_audio, audio_page
 from sponsors import load_sponsors, sponsor_pages
+from rdm_data import pick, merged_socials, load_sprout, jordan_pane
 
 
 # ─── Data loaders (same contract as RT) ──────────────────────────
@@ -307,7 +308,7 @@ def empty_state(message, sub=""):
 
 # ─── HTML builder ────────────────────────────────────────────────
 
-def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, data_dir="."):
+def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, data_dir=".", sprout=None):
     has_yt   = bool(d['months'])
     has_rev  = bool(revenue.get('months'))
     has_soc  = bool(socials.get('months'))
@@ -573,7 +574,7 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
             soc_table += '</tr>'
         soc_table += '</tbody></table></div>'
 
-        personal = platform_cards['personal'] or (
+        personal = jordan_pane(sprout, fmt) or platform_cards['personal'] or (
             '<div class="card"><div class="card-title">Waiting on Sprout Social</div>'
             '<div class="metric-delta" style="color:var(--text2)">Jordan Schultz\'s Instagram, TikTok and X come through '
             'the Sprout API, filtered to show content only: posts tagged Chime, Fanatics, Hims or Lowe\'s.</div></div>')
@@ -596,7 +597,7 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
     audio_content = audio_page(audio or [], fmt, empty_state)
 
     # ── Sponsors section (one page per row in sponsors.csv) ──
-    sponsor_nav, sponsor_pages_html = sponsor_pages(sponsors or [], data_dir, fmt, empty_state)
+    sponsor_nav, sponsor_pages_html = sponsor_pages(sponsors or [], data_dir, fmt, empty_state, sprout)
 
     # ── Tracker tab ──
     if has_yt:
@@ -1384,9 +1385,9 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(script_dir, "data_sr")
 
-    tracker_path = args.tracker or os.path.join(data_dir, "tracker_data_sr.json")
+    tracker_path = args.tracker or pick(data_dir, "tracker_data_sr.json")   # RDM pushes it daily
     revenue_path = args.revenue or os.path.join(data_dir, "revenue_sr.csv")
-    socials_path = args.socials or os.path.join(data_dir, "socials_sr.csv")
+    socials_path = args.socials or merged_socials(data_dir)   # Instagram from RDM + our manual rows
     out = os.path.join(script_dir, args.output)
 
     print("=" * 55)
@@ -1412,7 +1413,9 @@ def main():
     audio = load_audio(os.path.join(data_dir, "audio_sr.csv"))
     sponsors = load_sponsors(os.path.join(data_dir, "sponsors.csv"))
     print(f"Audio:   {len(audio)} week(s) · Sponsors: {', '.join(x['sponsor'] for x in sponsors) or 'none'}")
-    html = build_html(d, revenue, socials, generated_at, audio, sponsors, data_dir)
+    sprout = load_sprout(data_dir)
+    print(f"Sprout:  {len(sprout['posts']) if sprout else 0} sponsor-tagged posts" + (f" (pulled {sprout['pulled']})" if sprout else " — waiting on RDM's first push"))
+    html = build_html(d, revenue, socials, generated_at, audio, sponsors, data_dir, sprout)
     with open(out, 'w', encoding='utf-8') as f:
         f.write(html)
 

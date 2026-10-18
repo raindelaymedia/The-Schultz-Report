@@ -4,6 +4,7 @@ config*.py
 *.env
 client_secrets.json
 *tokens*.json
+schultz_report/data_sr/.socials_merged.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

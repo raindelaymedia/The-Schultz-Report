@@ -17,6 +17,8 @@ import os
 import re
 from datetime import date, datetime
 
+from rdm_data import pick, rdm_dir, sponsor_sprout_section
+
 
 def _read(path):
     if not os.path.exists(path):
@@ -49,10 +51,10 @@ def _mdy(iso):
 
 
 def _fanatics_body(s, data_dir, fmt, empty_state):
-    hist = sorted(_read(os.path.join(data_dir, "fanatics_history_sr.csv")), key=lambda r: r["period_start"])
+    hist = sorted(_read(pick(data_dir, "fanatics_history_sr.csv")), key=lambda r: r["period_start"])
     # Only periods inside the campaign (the history may still hold superseded rows)
     hist = [r for r in hist if not s.get("start") or r["period_start"] >= s["start"]]
-    posts = [p for p in _read(os.path.join(data_dir, "fanatics_posts_sr.csv"))
+    posts = [p for p in _read(pick(data_dir, "fanatics_posts_sr.csv"))
              if (p.get("sponsor") or "Fanatics") == "Fanatics"]
     goal = _int(s.get("impression_goal"))
     cum = sum(_int(r.get("impressions")) for r in hist)
@@ -62,7 +64,9 @@ def _fanatics_body(s, data_dir, fmt, empty_state):
     if start and end and hist:
         last_end = datetime.strptime(hist[-1]["period_end"], "%Y-%m-%d").date()
         elapsed = ((last_end - start).days + 1) / ((end - start).days + 1)
-    reports = sorted(glob.glob(os.path.join(data_dir, "reports", "fanatics", "*.html")))
+    rep_root = rdm_dir(data_dir) if os.path.isdir(os.path.join(rdm_dir(data_dir), "reports")) else data_dir
+    rep_rel = "data_sr/from_rdm" if rep_root != data_dir else "data_sr"
+    reports = sorted(glob.glob(os.path.join(rep_root, "reports", "fanatics", "*.html")))
     rows = "".join(
         f'<tr><td>{_mdy(r["period_start"])} – {_mdy(r["period_end"])}</td><td>{fmt(_int(r["imp_youtube"]))}</td>'
         f'<td>{fmt(_int(r["imp_social"]))}</td><td>{fmt(_int(r["imp_audio"]))}</td><td><b>{fmt(_int(r["impressions"]))}</b></td></tr>'
@@ -72,7 +76,7 @@ def _fanatics_body(s, data_dir, fmt, empty_state):
         k = f'{p["account"]} · {PLATFORM_NAME.get(p["platform"].upper(), p["platform"].title())}'
         by_plat[k] = by_plat.get(k, 0) + 1
     report_links = "".join(
-        f'<li><a href="data_sr/reports/fanatics/{os.path.basename(p)}" target="_blank" style="color:var(--brand)">'
+        f'<li><a href="{rep_rel}/reports/fanatics/{os.path.basename(p)}" target="_blank" style="color:var(--brand)">'
         f'{os.path.basename(p)}</a></li>' for p in reports)
     pct = f"{cum / goal * 100:.1f}%" if goal and hist else "—"
     return f"""
@@ -91,7 +95,7 @@ def _fanatics_body(s, data_dir, fmt, empty_state):
     <div class="card"><div class="card-title">Delivery Reports</div><ul style="margin-left:18px;line-height:1.9">{report_links or '<li>None yet</li>'}</ul></div>"""
 
 
-def sponsor_pages(sponsors, data_dir, fmt, empty_state):
+def sponsor_pages(sponsors, data_dir, fmt, empty_state, sprout=None):
     """→ (nav_html, pages_html). Pages use the dashboard's existing classes."""
     nav, pages = "", ""
     for s in sponsors:
@@ -99,12 +103,13 @@ def sponsor_pages(sponsors, data_dir, fmt, empty_state):
         nav += (f'<div class="nav-item" onclick="showPage(\'{sid}\',this)">'
                 f'<span class="sponsor-dot"></span><span>{name}</span></div>')
         flight = (f"{_mdy(s['start'])} – {_mdy(s['end'])}" if s.get("start") and s.get("end") else "Flight dates TBD")
+        tag = s.get("sprout_tag") or name
         if name == "Fanatics":
-            body = _fanatics_body(s, data_dir, fmt, empty_state)
+            body = _fanatics_body(s, data_dir, fmt, empty_state) + sponsor_sprout_section(tag, sprout, fmt)
         else:
-            body = empty_state(f"{name} campaign — details pending",
-                               f"Sprout tag “{s.get('sprout_tag') or name}” · campaign totals fill in once the Sprout API is "
-                               f"connected and the {name} deliverables are added to sponsors.csv")
+            body = (sponsor_sprout_section(tag, sprout, fmt)
+                    + '<div class="card"><div class="card-title">Campaign terms</div><div class="metric-delta" '
+                      f'style="color:var(--text2)">Flight, deliverables and goals pending — add them to sponsors.csv.</div></div>')
         pages += f"""
 <div class="page" id="page-{sid}">
   <div class="page-header">

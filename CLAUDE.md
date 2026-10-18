@@ -5,15 +5,15 @@ Schultz Media. It mirrors RDM's internal SR dashboard (repo `raindelaymedia/road
 metrics Schultz Media will specify (TBD). Mostly API-driven: daily refresh → static HTML on GitHub Pages.
 Owner on the RDM side: Andrew Priest (andrew@raindelaymedia.com).
 
-## Status (handoff, Oct 2026)
+## Status (Oct 2026)
 
-Seeded from the internal repo: the SR pipeline is copied in and repointed to this layout, but **nothing is wired
-up yet** — no workflow, no Pages, no secrets. Next steps, in order:
-1. Andrew adds local keys (see Keys) — never commit them.
-2. Get the existing scripts running locally here: tracker → dashboard → Fanatics report (`--no-write`).
-3. Decide the single-refresher question (below), then write `.github/workflows/daily.yml`.
-4. Enable GitHub Pages; decide access control before sharing the link.
-5. Sprout Social API once Schultz Media provides a token; then the Schultz-specific metrics.
+**This repo holds no API keys.** RDM's internal repo (`raindelaymedia/roadtrippin`) owns every SR key and token
+refresh. Its daily workflow (09:00 UTC) pulls YouTube, Instagram and Sprout, then pushes the results to
+`schultz_report/data_sr/from_rdm/` here. That push triggers `.github/workflows/build.yml`, which rebuilds
+`schultz_report/schultz_report.html` (also runs 10:30 UTC daily + manual). Pages serves `index.html` → dashboard.
+If the repos go private later, the same model holds (RDM pushes; nothing here needs a key).
+
+Deadline: dashboard + SR Fanatics report done EOD Oct 19 2026.
 
 ## Working style
 
@@ -28,13 +28,13 @@ up yet** — no workflow, no Pages, no secrets. Next steps, in order:
 ```
 schultz_report/
   build_tracker_sr.py            YouTube Analytics + Data API → data_sr/tracker_data_sr.json
-  build_sr_dashboard.py          → schultz_report.html (SR brand). Its sidebar still links "← RDM Network"
-                                 (../../../index.html) — remove/replace for the shared version.
+  build_sr_dashboard.py          → schultz_report.html (SR brand). Reads from_rdm/ + manual inputs
+  rdm_data.py                    from_rdm/ loaders: socials merge, Sprout → Jordan tab + sponsor sections
   build_fanatics_report_sr.py    SR × Fanatics monthly delivery report (+ fanatics_report_template_sr.py)
   sr_growth_snapshot.py, snapshot_sr_historical.py   one-off analysis scripts
   audio_sr.py                    Audio tab — weekly Simplecast downloads from data_sr/audio_sr.csv
   sponsors.py                    Sponsors section — one page per row in data_sr/sponsors.csv
-  config_sr.py                   YouTube OAuth (gitignored — create locally)
+  data_sr/from_rdm/              pushed daily by RDM — never edit by hand
   data_sr/
     socials_sr.csv               long format period,platform,metric,value (period = YYYY-MM)
     tracker_data_sr.json         generated
@@ -49,28 +49,24 @@ common/
   tiktok_auth.py                 TikTok connection + exact per-video stats (link / exchange / test / status / views)
   sync_socials.py                Instagram account metrics → socials_sr.csv (SR only here)
   sprout.py                      Sprout Social API client: status (profiles, tags) / daily / posts --tag
-  config_socials.py              IG / TikTok / Sprout keys (gitignored — create locally)
+  (no config files here — keys live in RDM's repo)
 ```
 
-## Keys (local files + GitHub secrets, same names)
+## Data flow + keys
 
-- `schultz_report/config_sr.py`: `YT_CHANNEL_ID = "UCD50DP5meQbRD0ug-dm1p1g"`, `YT_CLIENT_ID`, `YT_CLIENT_SECRET`,
-  `YT_REFRESH_TOKEN` (OAuth for the SR channel; Google project in **Published** mode, refresh tokens don't rotate).
-- `common/config_socials.py`: `IG_TOKEN_SR` (Instagram API with Instagram Login, account `theschultzreport`,
-  graph.instagram.com v25.0; 60-day token, refreshed on use), `TT_CLIENT_KEY` / `TT_CLIENT_SECRET` (TikTok app
-  **RDM SOCIALS**, sandbox keys start with `sb`), `TT_TOKEN_SR` (connected), `TT_TOKEN_JS` (Jordan — pending),
-  later `SPROUT_TOKEN`.
-- `SPROUT_TOKEN` (+ optional `SPROUT_CUSTOMER_ID`): Sprout API token — long-lived, doesn't rotate, safe to use in
-  both repos. Start with `python common/sprout.py status` to get profile and tag IDs.
-- **Each repo runs its own daily workflow (decided Oct 2026).** This repo stores Schultz-side account data; RDM's
-  internal repo uses Sprout only for Fanatics reporting and can pull from here if needed. SR X (show account) is
-  manual input. Give this repo its OWN Instagram and TikTok logins (second IG token for theschultzreport;
-  connect TikTok sr again from here) so the two workflows never refresh the same token.
-- **Single-refresher rule — important.** Instagram and TikTok tokens are replaced every time they're refreshed. If
-  this repo's workflow and the internal repo's workflow both refresh the same token, they invalidate each other.
-  Only ONE place may refresh each token. Plan: make this repo the SR data source (it refreshes IG_TOKEN_SR /
-  TT_TOKEN_*), and the internal repo reads SR files from here. Until that switch is agreed, do not put
-  `IG_TOKEN_SR` in this repo's secrets and don't schedule refreshes here. Local runs never refresh IG tokens.
+- **No keys here — ever.** No `config*.py`, no tokens, no secrets in this repo's Actions. `.gitignore` blocks them.
+  The scripts in `common/` and `build_tracker_sr.py` / `build_fanatics_report_sr.py` are kept for reference and
+  local runs only; the live copies run in RDM's repo.
+- `data_sr/from_rdm/` — **written only by RDM's workflow; never edit by hand** (it's overwritten daily):
+  `tracker_data_sr.json` (YouTube), `socials_sr.csv` (API-synced Instagram rows), `sprout/posts.json` +
+  `sprout/daily/*.csv` (sponsor-tagged posts, lifetime views), `fanatics_*.csv`, `reports/fanatics/`.
+- `data_sr/` (outside `from_rdm/`) — **this repo's own manual inputs**, edited on the dashboard: `socials_sr.csv`
+  (X, YouTube engaged views, anything Schultz-side), `audio_sr.csv` (Simplecast weekly), `sponsors.csv`.
+- At build, `schultz_report/rdm_data.py` merges socials: platforms in `RDM_PLATFORMS` (Instagram; TikTok once it's
+  in RDM's daily sync) come from RDM's file, every other row from ours. `pick()` prefers a `from_rdm/` copy of a file.
+- **Single-refresher rule.** Instagram and TikTok tokens are replaced on every refresh; only RDM's workflow refreshes
+  them. Never add IG/TikTok tokens here. Sprout and Google refresh tokens don't rotate, but they still stay in RDM's repo.
+- RDM pushes with a fine-grained PAT (`SHARED_REPO_PAT` in roadtrippin, Contents R/W on this repo only).
 
 ## Data rules (SR × Fanatics)
 
@@ -122,6 +118,9 @@ Simplecast has an analytics API (key from account settings) — worth checking o
 
 ## Open decisions
 
-1. Which repo owns SR data collection + token refresh (recommendation: this one).
-2. Access control for the shared site (GitHub Pages is public-with-link).
-3. Schultz Media's metric list.
+1. Access control for the shared site (GitHub Pages is public-with-link; both repos are public today).
+2. Schultz Media's metric list.
+3. Jordan's X isn't returned by the Sprout API (handle Schultz_Report shows in the app) — group permission? And is
+   the Sept X figure (2,771,393 impressions) Jordan's or @Schultz_Report's?
+4. Sprout shows Fanatics-tagged posts on Jordan YouTube, Jordan Threads and SR Facebook — do they count toward Fanatics?
+5. Keep the Revenue page in the shared view?
