@@ -25,6 +25,7 @@ import argparse
 import importlib.util
 import json
 import os
+import re
 import sys
 import time
 
@@ -34,8 +35,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://api.sproutsocial.com"
 DEFAULT_DAILY = ["impressions", "video_views", "followers", "net_follower_growth", "post_count",
                  "reactions", "comments", "shares"]
-DEFAULT_POST = ["lifetime.impressions", "lifetime.video_views", "lifetime.views",
-                "lifetime.reactions", "lifetime.comments", "lifetime.shares"]
+DEFAULT_POST = ["lifetime.impressions", "lifetime.video_views", "lifetime.views", "lifetime.reactions"]
 POST_FIELDS = ["created_time", "perma_link", "text", "customer_profile_id", "internal.tags.id"]
 
 
@@ -74,9 +74,21 @@ class Sprout:
         raise SystemExit(f"Sprout {method} {path}: still failing after retries")
 
     def _paged(self, path, body):
+        """All pages. Metric names differ by network, so metrics Sprout rejects are dropped and retried."""
         out, page = [], 1
         while True:
-            j = self._req("POST", path, {**body, "page": page})
+            try:
+                j = self._req("POST", path, {**body, "page": page})
+            except SystemExit as e:
+                bad = re.search(r"invalid metrics: ([^\"]+)", str(e))
+                if not bad or "metrics" not in body:
+                    raise
+                drop = {m.strip() for m in bad.group(1).split(",")}
+                body = {**body, "metrics": [m for m in body["metrics"] if m not in drop]}
+                if not body["metrics"]:
+                    raise
+                print(f"  · Sprout doesn't offer {', '.join(sorted(drop))} here — skipped")
+                continue
             out += j.get("data", [])
             paging = j.get("paging", {})
             if page >= (paging.get("total_pages") or 1):
@@ -142,10 +154,12 @@ class Sprout:
         """Posts created in [start, end] (dates), optionally only those carrying any of tag_ids."""
         filters = [f"customer_profile_id.eq({', '.join(map(str, profile_ids))})",
                    f"created_time.in({start}T00:00:00..{end}T23:59:59)"]
-        if tag_ids:
-            filters.append(f"tag_id.eq({', '.join(map(str, tag_ids))})")
-        return self._paged(f"/v1/{self.customer_id}/analytics/posts", {
+        posts = self._paged(f"/v1/{self.customer_id}/analytics/posts", {
             "fields": POST_FIELDS, "filters": filters, "metrics": metrics or DEFAULT_POST, "timezone": timezone})
+        if tag_ids:   # tag filtering is done here: every post comes back with internal.tags
+            want = {str(t) for t in tag_ids}
+            posts = [p for p in posts if want & {str(t.get("id")) for t in (p.get("internal", {}).get("tags") or [])}]
+        return posts
 
 
 def main():
