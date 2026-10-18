@@ -9,6 +9,7 @@ its own manual inputs:
     from_rdm/socials_sr.csv            socials incl. API-synced Instagram rows (RDM)
     from_rdm/sprout/posts.json         sponsor-tagged posts (Chime, Fanatics, Hims, Lowe's) with lifetime views
     from_rdm/sprout/daily/*.csv        daily snapshots of those views
+    from_rdm/tiktok/daily/*.csv        SR TikTok per-video lifetime counts, one file per day
     from_rdm/fanatics_*.csv, reports/  Fanatics delivery data + reports (RDM builds the Fanatics report)
 
 Ownership in socials: RDM_PLATFORMS rows come from RDM (API); every other row (X, YouTube engaged views,
@@ -21,7 +22,7 @@ import os
 from collections import defaultdict
 from datetime import date
 
-RDM_PLATFORMS = {"INSTAGRAM"}          # API-synced on RDM's side (TikTok joins once it's in RDM's daily sync)
+RDM_PLATFORMS = {"INSTAGRAM", "TIKTOK"}   # API-synced on RDM's side
 NETWORK_NAME = {"INSTAGRAM": "Instagram", "TIKTOK": "TikTok", "X": "X", "YOUTUBE": "YouTube",
                 "THREADS": "Threads", "FACEBOOK": "Facebook"}
 

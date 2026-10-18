@@ -59,7 +59,9 @@ common/
   local runs only; the live copies run in RDM's repo.
 - `data_sr/from_rdm/` — **written only by RDM's workflow; never edit by hand** (it's overwritten daily):
   `tracker_data_sr.json` (YouTube), `socials_sr.csv` (API-synced Instagram rows), `sprout/posts.json` +
-  `sprout/daily/*.csv` (sponsor-tagged posts, lifetime views), `fanatics_*.csv`, `reports/fanatics/`.
+  `sprout/daily/*.csv` (sponsor-tagged posts, lifetime views), `tiktok/daily/*.csv` (SR TikTok per-video lifetime
+  counts), `fanatics_*.csv`, `reports/fanatics/`. SR TikTok rows in socials come from RDM's API sync from Oct 2026
+  (VIEWS = lifetime views of that month's videos; Aug/Sep were Studio views-in-month).
 - `data_sr/` (outside `from_rdm/`) — **this repo's own manual inputs**, edited on the dashboard: `socials_sr.csv`
   (X, YouTube engaged views, anything Schultz-side), `audio_sr.csv` (Simplecast weekly), `sponsors.csv`.
 - At build, `schultz_report/rdm_data.py` merges socials: platforms in `RDM_PLATFORMS` (Instagram; TikTok once it's
