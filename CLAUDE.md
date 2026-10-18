@@ -116,11 +116,18 @@ marks show posts another way. Sponsor pages total campaigns from Sprout tags + o
 Chime deal terms pending. Revenue page: decide whether it stays in the shared view.
 Simplecast has an analytics API (key from account settings) — worth checking once access is sorted.
 
+## Decided (Oct 18 2026)
+
+- **Accounts:** show = `theschultzreport` (Instagram, TikTok, X @theschultzreport, Facebook @TheSchultzReport).
+  **@Schultz_Report on X is Jordan's personal account** — the Sept 2,771,393 X impressions are his. Sprout's API
+  doesn't return that X profile yet (it shows in the app).
+- **YouTube = YouTube Analytics only.** All SR channel content is Fanatics-integrated, so Sprout's YouTube profile is
+  skipped (it would double count). Revisit Sprout for YouTube once campaigns need per-video tagging.
+- **Revenue page stays in the shared view** — Schultz Media needs to audit/verify it; it'll carry more detail
+  than RT's revenue reporting. Source: this repo's `data_sr/revenue_sr.csv`.
+
 ## Open decisions
 
 1. Access control for the shared site (GitHub Pages is public-with-link; both repos are public today).
 2. Schultz Media's metric list.
-3. Jordan's X isn't returned by the Sprout API (handle Schultz_Report shows in the app) — group permission? And is
-   the Sept X figure (2,771,393 impressions) Jordan's or @Schultz_Report's?
-4. Sprout shows Fanatics-tagged posts on Jordan YouTube, Jordan Threads and SR Facebook — do they count toward Fanatics?
-5. Keep the Revenue page in the shared view?
+3. Sprout shows Fanatics-tagged posts on Jordan's Threads and SR Facebook — do they count toward Fanatics?

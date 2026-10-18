@@ -61,7 +61,10 @@ def load_sprout(data_dir):
     p = os.path.join(rdm_dir(data_dir), "sprout", "posts.json")
     if not os.path.exists(p):
         return None
-    return json.load(open(p, encoding="utf-8"))
+    d = json.load(open(p, encoding="utf-8"))
+    # YouTube comes from the channel itself (all of it is integrated) — Sprout's copy would double count
+    d["posts"] = [x for x in d["posts"] if x.get("network") != "YOUTUBE"]
+    return d
 
 
 def _rollup(posts):

@@ -526,13 +526,25 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
             return None
 
         platform_cards = {'show': '', 'personal': ''}
+        personal_cards = {}   # JS_<NET> → card; manual rows for networks Sprout doesn't cover (e.g. X)
         for p in soc_platforms:
             color = PLATFORM_COLORS.get(p, '#6B7280')
             display = PLATFORM_DISPLAY.get(p, p.title())
             followers = soc_latest_for(p, 'FOLLOWERS')
             views = soc_latest_for(p, 'VIEWS') or soc_latest_for(p, 'VIEWS_VIDS')
             eng = soc_latest_for(p, 'ENGAGEMENTS')
-            platform_cards['personal' if p.startswith('JS_') else 'show'] += (
+            if p.startswith('JS_'):
+                imps, posts = soc_latest_for(p, 'FANATICS_IMPRESSIONS'), soc_latest_for(p, 'FANATICS_POSTS')
+                if imps and not views:
+                    personal_cards[p[3:]] = (
+                        f'<div class="card soc-card"><div class="soc-card-head" style="border-color:{color}">'
+                        f'<span class="soc-name">{display.replace("Jordan · ", "")}</span><span class="soc-followers">{fmt(imps)}</span></div>'
+                        f'<div class="soc-stats">'
+                        f'<div><div class="soc-stat-lbl">Show-content impressions</div><div class="soc-stat-val">{fmt(imps)}</div></div>'
+                        f'<div><div class="soc-stat-lbl">Posts</div><div class="soc-stat-val">{fmt(posts)}</div></div>'
+                        f'</div><div class="metric-delta" style="color:var(--text2);padding:0 18px 14px">Manual input · latest month</div></div>')
+                    continue
+            card = (
                 f'<div class="card soc-card">'
                 f'<div class="soc-card-head" style="border-color:{color}">'
                 f'<span class="soc-name">{display}</span>'
@@ -541,6 +553,10 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
                 f'<div><div class="soc-stat-lbl">Views</div><div class="soc-stat-val">{fmt(views)}</div></div>'
                 f'<div><div class="soc-stat-lbl">Engagements</div><div class="soc-stat-val">{fmt(eng)}</div></div>'
                 f'</div></div>')
+            if p.startswith('JS_'):
+                personal_cards[p[3:]] = card
+            else:
+                platform_cards['show'] += card
 
         # Readonly data tracker table
         soc_table = '<div class="table-scroll"><table class="data-table"><thead><tr><th>Platform · Metric</th>'
@@ -574,7 +590,9 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
             soc_table += '</tr>'
         soc_table += '</tbody></table></div>'
 
-        personal = jordan_pane(sprout, fmt) or platform_cards['personal'] or (
+        sprout_nets = {x['network'] for x in (sprout or {}).get('posts', []) if x.get('owner') == 'JS'}
+        manual = ''.join(c for n, c in personal_cards.items() if n not in sprout_nets)
+        personal = ((jordan_pane(sprout, fmt) or '') + manual) or (
             '<div class="card"><div class="card-title">Waiting on Sprout Social</div>'
             '<div class="metric-delta" style="color:var(--text2)">Jordan Schultz\'s Instagram, TikTok and X come through '
             'the Sprout API, filtered to show content only: posts tagged Chime, Fanatics, Hims or Lowe\'s.</div></div>')
