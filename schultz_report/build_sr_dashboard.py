@@ -330,7 +330,7 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
 
     # ── Overview tab content ──
     if has_data:
-        overview_metrics = overview_page(d, socials, audio or [], sponsors or [], sprout, fmt)
+        overview_metrics = overview_page(d, socials, audio or [], sponsors or [], sprout, fmt, data_dir)
     elif False:
         overview_metrics = f"""
     <div class="metrics">

@@ -8,6 +8,8 @@ Sprout posts, sponsors.csv) — nothing new to maintain.
 from collections import defaultdict
 from datetime import date, datetime
 
+from growth_sr import growth_section
+
 NET = {"INSTAGRAM": "Instagram", "TIKTOK": "TikTok", "X": "X", "YOUTUBE": "YouTube",
        "THREADS": "Threads", "FACEBOOK": "Facebook"}
 
@@ -36,7 +38,7 @@ def _metric(label, value, sub):
     return f'<div class="metric"><div class="metric-label">{label}</div><div class="metric-value">{value}</div>{sub}</div>'
 
 
-def overview_page(d, socials, audio, sponsors, sprout, fmt):
+def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
     today = date.today()
     cur = today.strftime("%Y-%m")
     prev = (today.replace(day=1).toordinal() - 1)
@@ -150,4 +152,5 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt):
       <div class="table-scroll"><table class="data-table"><thead><tr><th>Views</th><th style="text-align:left">Video</th><th>Type · published</th></tr></thead>
       <tbody>{top_rows}</tbody></table></div></div>""" if top else ""
 
-    return metrics + show_table + jordan + sponsor_table + top_card
+    this_month = (f'<div class="card-title" style="margin:22px 0 10px;font-size:15px">This month · {cm} to date</div>')
+    return growth_section(data_dir, socials, fmt) + this_month + metrics + show_table + jordan + sponsor_table + top_card
