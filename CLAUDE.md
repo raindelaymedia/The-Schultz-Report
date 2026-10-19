@@ -137,6 +137,7 @@ Simplecast has an analytics API (key from account settings) — worth checking o
 
 ## Open decisions
 
+0. Jordan's personal accounts absorb show-account numbers (Oct 19 2026): Instagram collabs share one view count and are counted under Jordan, so collab-heavy posting moves views off @theschultzreport. Sprout can't split them. Andrew is working it out with the Schultz team; next step on our side = measure the overlap (SR IG permalinks vs Jordan's Sprout-tagged IG posts).
 1. Access control for the shared site (GitHub Pages is public-with-link; both repos are public today).
 2. Schultz Media's metric list.
 3. Sprout shows Fanatics-tagged posts on Jordan's Threads and SR Facebook — do they count toward Fanatics?
