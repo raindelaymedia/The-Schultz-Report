@@ -50,26 +50,27 @@ def audio_page(weeks, fmt, empty_state):
     if prev and last["downloads"] is not None and prev["downloads"]:
         d = last["downloads"] - prev["downloads"]
         delta = f'<span class="{"up" if d >= 0 else "down"}">{"+" if d >= 0 else ""}{fmt(d)} vs prior week</span>'
-    total = sum(w["downloads"] or 0 for w in weeks)
-    recent = [w["downloads"] for w in weeks[-4:] if w["downloads"] is not None]
-    avg4 = round(sum(recent) / len(recent)) if recent else None
     label = lambda w: f'{_md(w["start"])}–{_md(w["end"])}' if w["end"] else _md(w["start"])
+    total = sum(w["downloads"] or 0 for w in weeks)
+    is_week = lambda w: not w["end"] or (datetime.strptime(w["end"], "%Y-%m-%d") - datetime.strptime(w["start"], "%Y-%m-%d")).days <= 7
+    recent = [w["downloads"] for w in weeks if is_week(w) and w["downloads"] is not None][-4:]
+    avg4 = round(sum(recent) / len(recent)) if recent else None
     rows = "".join(f'<tr><td>{label(w)}</td><td>{fmt(w["downloads"])}</td><td>{fmt(w["listeners"])}</td>'
                    f'<td style="text-align:left">{w["notes"]}</td></tr>' for w in reversed(weeks))
     data = json.dumps({"labels": [label(w) for w in weeks], "downloads": [w["downloads"] for w in weeks]})
     return f"""
     <div class="metrics">
-      <div class="metric"><div class="metric-label">Downloads · week of {_md(last['start'])}</div><div class="metric-value">{fmt(last['downloads'])}</div><div class="metric-delta">{delta}</div></div>
-      <div class="metric"><div class="metric-label">4-week average</div><div class="metric-value">{fmt(avg4)}</div><div class="metric-delta" style="color:var(--text2)">per week</div></div>
-      <div class="metric"><div class="metric-label">Total tracked</div><div class="metric-value">{fmt(total)}</div><div class="metric-delta" style="color:var(--text2)">{len(weeks)} week{'s' if len(weeks) != 1 else ''} · since {_md(weeks[0]['start'])}</div></div>
+      <div class="metric"><div class="metric-label">Downloads · {'week of ' + _md(last['start']) if is_week(last) else label(last)}</div><div class="metric-value">{fmt(last['downloads'])}</div><div class="metric-delta">{delta}</div></div>
+      <div class="metric"><div class="metric-label">4-week average</div><div class="metric-value">{fmt(avg4) if avg4 else '—'}</div><div class="metric-delta" style="color:var(--text2)">{'per week' if avg4 else 'weekly entries start in October'}</div></div>
+      <div class="metric"><div class="metric-label">Total tracked</div><div class="metric-value">{fmt(total)}</div><div class="metric-delta" style="color:var(--text2)">{len(weeks)} entr{'ies' if len(weeks) != 1 else 'y'} · since {_md(weeks[0]['start'])}</div></div>
     </div>
     <div class="card">
-      <div class="card-title">Weekly Downloads · Simplecast</div>
+      <div class="card-title">Downloads · Simplecast</div>
       <div style="height:280px"><canvas id="audio-weekly-chart"></canvas></div>
     </div>
     <div class="card">
-      <div class="card-title">Weekly Detail</div>
-      <div class="table-scroll"><table class="data-table"><thead><tr><th>Week</th><th>Downloads</th><th>Listeners</th><th>Notes</th></tr></thead>
+      <div class="card-title">Detail</div>
+      <div class="table-scroll"><table class="data-table"><thead><tr><th>Period</th><th>Downloads</th><th>Listeners</th><th>Notes</th></tr></thead>
       <tbody>{rows}</tbody></table></div>
     </div>
     <script>

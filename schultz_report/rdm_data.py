@@ -12,8 +12,10 @@ its own manual inputs:
     from_rdm/tiktok/daily/*.csv        SR TikTok per-video lifetime counts, one file per day
     from_rdm/fanatics_*.csv, reports/  Fanatics delivery data + reports (RDM builds the Fanatics report)
 
-Ownership in socials: RDM_PLATFORMS rows come from RDM (API); every other row (X, YouTube engaged views,
-anything Schultz-side) comes from this repo's own data_sr/socials_sr.csv, edited on the dashboard.
+Ownership in socials: RDM_PLATFORMS rows come from RDM (API). Every other row (X, YouTube engaged views,
+Jordan's X — anything entered by hand) lives in this repo's own data_sr/socials_sr.csv, edited on this dashboard;
+RDM's workflow copies those rows back into its own file every morning. A manual row that only exists on RDM's side
+still shows here (ours wins when both have the cell).
 """
 
 import csv
@@ -38,12 +40,12 @@ def pick(data_dir, name):
 
 
 def merged_socials(data_dir):
-    """socials_sr.csv rows: RDM_PLATFORMS from RDM's file, everything else from ours. Returns a path."""
+    """socials_sr.csv rows: RDM_PLATFORMS from RDM's file; manual rows from ours, falling back to RDM's. Returns a path."""
     own, rdm = os.path.join(data_dir, "socials_sr.csv"), os.path.join(rdm_dir(data_dir), "socials_sr.csv")
     if not os.path.exists(rdm):
         return own
     rows = {}
-    for path, keep in ((own, lambda pl: pl not in RDM_PLATFORMS), (rdm, lambda pl: pl in RDM_PLATFORMS)):
+    for path, keep in ((rdm, lambda pl: True), (own, lambda pl: pl not in RDM_PLATFORMS)):   # later wins
         if os.path.exists(path):
             with open(path, encoding="utf-8-sig", newline="") as f:
                 for r in csv.DictReader(f):

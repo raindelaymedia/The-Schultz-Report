@@ -64,8 +64,15 @@ common/
   (VIEWS = lifetime views of that month's videos; Aug/Sep were Studio views-in-month).
 - `data_sr/` (outside `from_rdm/`) — **this repo's own manual inputs**, edited on the dashboard: `socials_sr.csv`
   (X, YouTube engaged views, anything Schultz-side), `audio_sr.csv` (Simplecast weekly), `sponsors.csv`.
-- At build, `schultz_report/rdm_data.py` merges socials: platforms in `RDM_PLATFORMS` (Instagram; TikTok once it's
-  in RDM's daily sync) come from RDM's file, every other row from ours. `pick()` prefers a `from_rdm/` copy of a file.
+- At build, `schultz_report/rdm_data.py` merges socials: platforms in `RDM_PLATFORMS` (Instagram, TikTok) come from
+  RDM's file; every manual row comes from ours, falling back to RDM's when we don't have the cell. `pick()` prefers a
+  `from_rdm/` copy of a file.
+- **Manual SR inputs are entered HERE (this dashboard's editor), not on RDM's.** Every morning RDM's workflow copies
+  them back into its own socials_sr.csv (`pull_shared_inputs_sr.py`, shared value wins) before building its SR
+  dashboard and Fanatics reports. An X edit made on RDM's dashboard is overwritten the next morning if this repo
+  has that cell.
+- Overview tab = `schultz_report/overview_sr.py` (show accounts, Jordan's show content, sponsor tag counts, top uploads).
+  Audio = `data_sr/audio_sr.csv`; a row longer than a week (e.g. the Sept 2026 monthly total) is shown as a period.
 - **Single-refresher rule.** Instagram and TikTok tokens are replaced on every refresh; only RDM's workflow refreshes
   them. Never add IG/TikTok tokens here. Sprout and Google refresh tokens don't rotate, but they still stay in RDM's repo.
 - RDM pushes with a fine-grained PAT (`SHARED_REPO_PAT` in roadtrippin, Contents R/W on this repo only).

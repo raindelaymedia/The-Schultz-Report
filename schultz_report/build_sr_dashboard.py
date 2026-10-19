@@ -17,6 +17,7 @@ from datetime import datetime
 from audio_sr import load_audio, audio_page
 from sponsors import load_sponsors, sponsor_pages
 from rdm_data import pick, merged_socials, load_sprout, jordan_pane
+from overview_sr import overview_page
 
 
 # ─── Data loaders (same contract as RT) ──────────────────────────
@@ -329,6 +330,8 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
 
     # ── Overview tab content ──
     if has_data:
+        overview_metrics = overview_page(d, socials, audio or [], sponsors or [], sprout, fmt)
+    elif False:
         overview_metrics = f"""
     <div class="metrics">
       <div class="metric">
