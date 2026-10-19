@@ -67,6 +67,8 @@ common/
 - At build, `schultz_report/rdm_data.py` merges socials: platforms in `RDM_PLATFORMS` (Instagram, TikTok) come from
   RDM's file; every manual row comes from ours, falling back to RDM's when we don't have the cell. `pick()` prefers a
   `from_rdm/` copy of a file.
+- Instagram / TikTok rows (incl. hand corrections to past months, e.g. Sept 2026 followers 1,979) live ONLY in RDM's
+  file — edit them on RDM's dashboard; this repo's own socials_sr.csv holds no Instagram/TikTok rows (an edit here is ignored).
 - **Manual SR inputs are entered HERE (this dashboard's editor), not on RDM's.** Every morning RDM's workflow copies
   them back into its own socials_sr.csv (`pull_shared_inputs_sr.py`, shared value wins) before building its SR
   dashboard and Fanatics reports. An X edit made on RDM's dashboard is overwritten the next morning if this repo
