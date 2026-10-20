@@ -141,7 +141,7 @@ def jordan_pane(sprout, fmt, data_dir="."):
         return None
     since = sprout.get("campaign_start", "")
     note = ('<div class="metric-delta" style="color:var(--text2);margin:-4px 0 4px;grid-column:1/-1">Show content only: posts tagged '
-            'Chime, Fanatics, Hims or Lowe\'s in Sprout Social · lifetime views (X: impressions) · updated '
+            'as show content in Sprout Social (any campaign tag: sponsors or unbranded) · lifetime views (X: impressions) · updated '
             f'{sprout.get("pulled", "")} (through {sprout.get("through", "")})</div>')
     return note + _cards(_rollup(posts), fmt, since, jordan_followers(data_dir))
 
