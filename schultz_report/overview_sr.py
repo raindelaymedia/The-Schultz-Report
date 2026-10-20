@@ -9,6 +9,7 @@ from collections import defaultdict
 from datetime import date, datetime
 
 from growth_sr import growth_section
+from rdm_data import jordan_followers, followers_line
 
 NET = {"INSTAGRAM": "Instagram", "TIKTOK": "TikTok", "X": "X", "YOUTUBE": "YouTube",
        "THREADS": "Threads", "FACEBOOK": "Facebook"}
@@ -131,10 +132,13 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
             a[2] += p.get("views") or 0
     js_x_m = next((m for m in (cur, prev) if _soc(socials, "JS_X", "FANATICS_IMPRESSIONS", m)), None)
     js_x = _soc(socials, "JS_X", "FANATICS_IMPRESSIONS", js_x_m) if js_x_m else None
+    jf = jordan_followers(data_dir)
     js_cards = "".join(
         f'<div class="metric"><div class="metric-label">Jordan · {NET.get(n, n.title())}</div>'
         f'<div class="metric-value">{fmt(v)}</div><div class="metric-delta" style="color:var(--text2)">'
-        f'{c} posts · {m} in {cm}</div></div>' for n, (m, c, v) in sorted(js.items(), key=lambda x: -x[1][2]))
+        f'{c} posts · {m} in {cm}</div>'
+        + (f'<div class="metric-delta" style="color:var(--text2)">{followers_line(jf[n], fmt)}</div>' if n in jf else '')
+        + '</div>' for n, (m, c, v) in sorted(js.items(), key=lambda x: -x[1][2]))
     if js_x and "X" not in js:                 # manual figure only until Sprout covers X
         js_cards += (f'<div class="metric"><div class="metric-label">Jordan · X</div><div class="metric-value">{fmt(js_x)}</div>'
                      f'<div class="metric-delta" style="color:var(--text2)">impressions · {_mon(js_x_m)} (entered by hand)</div></div>')

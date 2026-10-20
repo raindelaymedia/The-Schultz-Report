@@ -595,7 +595,7 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
 
         sprout_nets = {x['network'] for x in (sprout or {}).get('posts', []) if x.get('owner') == 'JS'}
         manual = ''.join(c for n, c in personal_cards.items() if n not in sprout_nets)
-        personal = ((jordan_pane(sprout, fmt) or '') + manual) or (
+        personal = ((jordan_pane(sprout, fmt, data_dir) or '') + manual) or (
             '<div class="card"><div class="card-title">Waiting on Sprout Social</div>'
             '<div class="metric-delta" style="color:var(--text2)">Jordan Schultz\'s Instagram, TikTok and X come through '
             'the Sprout API, filtered to show content only: posts tagged Chime, Fanatics, Hims or Lowe\'s.</div></div>')

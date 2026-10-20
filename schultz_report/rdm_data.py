@@ -22,7 +22,7 @@ import csv
 import json
 import os
 from collections import defaultdict
-from datetime import date
+from datetime import date, datetime
 
 RDM_PLATFORMS = {"INSTAGRAM", "TIKTOK"}   # API-synced on RDM's side
 NETWORK_NAME = {"INSTAGRAM": "Instagram", "TIKTOK": "TikTok", "X": "X", "YOUTUBE": "YouTube",
@@ -70,6 +70,36 @@ def load_sprout(data_dir):
     return d
 
 
+def jordan_followers(data_dir):
+    """{network: (first_date, first, last_date, last)} for Jordan's accounts, from Sprout's daily profile metrics."""
+    p = os.path.join(rdm_dir(data_dir), "sprout", "profiles_daily.csv")
+    if not os.path.exists(p):
+        return {}
+    out = {}
+    with open(p, encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f):
+            if r.get("owner") != "JS" or not (r.get("followers") or "").strip() or r.get("network") == "FACEBOOK":
+                continue
+            v = int(float(r["followers"]))
+            n = r["network"]
+            if n not in out:
+                out[n] = [r["date"], v, r["date"], v]
+            elif r["date"] >= out[n][2]:
+                out[n][2:] = [r["date"], v]
+    return {k: tuple(v) for k, v in out.items()}
+
+
+def followers_line(fol, fmt):
+    if not fol:
+        return ""
+    d0, v0, _, v1 = fol
+    g = v1 - v0
+    d = datetime.strptime(d0, "%Y-%m-%d")
+    since = f"{d.strftime('%b')} {d.day}"
+    return (f'{fmt(v1)} followers · <span class="{"up" if g >= 0 else "down"}">{"+" if g >= 0 else ""}{fmt(g)}'
+            f'{f" ({g / v0 * 100:+.1f}%)" if v0 else ""}</span> since {since}')
+
+
 def _rollup(posts):
     """{network: {posts, views}} plus month-to-date."""
     month = date.today().strftime("%Y-%m")
@@ -84,7 +114,7 @@ def _rollup(posts):
     return agg
 
 
-def _cards(agg, fmt, since):
+def _cards(agg, fmt, since, followers=None):
     order = ["INSTAGRAM", "TIKTOK", "X", "YOUTUBE", "THREADS", "FACEBOOK"]
     out = ""
     for n in sorted(agg, key=lambda k: order.index(k) if k in order else 99):
@@ -95,11 +125,14 @@ def _cards(agg, fmt, since):
                 f'<div class="soc-stats">'
                 f'<div><div class="soc-stat-lbl">Posts since {since}</div><div class="soc-stat-val">{a["posts"]}</div></div>'
                 f'<div><div class="soc-stat-lbl">This month</div><div class="soc-stat-val">{fmt(a["mtd_views"])} · {a["mtd_posts"]} posts</div></div>'
-                f'</div></div>')
+                f'</div>'
+                + (f'<div class="metric-delta" style="color:var(--text2);padding:0 18px 14px">{followers_line((followers or {}).get(n), fmt)}</div>'
+                   if (followers or {}).get(n) else '')
+                + '</div>')
     return out
 
 
-def jordan_pane(sprout, fmt):
+def jordan_pane(sprout, fmt, data_dir="."):
     """Jordan Schultz's personal accounts — show content only (sponsor-tagged posts)."""
     if not sprout:
         return None
@@ -110,7 +143,7 @@ def jordan_pane(sprout, fmt):
     note = ('<div class="metric-delta" style="color:var(--text2);margin:-4px 0 4px;grid-column:1/-1">Show content only: posts tagged '
             'Chime, Fanatics, Hims or Lowe\'s in Sprout Social · lifetime views (X: impressions) · updated '
             f'{sprout.get("pulled", "")} (through {sprout.get("through", "")})</div>')
-    return note + _cards(_rollup(posts), fmt, since)
+    return note + _cards(_rollup(posts), fmt, since, jordan_followers(data_dir))
 
 
 def sponsor_sprout_section(sponsor, sprout, fmt):
