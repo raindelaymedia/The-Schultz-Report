@@ -131,7 +131,8 @@ Simplecast has an analytics API (key from account settings) — worth checking o
 
 - **Accounts:** show = `theschultzreport` (Instagram, TikTok, X @theschultzreport, Facebook @TheSchultzReport).
   **@Schultz_Report on X is Jordan's personal account** — the Sept 2,771,393 X impressions are his. Sprout's API
-  doesn't return that X profile yet (it shows in the app).
+  returns it since Oct 20 2026 (profile 7718020, after an X user agreement was accepted in Sprout); X counts
+  impressions. Sprout Sept = 19 posts / 2,771,530 (matches the hand entry), so JS_X manual rows are no longer needed.
 - **YouTube = YouTube Analytics only.** All SR channel content is Fanatics-integrated, so Sprout's YouTube profile is
   skipped (it would double count). Revisit Sprout for YouTube once campaigns need per-video tagging.
 - **Revenue page stays in the shared view** — Schultz Media needs to audit/verify it; it'll carry more detail

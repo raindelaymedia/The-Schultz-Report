@@ -135,7 +135,7 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
         f'<div class="metric"><div class="metric-label">Jordan · {NET.get(n, n.title())}</div>'
         f'<div class="metric-value">{fmt(v)}</div><div class="metric-delta" style="color:var(--text2)">'
         f'{c} posts · {m} in {cm}</div></div>' for n, (m, c, v) in sorted(js.items(), key=lambda x: -x[1][2]))
-    if js_x:
+    if js_x and "X" not in js:                 # manual figure only until Sprout covers X
         js_cards += (f'<div class="metric"><div class="metric-label">Jordan · X</div><div class="metric-value">{fmt(js_x)}</div>'
                      f'<div class="metric-delta" style="color:var(--text2)">impressions · {_mon(js_x_m)} (entered by hand)</div></div>')
     jordan = (f'<div class="card-title" style="margin:8px 0 10px">Jordan Schultz · show content (sponsor-tagged posts, lifetime views)</div>'
