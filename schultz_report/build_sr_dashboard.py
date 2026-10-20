@@ -159,6 +159,23 @@ def load_socials(csv_path):
 ENGAGED_TYPES = [('VIDS', 'Videos'), ('SHORTS', 'Shorts'), ('LIVES', 'Lives')]
 
 
+def fill_api_views(socials, d):
+    """All-views half of the engaged-views pairs from the YouTube API: for a month that has ENGAGED_VIEWS_<T>
+    but no VIEWS_<T>, use the tracker's monthly views (matches Studio within a fraction of a percent).
+    A value entered by hand still wins. So only engaged views need entering."""
+    months, data = socials.get('months', []), socials.get('data', {})
+    api = {t: dict(zip(d.get('months', []), d.get(k, []))) for t, k in (('VIDS', 'vids'), ('SHORTS', 'shorts'), ('LIVES', 'lives'))}
+    for t, by_month in api.items():
+        eng = data.get(('YOUTUBE', f'ENGAGED_VIEWS_{t}'))
+        if not eng:
+            continue
+        views = data.setdefault(('YOUTUBE', f'VIEWS_{t}'), [None] * len(months))
+        for i, m in enumerate(months):
+            if isinstance(eng[i], (int, float)) and not isinstance(views[i], (int, float)) and by_month.get(m) is not None:
+                views[i] = by_month[m]
+    return socials
+
+
 def engaged_views(socials, months):
     """{type: {'views': [...], 'engaged': [...], 'rate': [...]}} aligned to `months`
     (any order). Only content types with at least one value are returned."""
@@ -1439,6 +1456,7 @@ def main():
     print(f"Audio:   {len(audio)} week(s) · Sponsors: {', '.join(x['sponsor'] for x in sponsors) or 'none'}")
     sprout = load_sprout(data_dir)
     print(f"Sprout:  {len(sprout['posts']) if sprout else 0} sponsor-tagged posts" + (f" (pulled {sprout['pulled']})" if sprout else " — waiting on RDM's first push"))
+    fill_api_views(socials, d)   # API fills all-views where only engaged views were entered
     html = build_html(d, revenue, socials, generated_at, audio, sponsors, data_dir, sprout)
     with open(out, 'w', encoding='utf-8') as f:
         f.write(html)
