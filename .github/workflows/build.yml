@@ -9,6 +9,8 @@ on:
     paths:
       - "schultz_report/data_sr/**"
       - "schultz_report/*.py"
+      - "common/**"
+      - ".github/workflows/build.yml"
   schedule:
     - cron: "30 10 * * *"     # 10:30 UTC daily, after RDM's 09:00 run — safety net
   workflow_dispatch:
