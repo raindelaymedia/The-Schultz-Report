@@ -18,6 +18,7 @@ from audio_sr import load_audio, audio_page
 from sponsors import load_sponsors, sponsor_pages
 from rdm_data import pick, merged_socials, load_sprout, jordan_pane
 from overview_sr import overview_page
+from content_tab_sr import content_page
 
 
 # ─── Data loaders (same contract as RT) ──────────────────────────
@@ -364,7 +365,8 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
         M_display = [fmt_period(m) for m in M_raw]
         M = list(reversed(M_display))
         latest_mo = M[-1] if M else '—'
-        overview_sub = f"All platforms · {M[0]} – {latest_mo}" if M else "No data yet"
+        overview_sub = (f"Where the show stands · updated {datetime.now().strftime('%b %d, %Y')} · "
+                        "YouTube data runs about 2 days behind")
     else:
         M, M_display, latest_mo = [], [], '—'
         overview_sub = "No data connected yet — metrics will appear here once data pipelines are live"
@@ -898,6 +900,10 @@ body > *{{position:relative;z-index:1}}
       <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity=".5"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity=".3"/></svg>
       <span>Overview</span>
     </div>
+    <div class="nav-item" onclick="showPage('content',this)">
+      <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.3l-3.8 2 .7-4.3-3.1-3 4.3-.6L8 1.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      <span>Content</span>
+    </div>
     <div class="nav-item" onclick="showPage('youtube',this)">
       <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" fill="currentColor" opacity=".2"/><path d="M6.5 5.5l4 2.5-4 2.5V5.5z" fill="currentColor"/></svg>
       <span>YouTube</span>
@@ -936,6 +942,15 @@ body > *{{position:relative;z-index:1}}
   {overview_metrics}
   {empty_state("Dashboard ready — data will populate as pipelines come online",
                "YouTube API · Socials CSV · Revenue CSV") if not has_data else ''}
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="page" id="page-content">
+  <div class="page-header">
+    <div class="page-title">Content</div>
+    <div class="page-sub">How each piece of content is doing · YouTube uploads graded, top posts by platform</div>
+  </div>
+  {content_page(data_dir, fmt)}
 </div>
 
 <!-- ═══ YOUTUBE ═══ -->

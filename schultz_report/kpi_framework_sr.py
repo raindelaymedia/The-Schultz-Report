@@ -73,7 +73,7 @@ def _bar(v, base, lean, hi):
             f'<div style="height:100%;width:{w:.1f}%;border-radius:4px;background:var(--brand)"></div>'
             f'{mk(base, "base")}{mk(lean, "lean-in")}</div>'
             f'<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text2)"><span>0</span>'
-            f'<span>base {_pct(base, 1)} · lean-in {_pct(lean, 1)}</span></div>')
+            f'<span>target {_pct(base, 1)} · stretch {_pct(lean, 1)}</span></div>')
 
 
 def _kpi_card(num, name, sub, defn, headline_label, month_v, week_v, week_lbl, t, extra=""):
@@ -94,6 +94,47 @@ def _kpi_card(num, name, sub, defn, headline_label, month_v, week_v, week_lbl, t
     </div>"""
 
 
+def _chip(v, base, lean):
+    """Plain-language status: On target / Close / Below target / No data yet."""
+    if v is None or base is None:
+        return '<span class="ns-chip" style="background:rgba(255,255,255,.12)">No data yet</span>'
+    if lean is not None and v >= lean:
+        return '<span class="ns-chip" style="background:#3BB273;color:#11116b">Stretch goal hit ✓</span>'
+    if v >= base:
+        return '<span class="ns-chip" style="background:#3BB273;color:#11116b">On target ✓</span>'
+    if v >= base * 0.9:
+        return '<span class="ns-chip" style="background:#E8C840;color:#11116b">Close</span>'
+    return '<span class="ns-chip" style="background:#E08C2A;color:#11116b">Below target</span>'
+
+
+def _kpi_tile(num, name, plain, value, chip, bar, foot, details):
+    return f"""
+      <div class="ns-tile">
+        <div class="metric-label">KPI {num} · {name}</div>
+        <div class="metric-delta" style="color:var(--text2);margin:2px 0 6px">{plain}</div>
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><div class="metric-value" style="margin:0">{value}</div>{chip}</div>
+        {bar}
+        <div class="metric-delta" style="color:var(--text2)">{foot}</div>
+        <details style="margin-top:6px"><summary style="cursor:pointer;color:var(--brand);font-size:12px">Details</summary>
+          <div class="metric-delta" style="color:var(--text2);margin-top:6px">{details}</div></details>
+      </div>"""
+
+
+def _count_tile(label, value, sub):
+    return (f'<div class="ns-tile"><div class="metric-label">{label}</div><div class="metric-value">{value}</div>'
+            f'<div class="metric-delta" style="color:var(--text2)">{sub}</div></div>')
+
+
+def _ns_row(code, title, desc, status, tiles):
+    return f"""
+    <div class="ns-row">
+      <div class="ns-head"><div class="metric-label" style="color:var(--brand)">{code}</div>
+        <div class="card-title" style="margin:4px 0;font-size:16px">{title}</div>
+        <div class="metric-delta" style="color:var(--text2);margin-bottom:10px">{desc}</div>{status}</div>
+      <div class="ns-tiles">{tiles}</div>
+    </div>"""
+
+
 def framework_section(data_dir, fmt):
     content = {}
     p = pick(data_dir, "content_sr.json")
@@ -103,103 +144,101 @@ def framework_section(data_dir, fmt):
     kw, km = (content.get("kpis") or {}).get("week", {}), (content.get("kpis") or {}).get("month", {})
     today = date.today()
     cur_m = today.strftime("%Y-%m")
-    last_w = (today - timedelta(days=today.weekday() + 7)).isoformat()      # last complete Mon–Sun week
+    mon = today.strftime("%B")
+    last_w = (today - timedelta(days=today.weekday() + 7)).isoformat()
     wlbl = f"{_md(last_w)}–{_md((date.fromisoformat(last_w) + timedelta(days=6)).isoformat())}"
     g = lambda src, per, f, k: ((src.get(per) or {}).get(f) or {}).get(k)
+    T = lambda m: (_f(targets.get(m, {}).get("base")), _f(targets.get(m, {}).get("lean_in")))
+    s1 = lambda m: _pct(_f(targets.get(m, {}).get("season1"))) if _f(targets.get(m, {}).get("season1")) is not None else "TBD"
+    prov = " (provisional — locks after 8–10 organic episodes)"
 
     # KPI 1 — retention
-    ep_t, cl_t = targets.get("episode_pct_viewed", {}), targets.get("clip_pct_viewed", {})
+    eb, el = T("episode_pct_viewed")
+    cb, cl = T("clip_pct_viewed")
+    ep_m, ep_w = g(km, cur_m, "episode", "pct_viewed"), g(kw, last_w, "episode", "pct_viewed")
     cl_m, cl_w = g(km, cur_m, "clip", "pct_viewed"), g(kw, last_w, "clip", "pct_viewed")
-    k1_extra = (f'<div style="margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1)">'
-                f'<div class="metric-label">Clips · % viewed this month</div>'
-                f'<div style="font-family:Oswald,sans-serif;font-size:20px">{_pct(cl_m)}</div>'
-                f'<div class="metric-delta">{_status(cl_m, _f(cl_t.get("base")), _f(cl_t.get("lean_in")))} · last week {_pct(cl_w)}</div>'
-                f'<div class="metric-delta" style="color:var(--text2)">Avg minutes watched: episodes '
-                f'{g(km, cur_m, "episode", "avg_minutes") or "—"} · clips {g(km, cur_m, "clip", "avg_minutes") or "—"}</div></div>')
-    k1 = _kpi_card("1", "Audience retention", "Content quality",
-                   "Long-form % viewed, by format, organic views only (YouTube ads excluded). Headline is full episodes; clips and average minutes underneath.",
-                   "Episodes · % viewed", g(km, cur_m, "episode", "pct_viewed"), g(kw, last_w, "episode", "pct_viewed"),
-                   wlbl, ep_t, k1_extra)
+    k1 = _kpi_tile(1, "Audience retention", "How much of each full episode people watch (organic views).",
+                   _pct(ep_m), _chip(ep_m, eb, el), _bar(ep_m, eb, el, max(el or 0, ep_m or 0) * 1.25 or 1),
+                   f"{mon} so far · last week ({wlbl}) {_pct(ep_w)} · target {_pct(eb, 0)}, stretch {_pct(el, 0)}",
+                   f"<b>Clips:</b> {_pct(cl_m)} this month ({_pct(cl_w)} last week) — target {_pct(cb, 0)}, stretch {_pct(cl, 0)} "
+                   f"{_chip(cl_m, cb, cl)}<br>Average minutes watched: episodes {g(km, cur_m, 'episode', 'avg_minutes') or '—'}, "
+                   f"clips {g(km, cur_m, 'clip', 'avg_minutes') or '—'}<br>Season 1 {s1('episode_pct_viewed')} · comparable RDM show "
+                   f"{_pct(_f(targets.get('episode_pct_viewed', {}).get('comparable')), 0)}{prov}. Views from YouTube ads are left out.")
 
-    # KPI 2 — organic long-form CTR, with first-day CTR per episode
+    # KPI 2 — organic long-form CTR
+    ctb, ctl = T("longform_ctr_organic")
+    ct_m, ct_w = g(km, cur_m, "longform", "ctr_organic"), g(kw, last_w, "longform", "ctr_organic")
     eps = sorted((dict(v, id=k) for k, v in (content.get("videos") or {}).items()
                   if v.get("format") == "episode" and v.get("first_day_ctr") is not None),
-                 key=lambda v: v["published"], reverse=True)[:6]
-    ct = targets.get("longform_ctr_organic", {})
+                 key=lambda v: v["published"], reverse=True)[:5]
     d1 = "".join(f'<tr><td style="text-align:left">{_md(v["published"])}</td><td><b>{_pct(v["first_day_ctr"])}</b></td>'
-                 f'<td style="text-align:left"><a href="https://www.youtube.com/watch?v={vid_id(v)}" target="_blank" '
+                 f'<td style="text-align:left"><a href="https://www.youtube.com/watch?v={v["id"]}" target="_blank" '
                  f'style="color:var(--brand)">{v["title"][:34]}…</a></td></tr>' for v in eps)
-    k2_extra = (f'<div style="margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1)">'
-                f'<div class="metric-label">First-day CTR · latest episodes (the test read)</div>'
-                f'<div class="table-scroll"><table class="data-table" style="font-size:11px"><tbody>{d1 or "<tr><td>—</td></tr>"}</tbody></table></div>'
-                f'<div class="metric-delta" style="color:var(--text2)">Publish day + the day after, organic. Episodes {_pct(g(km, cur_m, "episode", "ctr_organic"))}'
-                f' · clips {_pct(g(km, cur_m, "clip", "ctr_organic"))} this month.</div></div>')
-    k2 = _kpi_card("2", "Impression CTR", "Discovery · packaging",
-                   "Long-form impressions CTR, organic traffic only. First-day CTR per episode is the test read.",
-                   "Long-form CTR (organic)", g(km, cur_m, "longform", "ctr_organic"), g(kw, last_w, "longform", "ctr_organic"),
-                   wlbl, ct, k2_extra)
+    k2 = _kpi_tile(2, "Impression click-through rate", "How often people who see a thumbnail click it (long-form, organic).",
+                   _pct(ct_m), _chip(ct_m, ctb, ctl), _bar(ct_m, ctb, ctl, max(ctl or 0, ct_m or 0) * 1.25 or 1),
+                   f"{mon} so far · last week {_pct(ct_w)} · target {_pct(ctb)}, stretch {_pct(ctl)}",
+                   f"Episodes {_pct(g(km, cur_m, 'episode', 'ctr_organic'))} · clips {_pct(g(km, cur_m, 'clip', 'ctr_organic'))} this month."
+                   f"<br><b>First-day CTR, latest episodes</b> (the test read):"
+                   f'<table class="data-table" style="font-size:11px;margin-top:4px"><tbody>{d1 or "<tr><td>—</td></tr>"}</tbody></table>'
+                   f"Season 1 {s1('longform_ctr_organic')} · comparable RDM show "
+                   f"{_pct(_f(targets.get('longform_ctr_organic', {}).get('comparable')))}{prov}.")
 
-    # KPI 3 — pending
+    # Manual North Star indicators (weekly entries summed for the month)
+    tot = {}
+    for r in _csv(os.path.join(data_dir, "ns_indicators.csv")):
+        v = _f(r.get("value"))
+        if v is not None and (r.get("week_start") or "").startswith(cur_m):
+            tot[r["indicator"]] = tot.get(r["indicator"], 0) + v
+    cnt = lambda key, label, sub: _count_tile(label, fmt(tot[key]) if key in tot else "—", sub)
+    manual = f"{mon} · entered weekly"
+
+    k_status = [x for x in ((ep_m, eb), (ct_m, ctb)) if x[0] is not None and x[1] is not None]
+    if not k_status:
+        ns1_status = _chip(None, None, None)
+    elif all(v >= b for v, b in k_status):
+        ns1_status = '<span class="ns-chip" style="background:#3BB273;color:#11116b">KPIs on target ✓</span>'
+    elif any(v >= b for v, b in k_status):
+        ns1_status = '<span class="ns-chip" style="background:#E8C840;color:#11116b">Mixed</span>'
+    else:
+        ns1_status = '<span class="ns-chip" style="background:#E08C2A;color:#11116b">KPIs below target</span>'
+    pending = '<span class="ns-chip" style="background:rgba(255,255,255,.12)">Waiting on inputs</span>'
+
     rt = targets.get("blended_rpm", {})
     money = lambda v: "—" if _f(v) is None else f"${_f(v):.2f}"
-    k3 = f"""
-    <div class="card" style="margin:0">
-      <div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:Oswald,sans-serif;font-size:30px;color:var(--brand)">3</span>
-        <div><div class="card-title" style="margin:0">Revenue per viewer</div><div class="metric-label">Commercial viability</div></div></div>
-      <div class="metric-delta" style="color:var(--text2);margin:6px 0 10px">Blended RPM per 1K long-form views, with the revenue mix:
-        Fanatics, programmatic, RSS, branded.</div>
-      <div class="metric-label">This month</div><div class="metric-value" style="color:var(--text2)">Pending</div>
-      <div class="metric-delta" style="color:var(--text2)">Revenue tracking is being set up.</div>
-      <div class="metric-delta" style="color:var(--text2);margin-top:6px">Season 1 {money(rt.get("season1"))} · comparable RDM show
-        {money(rt.get("comparable"))} · '26 base {money(rt.get("base"))} · lean-in {money(rt.get("lean_in"))}</div>
-    </div>"""
+    k3 = _kpi_tile(3, "Revenue per viewer", "Revenue for every 1,000 long-form views (Fanatics, ads, RSS, branded).",
+                   '<span style="color:var(--text2)">Pending</span>', "", "",
+                   f"Target {money(rt.get('base'))}, stretch {money(rt.get('lean_in'))} · revenue tracking is being set up",
+                   f"Season 1 {money(rt.get('season1'))} (ads ran on 0.46% of views) · comparable RDM show {money(rt.get('comparable'))}.")
 
-    ns = "".join(f'<div class="card" style="margin:0;border-top:3px solid var(--brand)"><div class="metric-label">{k}</div>'
-                 f'<div class="card-title" style="margin:4px 0">{n}</div><div class="metric-delta" style="color:var(--text2)">{d}</div></div>'
-                 for k, n, d in NS)
-
-    # North Star indicators (manual, weekly)
-    ind = _csv(os.path.join(data_dir, "ns_indicators.csv"))
-    month_rows = [r for r in ind if (r.get("week_start") or "").startswith(cur_m)]
-    tot = {}
-    for r in month_rows:
-        v = _f(r.get("value"))
-        if v is not None:
-            tot[r["indicator"]] = tot.get(r["indicator"], 0) + v
-    ind_html = "".join(f'<div class="metric"><div class="metric-label">{ns_} · {lab}</div>'
-                       f'<div class="metric-value">{fmt(tot.get(key)) if key in tot else "—"}</div>'
-                       f'<div class="metric-delta" style="color:var(--text2)">this month</div></div>'
-                       for key, (ns_, lab) in INDICATORS.items())
-    tests = [r for r in _csv(os.path.join(data_dir, "tests_sr.csv")) if r.get("test")]
-    test_html = ("".join(f'<tr><td style="text-align:left">{r["test"]}</td><td>{r.get("variable", "")}</td><td>{r.get("start_date", "")}</td>'
-                         f'<td>{r.get("episodes", "")}</td><td>{r.get("status", "")}</td><td style="text-align:left">{r.get("result", "")}</td></tr>'
-                         for r in reversed(tests))
-                 or '<tr><td colspan="6" style="color:var(--text2)">No test running yet — add one to data_sr/tests_sr.csv</td></tr>')
-
+    rows = (
+        _ns_row("NORTH STAR 1", "Most sought-after player platform", "Players ask to be on the show; we aren't chasing them.", ns1_status,
+                k1 + k2 + cnt("guest_requests", "Inbound guest requests", manual)
+                + cnt("players_booked", "Active players booked", manual)
+                + cnt("collaborations", "Collaborations published", f"goal: 2 a month · {manual}"))
+        + _ns_row("NORTH STAR 2", "The league's most respected outsider", "Teams and the league treat us as a partner, not a risk.",
+                  pending if not any(k in tot for k in ("league_access", "league_shares")) else "",
+                  cnt("league_access", "Team / league access or collaborations", manual)
+                  + cnt("league_shares", "Times the league or teams shared the show", manual))
+        + _ns_row("NORTH STAR 3", "Break-even or better by year two", "≥50% of costs from sponsorship in '26; break-even all-in by end of year two.",
+                  '<span class="ns-chip" style="background:rgba(255,255,255,.12)">Pending revenue tracking</span>',
+                  k3 + _count_tile("'26 season", "≥ 50% of costs", "covered by sponsorship · pending")
+                  + _count_tile("End of year 2", "Break-even +", "all-in, no paid media · pending")
+                  + _count_tile("12–24 months", "Diversified", "YouTube ads, RSS ad sales and branded content live alongside Fanatics"))
+    )
     return f"""
-    <div class="card-title" style="margin:6px 0 10px;font-size:16px">Are we on track? · KPI framework</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:14px">{ns}</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:14px">{k1}{k2}{k3}</div>
-    <div class="card">
-      <div class="card-title">Commercial milestones · NS 3</div>
-      <div class="metrics">
-        <div class="metric"><div class="metric-label">'26 season</div><div class="metric-value" style="font-size:20px">≥ 50% of opex</div><div class="metric-delta" style="color:var(--text2)">Pending — revenue tracking</div></div>
-        <div class="metric"><div class="metric-label">End of year 2</div><div class="metric-value" style="font-size:20px">Break-even +</div><div class="metric-delta" style="color:var(--text2)">Pending — revenue tracking</div></div>
-        <div class="metric"><div class="metric-label">12–24 months</div><div class="metric-value" style="font-size:20px">Diversified</div><div class="metric-delta" style="color:var(--text2)">Programmatic YouTube, RSS ad sales and branded content live alongside Fanatics</div></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">North Star indicators · evidence we're moving (not KPIs)</div>
-      <div class="metrics">{ind_html}</div>
-      <div class="metric-delta" style="color:var(--text2)">Entered weekly in data_sr/ns_indicators.csv (week_start, indicator, value, notes).</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Current test · reviewed every ~10 comparable episodes (keep, adjust or stop)</div>
-      <div class="table-scroll"><table class="data-table"><thead><tr><th style="text-align:left">Test</th><th>Variable</th><th>Started</th>
-        <th>Episodes</th><th>Status</th><th style="text-align:left">Result</th></tr></thead><tbody>{test_html}</tbody></table></div>
-      <div class="metric-delta" style="color:var(--text2);margin-top:8px">Targets are provisional: base and lean-in lock after the first
-        8–10 organic episodes. Metrics are guideposts, not gotchas.</div>
-    </div>"""
+    <style>
+      .ns-row{{display:grid;grid-template-columns:260px 1fr;gap:16px;padding:18px;margin-bottom:14px;border-radius:12px;
+               background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}}
+      .ns-head{{border-right:1px solid rgba(255,255,255,.08);padding-right:16px}}
+      .ns-tiles{{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;align-items:start}}
+      .ns-tile{{background:rgba(255,255,255,.05);border-radius:10px;padding:14px}}
+      .ns-chip{{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700}}
+      @media (max-width:900px){{.ns-row{{grid-template-columns:1fr}}.ns-head{{border-right:0;padding-right:0}}}}
+    </style>
+    <div class="card-title" style="margin:6px 0 4px;font-size:16px">Are we on track?</div>
+    <div class="metric-delta" style="color:var(--text2);margin-bottom:12px">Each North Star with the numbers that show progress toward it.
+      KPIs update daily from YouTube; the counts are entered weekly by the team. Metrics are guideposts, not gotchas.</div>
+    {rows}"""
 
 
 def vid_id(v):
@@ -255,10 +294,7 @@ def top_content_section(data_dir, fmt):
       <div class="table-scroll"><table class="data-table"><thead><tr><th>Grade</th><th style="text-align:left">Upload</th>
         <th>Published · age</th><th>Organic views</th><th>Paid views</th><th>% viewed</th><th>CTR / engaged %</th><th>Engagement</th><th style="text-align:left">Why</th>
         </tr></thead><tbody>{rows}</tbody></table></div>
-      <div class="metric-delta" style="color:var(--text2);margin-top:8px">Each upload is ranked against the same format's uploads from
-        the previous {content.get("peer_days", 90)} days <b>at the same age</b> (a 3-day-old clip vs other clips at day 3).
-        Weights: % viewed {w.get("retention", 0):.0%} · CTR {w.get("ctr", 0):.0%} (Shorts: engaged %) · views {w.get("views", 0):.0%}
-        · engagement {w.get("engagement", 0):.0%} · subs per 1K views {w.get("subs", 0):.0%}. A = top 20% … F = bottom 20%.
-        Everything is organic: views, % viewed and CTR leave out YouTube-ad traffic (paid views shown for reference, not graded).
-        Data through {content.get("through", "")}.</div>
+      <div class="metric-delta" style="color:var(--text2);margin-top:8px">Grades compare each upload with the show's own recent
+        uploads of the same kind at the same age — see <b>How the grades work</b> at the bottom of this page. Organic only (views from
+        YouTube ads are shown but not graded). Data through {content.get("through", "")}.</div>
     </div>"""
