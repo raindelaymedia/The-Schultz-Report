@@ -9,6 +9,7 @@ from collections import defaultdict
 from datetime import date, datetime
 
 from growth_sr import growth_section
+from kpi_framework_sr import framework_section, top_content_section
 from rdm_data import jordan_followers, followers_line
 
 NET = {"INSTAGRAM": "Instagram", "TIKTOK": "TikTok", "X": "X", "YOUTUBE": "YouTube",
@@ -157,4 +158,5 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
       <tbody>{top_rows}</tbody></table></div></div>""" if top else ""
 
     this_month = (f'<div class="card-title" style="margin:22px 0 10px;font-size:15px">This month · {cm} to date</div>')
-    return growth_section(data_dir, socials, fmt) + this_month + metrics + show_table + jordan + sponsor_table + top_card
+    return (framework_section(data_dir, fmt) + top_content_section(data_dir, fmt) + growth_section(data_dir, socials, fmt)
+            + this_month + metrics + show_table + jordan + sponsor_table + top_card)

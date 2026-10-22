@@ -1,5 +1,5 @@
 """
-Growth section for the Overview — every platform since the start of the RDM term (Aug 18 2026), in two-week
+Growth section for the Overview — every platform since the start of the RDM term (Aug 18 2026), week by week (Mon–Sun)
 windows, plus a short plain-language read of the latest complete window.
 
 Sources (all pushed by RDM to data_sr/from_rdm/):
@@ -17,7 +17,7 @@ from datetime import date, datetime, timedelta
 from rdm_data import pick, rdm_dir
 
 START = date(2026, 8, 18)
-WINDOW = 14
+WINDOW = 7
 COLORS = {"YouTube": "#5B8DEF", "Instagram": "#E08C2A", "TikTok": "#9B7BEA"}
 
 
@@ -46,9 +46,10 @@ def _pct_html(p):
 
 
 def _windows(through):
+    """Monday–Sunday weeks from START (first one Aug 18–23); the current week is partial."""
     out, s = [], START
     while s <= through:
-        e = s + timedelta(days=WINDOW - 1)
+        e = s + timedelta(days=6 - s.weekday())
         out.append({"start": s.isoformat(), "end": min(e, through).isoformat(), "partial": e > through})
         s = e + timedelta(days=1)
     return out
@@ -110,7 +111,7 @@ def growth_section(data_dir, socials, fmt):
         lbl = f'{_md(c["start"])}–{_md(c["end"])}'
         yp = _pct(c["yt_views"], p_["yt_views"])
         story.append(f'<b>YouTube</b>: {fmt(c["yt_views"])} views in {lbl}'
-                     + (f' ({"+" if yp >= 0 else ""}{yp * 100:.0f}% vs the two weeks before)' if yp is not None else "")
+                     + (f' ({"+" if yp >= 0 else ""}{yp * 100:.0f}% vs the week before)' if yp is not None else "")
                      + f', {c["yt_subs"]:+,} subscribers.')
         if "ig_views" in c:
             ip = _pct(c["ig_views"], p_.get("ig_views"))
@@ -169,17 +170,17 @@ def growth_section(data_dir, socials, fmt):
 
     return f"""
     <div class="card" style="border-left:3px solid var(--brand)">
-      <div class="card-title">What the data says · two-week read</div>
+      <div class="card-title">What the data says · week over week</div>
       <ul style="margin:0;padding-left:18px;line-height:1.5;font-size:13px">{story_html}</ul>
     </div>
     <div class="metrics">{cards}</div>
     <div class="card">
-      <div class="card-title">Views every two weeks · since Aug 18</div>
+      <div class="card-title">Views by week · since Aug 18</div>
       <div style="height:260px"><canvas id="growth-chart"></canvas></div>
       <div class="table-scroll" style="margin-top:14px"><table class="data-table"><thead><tr><th style="text-align:left">Window</th>
         <th>YouTube views</th><th>YouTube subs</th><th>Instagram views</th><th>Instagram followers (follows / unfollows)</th>
         <th>TikTok views</th></tr></thead><tbody>{rows}</tbody></table></div>
-      <div class="metric-delta" style="color:var(--text2);margin-top:8px">* in progress. % = change vs the previous two weeks.
+      <div class="metric-delta" style="color:var(--text2);margin-top:8px">* in progress. % = change vs the previous week (weeks run Mon–Sun, reported Mondays).
         TikTok views by window start Oct 18 (daily account snapshots); Aug–Sep TikTok and X are monthly totals on the Socials tab.</div>
     </div>
     <script>

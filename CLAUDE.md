@@ -108,6 +108,22 @@ common/
 - Sprout API: Advanced plan or above; 60 req/min, 250K/month; daily profile metrics + per-post metrics filterable
   by tag (Fanatics tag already applied by Schultz's team).
 
+## KPI framework + content grades (Oct 22 2026)
+
+- Source: Frank's "KPI Framework V4 North Star" (SR-KPI-001). The Overview leads with it: 3 North Stars, KPI 1 retention
+  (organic % viewed — episodes headline, clips under), KPI 2 organic long-form CTR (+ first-day CTR per episode),
+  KPI 3 RPM and the commercial milestones **on hold until revenue tracking is defined** (no money on this page for now).
+- Targets: `data_sr/kpi_targets.csv` (season 1, comparable RDM show — static from the PDF, never computed from RT —
+  base, lean-in; provisional until they lock after 8–10 organic episodes). North Star indicators: `data_sr/ns_indicators.csv`
+  (manual, weekly). Test log: `data_sr/tests_sr.csv`.
+- Data: RDM's `pull_content_sr.py` → `from_rdm/content_sr.json`. Formats: episode = Full Episodes playlist
+  PL-57LJk452aiG43ygafeNcBCb8vZAv-4U (any length; 20–30 min counts), short = YouTube Short, clip = other long-form.
+  **Everything graded/KPI'd is organic** — SR runs YouTube ads (most long-form views are paid); ad traffic is subtracted,
+  paid views shown separately. % viewed = watch time ÷ (engaged views × length), YouTube's basis.
+- Grades: each upload vs same-format uploads from the prior 90 days at the same age; weights retention .35, CTR .35
+  (Shorts: engaged %), views .15, engagement .10, subs/1K .05 — to be tuned with strategy. A top 20% … F bottom 20%.
+- Cadence: weekly, Mon–Sun, reported Mondays; week-over-week deltas.
+
 ## Dashboard conventions (carried over)
 
 - Engaged vs all YouTube views are entered by hand (API doesn't expose engaged views): YOUTUBE rows

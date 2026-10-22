@@ -1,0 +1,5 @@
+kpi,metric,label,unit,season1,comparable,base,lean_in,status,notes
+retention,episode_pct_viewed,Episodes · % viewed,pct,,0.33,0.35,0.40,provisional,Headline: full episodes (Full Episodes playlist)
+retention,clip_pct_viewed,Clips · % viewed,pct,,,0.45,0.51,provisional,Long-form clips
+ctr,longform_ctr_organic,Long-form impressions CTR (organic),pct,0.053,0.070,0.060,0.075,provisional,Organic = all traffic except YouTube advertising
+rpm,blended_rpm,Blended RPM per 1K long-form views,usd,0.08,3.90,2.50,5.00,pending,Revenue tracking being set up
