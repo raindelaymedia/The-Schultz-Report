@@ -372,8 +372,9 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
         overview_sub = "No data connected yet — metrics will appear here once data pipelines are live"
 
     # ── Overview tab content ──
+    youtube_month = socials_month = ""
     if has_data:
-        overview_metrics = overview_page(d, socials, audio or [], sponsors or [], sprout, fmt, data_dir)
+        overview_metrics, youtube_month, socials_month = overview_page(d, socials, audio or [], sponsors or [], sprout, fmt, data_dir)
     elif False:
         overview_metrics = f"""
     <div class="metrics">
@@ -959,6 +960,7 @@ body > *{{position:relative;z-index:1}}
     <div class="page-title">YouTube</div>
     <div class="page-sub">{'Channel analytics · views, subscribers, content mix' if has_yt else 'Not connected'}</div>
   </div>
+  {youtube_month}
   {yt_content}
 </div>
 
@@ -995,6 +997,7 @@ body > *{{position:relative;z-index:1}}
     <div class="page-title">Socials</div>
     <div class="page-sub">{'Cross-platform social metrics' if has_soc else 'Not connected'}</div>
   </div>
+  {socials_month}
   {socials_content}
 </div>
 

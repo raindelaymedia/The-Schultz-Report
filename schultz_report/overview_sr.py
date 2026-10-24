@@ -62,7 +62,7 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
     # ── Audio ──
     last_audio = audio[-1] if audio else None
 
-    metrics = '<div class="metrics">' + "".join([
+    cards = [
         _metric("YouTube subscribers", fmt(d.get("current_subs")) if d.get("current_subs") else "—",
                 f'<div class="metric-delta"><span class="{"up" if (gained or 0) >= 0 else "down"}">'
                 f'{"+" if (gained or 0) >= 0 else ""}{fmt(gained)}</span> <span style="color:var(--text2)">in {cm}</span></div>'
@@ -73,7 +73,9 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
         _metric("Podcast downloads", fmt(last_audio["downloads"]) if last_audio else "—",
                 f'<div class="metric-delta" style="color:var(--text2)">'
                 f'{(last_audio["notes"] or (last_audio["start"] + " – " + last_audio["end"])) if last_audio else "Simplecast · not entered yet"}</div>'),
-    ]) + "</div>"
+    ]
+    yt_metrics = '<div class="metrics">' + "".join(cards[:2]) + "</div>"
+    soc_metrics = '<div class="metrics">' + cards[2] + "</div>"
 
     # ── Show accounts table ──
     def row(name, followers, gain, v_cur, v_prev, posts):
@@ -157,6 +159,11 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
       <div class="table-scroll"><table class="data-table"><thead><tr><th>Views</th><th style="text-align:left">Video</th><th>Type · published</th></tr></thead>
       <tbody>{top_rows}</tbody></table></div></div>""" if top else ""
 
-    this_month = (f'<div class="card-title" style="margin:22px 0 10px;font-size:15px">This month · {cm} to date</div>')
-    return (framework_section(data_dir, fmt) + growth_section(data_dir, socials, fmt)
-            + this_month + metrics + show_table + jordan + sponsor_table + top_card)
+    # The Overview stays the big picture (North Stars + week over week). "This month" detail lives on the
+    # YouTube tab (subs, views, top uploads) and the Socials tab (show accounts, sponsor-tagged posts);
+    # Jordan's show content already has its own Socials sub-tab, and podcast downloads the Audio tab.
+    this_month = (f'<div class="card-title" style="margin:4px 0 10px;font-size:15px">This month · {cm} to date</div>')
+    overview = framework_section(data_dir, fmt) + growth_section(data_dir, socials, fmt)
+    youtube_month = this_month + yt_metrics + top_card
+    socials_month = this_month + soc_metrics + show_table + sponsor_table
+    return overview, youtube_month, socials_month
