@@ -77,7 +77,7 @@ def _fanatics_body(s, data_dir, fmt, empty_state):
         by_plat[k] = by_plat.get(k, 0) + 1
     report_links = "".join(
         f'<li><a href="{rep_rel}/reports/fanatics/{os.path.basename(p)}" target="_blank" style="color:var(--brand)">'
-        f'{os.path.basename(p)}</a></li>' for p in reports)
+        f'{_report_label(os.path.basename(p))}</a></li>' for p in reports)
     pct = f"{cum / goal * 100:.1f}%" if goal and hist else "—"
     return f"""
     <div class="metrics">
@@ -93,6 +93,16 @@ def _fanatics_body(s, data_dir, fmt, empty_state):
         + rows + '</tbody></table></div>') if hist else '<div class="metric-delta">No saved periods yet — the first one is saved when a report is finalized.</div>'}
     </div>
     <div class="card"><div class="card-title">Delivery Reports</div><ul style="margin-left:18px;line-height:1.9">{report_links or '<li>None yet</li>'}</ul></div>"""
+
+
+def _report_label(name):
+    """Schultz_Report_Fanatics_0901_0930_26.html → 'Delivery report · Sep 1 – Sep 30, 2026'."""
+    m = re.search(r"_(\d{2})(\d{2})_(\d{2})(\d{2})_(\d{2})\.html$", name)
+    if not m:
+        return name
+    m1, d1, m2, d2, yy = (int(x) for x in m.groups())
+    mon = lambda n: datetime(2000, n, 1).strftime("%b")
+    return f"Delivery report · {mon(m1)} {d1} – {mon(m2)} {d2}, 20{yy:02d}"
 
 
 def sponsor_pages(sponsors, data_dir, fmt, empty_state, sprout=None):
