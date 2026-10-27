@@ -112,6 +112,9 @@ def methodology_section(data_dir):
           punished for being new.</p>
         <p style="margin:0 0 6px"><b>2. The comparison group.</b> Uploads of the same kind from the {content.get("peer_days", 90)} days
           before it was published (at least 5 of them; if there aren't enough yet, everything comparable is used).</p>
+        <p style="margin:0 0 6px"><b>Grade status.</b> <b>Provisional</b> (under 7 days old) — an early read, likely to move.
+          <b>Working</b> (7–28 days) — mostly settled. <b>Final</b> (28+ days) — locked at its day-28 reading, so uploads from
+          any period compare on the same yardstick. Use the date range above to look at any span.</p>
         <p style="margin:0 0 6px"><b>3. Five measures, each ranked against that group, then combined:</b></p>
         <table class="data-table" style="margin:4px 0 10px;font-family:inherit;white-space:normal"><thead><tr><th style="text-align:left">Measure</th>
           <th>Weight</th><th style="text-align:left">What it tells us</th></tr></thead><tbody>
@@ -138,6 +141,10 @@ def methodology_section(data_dir):
 
 
 def content_page(data_dir, fmt):
-    graded = top_content_section(data_dir, fmt)
-    return ((graded or '<div class="card"><div class="metric-delta" style="color:var(--text2)">No graded uploads for last week yet.</div></div>')
-            + top_posts_section(data_dir, fmt) + tests_section(data_dir) + methodology_section(data_dir))
+    """Graded uploads for any date range (common/content_tab.py — the same table as RDM's dashboards), then top posts by
+    platform, the current test and the grading guide."""
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "common"))
+    from content_tab import content_page as graded_table
+    graded = graded_table(pick(data_dir, "content_sr.json"), fmt, "The Schultz Report", methodology=False)
+    return graded + top_posts_section(data_dir, fmt) + tests_section(data_dir) + methodology_section(data_dir)
