@@ -565,9 +565,9 @@ body > *{position:relative;z-index:1}
   </div>
   
     <div class="metrics">
-      <div class="metric"><div class="metric-label">Downloads · week of Oct 19</div><div class="metric-value">3.4K</div><div class="metric-delta"><span class="down">-31,454 vs prior week</span></div></div>
-      <div class="metric"><div class="metric-label">4-week average</div><div class="metric-value">21.3K</div><div class="metric-delta" style="color:var(--text2)">per week</div></div>
-      <div class="metric"><div class="metric-label">Total tracked</div><div class="metric-value">98.4K</div><div class="metric-delta" style="color:var(--text2)">9 entries · since Aug 24</div></div>
+      <div class="metric"><div class="metric-label">Downloads · week of Oct 26</div><div class="metric-value">28.5K</div><div class="metric-delta"><span class="up">+25.1K vs prior week</span></div></div>
+      <div class="metric"><div class="metric-label">4-week average</div><div class="metric-value">23.3K</div><div class="metric-delta" style="color:var(--text2)">per week</div></div>
+      <div class="metric"><div class="metric-label">Total tracked</div><div class="metric-value">125.2K</div><div class="metric-delta" style="color:var(--text2)">10 entries · since Aug 24</div></div>
     </div>
     <div class="card">
       <div class="card-title">Downloads · Simplecast</div>
@@ -576,11 +576,11 @@ body > *{position:relative;z-index:1}
     <div class="card">
       <div class="card-title">Detail</div>
       <div class="table-scroll"><table class="data-table"><thead><tr><th>Period</th><th>Downloads</th><th>Listeners</th><th>Notes</th></tr></thead>
-      <tbody><tr><td>Oct 19–Oct 25</td><td>3.4K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Oct 12–Oct 18</td><td>34.8K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Oct 5–Oct 11</td><td>28.4K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 28–Oct 4</td><td>18.5K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 21–Sep 27</td><td>13.2K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 14–Sep 20</td><td>44</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 7–Sep 13</td><td>41</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Aug 31–Sep 6</td><td>62</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Aug 24–Aug 30</td><td>21</td><td>—</td><td style="text-align:left"></td></tr></tbody></table></div>
+      <tbody><tr><td>Oct 26–Nov 1</td><td>28.5K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Oct 19–Oct 25</td><td>3.4K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Oct 12–Oct 18</td><td>33.1K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Oct 5–Oct 11</td><td>28.4K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 28–Oct 4</td><td>18.5K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 21–Sep 27</td><td>13.2K</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 14–Sep 20</td><td>44</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Sep 7–Sep 13</td><td>41</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Aug 31–Sep 6</td><td>62</td><td>—</td><td style="text-align:left"></td></tr><tr><td>Aug 24–Aug 30</td><td>21</td><td>—</td><td style="text-align:left"></td></tr></tbody></table></div>
     </div>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const A = {"labels": ["Aug 24\u2013Aug 30", "Aug 31\u2013Sep 6", "Sep 7\u2013Sep 13", "Sep 14\u2013Sep 20", "Sep 21\u2013Sep 27", "Sep 28\u2013Oct 4", "Oct 5\u2013Oct 11", "Oct 12\u2013Oct 18", "Oct 19\u2013Oct 25"], "downloads": [21, 62, 41, 44, 13201, 18472, 28375, 34828, 3374]}, el = document.getElementById('audio-weekly-chart');
+      const A = {"labels": ["Aug 24\u2013Aug 30", "Aug 31\u2013Sep 6", "Sep 7\u2013Sep 13", "Sep 14\u2013Sep 20", "Sep 21\u2013Sep 27", "Sep 28\u2013Oct 4", "Oct 5\u2013Oct 11", "Oct 12\u2013Oct 18", "Oct 19\u2013Oct 25", "Oct 26\u2013Nov 1"], "downloads": [21, 62, 41, 44, 13201, 18472, 28375, 33134, 3365, 28494]}, el = document.getElementById('audio-weekly-chart');
       if (!el || typeof Chart === 'undefined') return;
       new Chart(el, { type:'bar', data:{ labels:A.labels, datasets:[{ label:'Downloads', data:A.downloads,
         backgroundColor:'#E8C840', borderRadius:3, maxBarThickness:48 }] },
