@@ -18,6 +18,7 @@ from audio_sr import load_audio, audio_page
 from sponsors import load_sponsors, sponsor_pages
 from rdm_data import pick, merged_socials, load_sprout, jordan_pane
 from overview_sr import overview_page
+from growth_sr import jordan_monthly
 from content_tab_sr import content_page
 
 
@@ -372,9 +373,9 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
         overview_sub = "No data connected yet — metrics will appear here once data pipelines are live"
 
     # ── Overview tab content ──
-    youtube_month = socials_month = ""
+    youtube_month = socials_month = sponsor_table = ""
     if has_data:
-        overview_metrics, youtube_month, socials_month = overview_page(d, socials, audio or [], sponsors or [], sprout, fmt, data_dir)
+        overview_metrics, youtube_month, socials_month, sponsor_table = overview_page(d, socials, audio or [], sponsors or [], sprout, fmt, data_dir)
     elif False:
         overview_metrics = f"""
     <div class="metrics">
@@ -646,14 +647,22 @@ def build_html(d, revenue, socials, generated_at, audio=None, sponsors=None, dat
             'the Sprout API, filtered to show content only: posts tagged Chime, Fanatics, Hims or Lowe\'s.</div></div>')
         socials_content = f"""
     <div class="soc-tabs">
-      <button class="soc-tab on" onclick="socTab('show',this)">Show accounts</button>
-      <button class="soc-tab" onclick="socTab('personal',this)">Jordan Schultz · show content</button>
+      <button class="soc-tab on" onclick="socTab('personal',this)">Jordan Schultz</button>
+      <button class="soc-tab" onclick="socTab('show',this)">Show accounts</button>
     </div>
-    <div class="soc-pane" id="soc-pane-show"><div class="soc-grid">{platform_cards['show']}</div></div>
-    <div class="soc-pane" id="soc-pane-personal" hidden><div class="soc-grid">{personal}</div></div>
-    {soc_toolbar}
-    <div id="soc-readonly">{soc_table}</div>
-    <div id="soc-editable" style="display:none"></div>"""
+    <div class="soc-pane" id="soc-pane-personal">
+      {jordan_monthly(data_dir, fmt)}
+      <div class="card-title" style="margin:4px 0 10px">Show content on Jordan's accounts · posts tagged in Sprout Social</div>
+      <div class="soc-grid">{personal}</div>
+      {sponsor_table}
+    </div>
+    <div class="soc-pane" id="soc-pane-show" hidden>
+      {socials_month}
+      <div class="soc-grid">{platform_cards['show']}</div>
+      {soc_toolbar}
+      <div id="soc-readonly">{soc_table}</div>
+      <div id="soc-editable" style="display:none"></div>
+    </div>"""
     else:
         socials_content = soc_toolbar + '<div id="soc-readonly">' + empty_state(
             "No socials data yet",
@@ -995,9 +1004,8 @@ body > *{{position:relative;z-index:1}}
 <div class="page" id="page-socials">
   <div class="page-header">
     <div class="page-title">Socials</div>
-    <div class="page-sub">{'Cross-platform social metrics' if has_soc else 'Not connected'}</div>
+    <div class="page-sub">{"Jordan Schultz's accounts first; the show accounts on their own tab" if has_soc else 'Not connected'}</div>
   </div>
-  {socials_month}
   {socials_content}
 </div>
 
