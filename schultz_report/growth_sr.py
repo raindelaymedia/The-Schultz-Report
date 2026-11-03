@@ -136,6 +136,13 @@ def growth_section(data_dir, socials, fmt):
     lm_sc = [p for p in show_posts if (p.get("created") or "").startswith(last_month)]
     lm_sc_views = sum(p.get("views") or 0 for p in lm_sc)
     sc_views_since = sum(p.get("views") or 0 for p in show_posts)
+    # the month before, for the one-line summary
+    pm = (date.fromisoformat(last_month + "-01") - timedelta(days=1)).strftime("%Y-%m")
+    pm_lbl = datetime.strptime(pm, "%Y-%m").strftime("%B")
+    pm_total = sum(v["reach"] for n, _, _ in NETS for k, v in jd.get(n, {}).items() if k.startswith(pm))
+    pm_sc = [p for p in show_posts if (p.get("created") or "").startswith(pm)]
+    pm_sc_views = sum(p.get("views") or 0 for p in pm_sc)
+    yt_m = lambda m: sum(v.get("total_views", 0) for k, v in daily.items() if k.startswith(m))
     subs_now = tracker.get("current_subs") or 0
     net_since = sum(v.get("subs_gained", 0) - v.get("subs_lost", 0) for k, v in daily.items() if k >= START.isoformat())
     subs_start = subs_now - net_since
@@ -194,7 +201,20 @@ def growth_section(data_dir, socials, fmt):
         + (card("Podcast · since Aug 18", fmt(dl_since), "downloads (Simplecast)") if dl_since else "")
     )
 
+    # ── One-line summary: last full month vs the month before ──
+    chg = lambda a, b: f' ({"+" if a >= b else ""}{(a - b) / b * 100:.0f}% on {pm_lbl})' if b else ""
+    summary = ""
+    if lm_total:
+        summary = (f'<b>{lm_lbl} in one line:</b> Jordan\'s accounts did {fmt(lm_total)} impressions{chg(lm_total, pm_total)}'
+                   + (f', and Schultz Report content on them grew from {fmt(pm_sc_views)} to {fmt(lm_sc_views)} views '
+                      f'({len(pm_sc)} → {len(lm_sc)} posts), now ≈{lm_sc_views / lm_total * 100:.0f}% of his audience'
+                      if pm_sc_views and lm_sc_views else "")
+                   + (f'. YouTube: {fmt(yt_m(last_month))} views{chg(yt_m(last_month), yt_m(pm))}.' if yt_m(last_month) else "."))
+    summary_html = (f'<div class="card" style="border-left:3px solid var(--brand);font-size:15px;line-height:1.55">{summary}</div>'
+                    if summary else "")
+
     top = f"""
+    {summary_html}
     <div class="card-title" style="margin:4px 0 10px;font-size:15px">The Schultz network · led by Jordan's accounts</div>
     <div class="metrics">{cards}</div>
     <div class="card" style="border-left:3px solid var(--brand)">

@@ -164,7 +164,7 @@ def overview_page(d, socials, audio, sponsors, sprout, fmt, data_dir="."):
     # Jordan's show content already has its own Socials sub-tab, and podcast downloads the Audio tab.
     this_month = (f'<div class="card-title" style="margin:4px 0 10px;font-size:15px">This month · {cm} to date</div>')
     growth_top, growth_detail = growth_section(data_dir, socials, fmt)
-    overview = growth_top + framework_section(data_dir, fmt) + growth_detail
+    overview = growth_top + growth_detail + framework_section(data_dir, fmt)   # story first, framework last
     youtube_month = this_month + yt_metrics + top_card
     socials_month = this_month + soc_metrics + show_table      # show accounts (Socials → Show accounts tab)
     return overview, youtube_month, socials_month, sponsor_table

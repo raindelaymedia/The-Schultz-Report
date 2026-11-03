@@ -107,11 +107,13 @@ def _chip(v, base, lean):
     return '<span class="ns-chip" style="background:#E08C2A;color:#11116b">Below target</span>'
 
 
-def _kpi_tile(num, name, plain, value, chip, bar, foot, details):
+def _kpi_tile(num, name, plain, value, chip, bar, foot, details, period=""):
+    head = f'<div class="metric-label" style="margin-top:4px">{period}</div>' if period else ""
     return f"""
       <div class="ns-tile">
         <div class="metric-label">KPI {num} · {name}</div>
         <div class="metric-delta" style="color:var(--text2);margin:2px 0 6px">{plain}</div>
+        {head}
         <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><div class="metric-value" style="margin:0">{value}</div>{chip}</div>
         {bar}
         <div class="metric-delta" style="color:var(--text2)">{foot}</div>
@@ -123,6 +125,13 @@ def _kpi_tile(num, name, plain, value, chip, bar, foot, details):
 def _count_tile(label, value, sub):
     return (f'<div class="ns-tile"><div class="metric-label">{label}</div><div class="metric-value">{value}</div>'
             f'<div class="metric-delta" style="color:var(--text2)">{sub}</div></div>')
+
+
+def _waiting(items):
+    """One line for the indicators with nothing entered yet (they become tiles once the weekly entries start)."""
+    if not items:
+        return ""
+    return f'<div class="ns-wait">Tracking starts once the weekly entries begin: {" · ".join(items)}</div>'
 
 
 def _ns_row(code, title, desc, status, tiles):
@@ -145,6 +154,8 @@ def framework_section(data_dir, fmt):
     today = date.today()
     cur_m = today.strftime("%Y-%m")
     mon = today.strftime("%B")
+    prev_m = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")     # last full month: the headline
+    pmon = (today.replace(day=1) - timedelta(days=1)).strftime("%B")
     last_w = (today - timedelta(days=today.weekday() + 7)).isoformat()
     wlbl = f"{_md(last_w)}–{_md((date.fromisoformat(last_w) + timedelta(days=6)).isoformat())}"
     g = lambda src, per, f, k: ((src.get(per) or {}).get(f) or {}).get(k)
@@ -157,17 +168,20 @@ def framework_section(data_dir, fmt):
     cb, cl = T("clip_pct_viewed")
     ep_m, ep_w = g(km, cur_m, "episode", "pct_viewed"), g(kw, last_w, "episode", "pct_viewed")
     cl_m, cl_w = g(km, cur_m, "clip", "pct_viewed"), g(kw, last_w, "clip", "pct_viewed")
+    ep_p, cl_p = g(km, prev_m, "episode", "pct_viewed"), g(km, prev_m, "clip", "pct_viewed")
     k1 = _kpi_tile(1, "Audience retention", "How much of each full episode people watch (organic views).",
-                   _pct(ep_m), _chip(ep_m, eb, el), _bar(ep_m, eb, el, max(el or 0, ep_m or 0) * 1.25 or 1),
-                   f"{mon} so far · last week ({wlbl}) {_pct(ep_w)} · target {_pct(eb, 0)}, stretch {_pct(el, 0)}",
-                   f"<b>Clips:</b> {_pct(cl_m)} this month ({_pct(cl_w)} last week) — target {_pct(cb, 0)}, stretch {_pct(cl, 0)} "
-                   f"{_chip(cl_m, cb, cl)}<br>Average minutes watched: episodes {g(km, cur_m, 'episode', 'avg_minutes') or '—'}, "
+                   _pct(ep_p), _chip(ep_p, eb, el), _bar(ep_p, eb, el, max(el or 0, ep_p or 0) * 1.25 or 1),
+                   f"{mon} so far {_pct(ep_m)} · last week ({wlbl}) {_pct(ep_w)} · target {_pct(eb, 0)}, stretch {_pct(el, 0)}",
+                   f"<b>Clips:</b> {_pct(cl_p)} in {pmon}, {_pct(cl_m)} in {mon} so far ({_pct(cl_w)} last week) — target {_pct(cb, 0)}, "
+                   f"stretch {_pct(cl, 0)} {_chip(cl_p, cb, cl)}<br>Average minutes watched: episodes {g(km, cur_m, 'episode', 'avg_minutes') or '—'}, "
                    f"clips {g(km, cur_m, 'clip', 'avg_minutes') or '—'}<br>Season 1 {s1('episode_pct_viewed')} · comparable RDM show "
-                   f"{_pct(_f(targets.get('episode_pct_viewed', {}).get('comparable')), 0)}{prov}. Views from YouTube ads are left out.")
+                   f"{_pct(_f(targets.get('episode_pct_viewed', {}).get('comparable')), 0)}{prov}. Views from YouTube ads are left out.",
+                   period=f"{pmon} · last full month")
 
     # KPI 2 — organic long-form CTR
     ctb, ctl = T("longform_ctr_organic")
     ct_m, ct_w = g(km, cur_m, "longform", "ctr_organic"), g(kw, last_w, "longform", "ctr_organic")
+    ct_p = g(km, prev_m, "longform", "ctr_organic")
     eps = sorted((dict(v, id=k) for k, v in (content.get("videos") or {}).items()
                   if v.get("format") == "episode" and v.get("first_day_ctr") is not None),
                  key=lambda v: v["published"], reverse=True)[:5]
@@ -175,13 +189,14 @@ def framework_section(data_dir, fmt):
                  f'<td style="text-align:left"><a href="https://www.youtube.com/watch?v={v["id"]}" target="_blank" '
                  f'style="color:var(--brand)">{v["title"][:34]}…</a></td></tr>' for v in eps)
     k2 = _kpi_tile(2, "Impression click-through rate", "How often people who see a thumbnail click it (long-form, organic).",
-                   _pct(ct_m), _chip(ct_m, ctb, ctl), _bar(ct_m, ctb, ctl, max(ctl or 0, ct_m or 0) * 1.25 or 1),
-                   f"{mon} so far · last week {_pct(ct_w)} · target {_pct(ctb)}, stretch {_pct(ctl)}",
-                   f"Episodes {_pct(g(km, cur_m, 'episode', 'ctr_organic'))} · clips {_pct(g(km, cur_m, 'clip', 'ctr_organic'))} this month."
+                   _pct(ct_p), _chip(ct_p, ctb, ctl), _bar(ct_p, ctb, ctl, max(ctl or 0, ct_p or 0) * 1.25 or 1),
+                   f"{mon} so far {_pct(ct_m)} · last week ({wlbl}) {_pct(ct_w)} · target {_pct(ctb)}, stretch {_pct(ctl)}",
+                   f"Episodes {_pct(g(km, prev_m, 'episode', 'ctr_organic'))} · clips {_pct(g(km, prev_m, 'clip', 'ctr_organic'))} in {pmon}."
                    f"<br><b>First-day CTR, latest episodes</b> (the test read):"
                    f'<table class="data-table" style="font-size:11px;margin-top:4px"><tbody>{d1 or "<tr><td>—</td></tr>"}</tbody></table>'
                    f"Season 1 {s1('longform_ctr_organic')} · comparable RDM show "
-                   f"{_pct(_f(targets.get('longform_ctr_organic', {}).get('comparable')))}{prov}.")
+                   f"{_pct(_f(targets.get('longform_ctr_organic', {}).get('comparable')))}{prov}.",
+                   period=f"{pmon} · last full month")
 
     # Manual North Star indicators (weekly entries summed for the month)
     tot = {}
@@ -189,10 +204,11 @@ def framework_section(data_dir, fmt):
         v = _f(r.get("value"))
         if v is not None and (r.get("week_start") or "").startswith(cur_m):
             tot[r["indicator"]] = tot.get(r["indicator"], 0) + v
-    cnt = lambda key, label, sub: _count_tile(label, fmt(tot[key]) if key in tot else "—", sub)
+    cnt = lambda key, label, sub: _count_tile(label, fmt(tot[key]), sub) if key in tot else ""
+    wait = lambda *pairs: _waiting([label for key, label in pairs if key not in tot])
     manual = f"{mon} · entered weekly"
 
-    k_status = [x for x in ((ep_m, eb), (ct_m, ctb)) if x[0] is not None and x[1] is not None]
+    k_status = [x for x in ((ep_p, eb), (ct_p, ctb)) if x[0] is not None and x[1] is not None]
     if not k_status:
         ns1_status = _chip(None, None, None)
     elif all(v >= b for v, b in k_status):
@@ -205,23 +221,25 @@ def framework_section(data_dir, fmt):
 
     rt = targets.get("blended_rpm", {})
     money = lambda v: "—" if _f(v) is None else f"${_f(v):.2f}"
-    k3 = _kpi_tile(3, "Revenue per viewer", "Revenue for every 1,000 long-form views (Fanatics, ads, RSS, branded).",
-                   '<span style="color:var(--text2)">Pending</span>', "", "",
-                   f"Target {money(rt.get('base'))}, stretch {money(rt.get('lean_in'))} · revenue tracking is being set up",
-                   f"Season 1 {money(rt.get('season1'))} (ads ran on 0.46% of views) · comparable RDM show {money(rt.get('comparable'))}.")
 
     rows = (
         _ns_row("NORTH STAR 1", "Most sought-after player platform", "Players ask to be on the show; we aren't chasing them.", ns1_status,
                 k1 + k2 + cnt("guest_requests", "Inbound guest requests", manual)
                 + cnt("players_booked", "Active players booked", manual)
-                + cnt("collaborations", "Collaborations published", f"goal: 2 a month · {manual}"))
+                + cnt("collaborations", "Collaborations published", f"goal: 2 a month · {manual}")
+                + wait(("guest_requests", "inbound guest requests"), ("players_booked", "active players booked"),
+                       ("collaborations", "collaborations published (goal 2 a month)")))
         + _ns_row("NORTH STAR 2", "The league's most respected outsider", "Teams and the league treat us as a partner, not a risk.",
                   pending if not any(k in tot for k in ("league_access", "league_shares")) else "",
                   cnt("league_access", "Team / league access or collaborations", manual)
-                  + cnt("league_shares", "Times the league or teams shared the show", manual))
+                  + cnt("league_shares", "Times the league or teams shared the show", manual)
+                  + wait(("league_access", "team / league access or collaborations"),
+                         ("league_shares", "times the league or teams shared the show")))
         + _ns_row("NORTH STAR 3", "Break-even or better by year two", "≥50% of costs from sponsorship in '26; break-even all-in by end of year two.",
                   '<span class="ns-chip" style="background:rgba(255,255,255,.12)">Pending revenue tracking</span>',
-                  k3 + _count_tile("'26 season", "≥ 50% of costs", "covered by sponsorship · pending")
+                  _waiting([f"KPI 3 · revenue per viewer (target {money(rt.get('base'))} per 1,000 long-form views; "
+                            "revenue tracking is being set up)"])
+                  + _count_tile("'26 season", "≥ 50% of costs", "covered by sponsorship · pending")
                   + _count_tile("End of year 2", "Break-even +", "all-in, no paid media · pending")
                   + _count_tile("12–24 months", "Diversified", "YouTube ads, RSS ad sales and branded content live alongside Fanatics"))
     )
@@ -232,6 +250,8 @@ def framework_section(data_dir, fmt):
       .ns-head{{border-right:1px solid rgba(255,255,255,.08);padding-right:16px}}
       .ns-tiles{{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;align-items:start}}
       .ns-tile{{background:rgba(255,255,255,.05);border-radius:10px;padding:14px}}
+      .ns-wait{{grid-column:1/-1;font-size:12px;color:var(--text2);padding:8px 12px;border-radius:8px;
+                border:1px dashed rgba(255,255,255,.18)}}
       .ns-chip{{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700}}
       @media (max-width:900px){{.ns-row{{grid-template-columns:1fr}}.ns-head{{border-right:0;padding-right:0}}}}
     </style>
