@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-05",
- "pulled": "2026-11-06T16:43+00:00",
+ "through": "2026-11-06",
+ "pulled": "2026-11-07T15:31+00:00",
  "instagram": {
-  "followers_now": 2525,
+  "followers_now": 2417,
   "windows": [
    {
     "start": "2026-08-18",
@@ -50,7 +50,7 @@
     "start": "2026-09-14",
     "end": "2026-09-20",
     "partial": false,
-    "views": 260864,
+    "views": 260865,
     "interactions": 16694,
     "follows": 1851,
     "unfollows": 879,
@@ -118,12 +118,12 @@
    },
    {
     "start": "2026-11-02",
-    "end": "2026-11-05",
+    "end": "2026-11-06",
     "partial": true,
-    "views": 471095,
-    "interactions": 25343,
-    "follows": 123,
-    "unfollows": 41,
+    "views": 555466,
+    "interactions": 29816,
+    "follows": 135,
+    "unfollows": 53,
     "net_followers": 82
    }
   ],
@@ -133,7 +133,7 @@
     "created": "2026-11-04",
     "text": "One day after Jordan previewed it on the Schultz Report, the Ravens traded for Jacoby Brissett \ud83d\udc40",
     "type": "VIDEO",
-    "views": 1358,
+    "views": 1360,
     "likes": 18,
     "comments": 1
    },
