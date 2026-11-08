@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-06",
- "pulled": "2026-11-07T15:31+00:00",
+ "through": "2026-11-07",
+ "pulled": "2026-11-08T15:54+00:00",
  "instagram": {
-  "followers_now": 2417,
+  "followers_now": 2454,
   "windows": [
    {
     "start": "2026-08-18",
@@ -118,13 +118,13 @@
    },
    {
     "start": "2026-11-02",
-    "end": "2026-11-06",
+    "end": "2026-11-07",
     "partial": true,
-    "views": 555466,
-    "interactions": 29816,
-    "follows": 135,
-    "unfollows": 53,
-    "net_followers": 82
+    "views": 593253,
+    "interactions": 31674,
+    "follows": 192,
+    "unfollows": 63,
+    "net_followers": 129
    }
   ],
   "posts": [
@@ -133,7 +133,7 @@
     "created": "2026-11-04",
     "text": "One day after Jordan previewed it on the Schultz Report, the Ravens traded for Jacoby Brissett \ud83d\udc40",
     "type": "VIDEO",
-    "views": 1360,
+    "views": 1361,
     "likes": 18,
     "comments": 1
    },
@@ -151,7 +151,7 @@
     "created": "2026-10-19",
     "text": "Call it clich\u00e9, but Mike Vrabel really is the ultimate player\u2019s coach in New England \ud83d\udcaa",
     "type": "VIDEO",
-    "views": 81,
+    "views": 82,
     "likes": 5,
     "comments": 0
    }
