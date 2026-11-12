@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-10",
- "pulled": "2026-11-11T17:14+00:00",
+ "through": "2026-11-11",
+ "pulled": "2026-11-12T17:41+00:00",
  "instagram": {
-  "followers_now": 2847,
+  "followers_now": 2689,
   "windows": [
    {
     "start": "2026-08-18",
@@ -128,13 +128,13 @@
    },
    {
     "start": "2026-11-09",
-    "end": "2026-11-10",
+    "end": "2026-11-11",
     "partial": true,
-    "views": 218542,
-    "interactions": 8168,
-    "follows": 89,
-    "unfollows": 17,
-    "net_followers": 72
+    "views": 295485,
+    "interactions": 10637,
+    "follows": 331,
+    "unfollows": 79,
+    "net_followers": 252
    }
   ],
   "posts": [
@@ -143,8 +143,8 @@
     "created": "2026-11-10",
     "text": "Former Titans GM Ran Carthon walks Jordan through the process of getting Jeffery Simmons\u2019 extension done in 2023 \ud83d\udc40",
     "type": "VIDEO",
-    "views": 203,
-    "likes": 7,
+    "views": 214,
+    "likes": 8,
     "comments": 0
    },
    {
