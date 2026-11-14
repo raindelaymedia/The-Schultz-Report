@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-12",
- "pulled": "2026-11-13T17:21+00:00",
+ "through": "2026-11-13",
+ "pulled": "2026-11-14T15:54+00:00",
  "instagram": {
-  "followers_now": 2758,
+  "followers_now": 2771,
   "windows": [
    {
     "start": "2026-08-18",
@@ -128,16 +128,25 @@
    },
    {
     "start": "2026-11-09",
-    "end": "2026-11-12",
+    "end": "2026-11-13",
     "partial": true,
-    "views": 532168,
-    "interactions": 19913,
-    "follows": 331,
-    "unfollows": 79,
-    "net_followers": 252
+    "views": 676227,
+    "interactions": 25586,
+    "follows": 416,
+    "unfollows": 101,
+    "net_followers": 315
    }
   ],
   "posts": [
+   {
+    "url": "https://www.instagram.com/reel/DfsUtTlhA4Y/",
+    "created": "2026-11-13",
+    "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
+    "type": "VIDEO",
+    "views": 2129,
+    "likes": 74,
+    "comments": 0
+   },
    {
     "url": "https://www.instagram.com/reel/DfkpIhJOdA0/",
     "created": "2026-11-10",
@@ -152,18 +161,9 @@
     "created": "2026-11-04",
     "text": "One day after Jordan previewed it on the Schultz Report, the Ravens traded for Jacoby Brissett \ud83d\udc40",
     "type": "VIDEO",
-    "views": 1386,
+    "views": 1387,
     "likes": 21,
     "comments": 1
-   },
-   {
-    "url": "https://www.instagram.com/reel/De2sEvou9QS/",
-    "created": "2026-10-23",
-    "text": "The Jalen Hurts health scare explained. Wishing him a speedy recovery \ud83d\ude4f",
-    "type": "VIDEO",
-    "views": 230,
-    "likes": 12,
-    "comments": 0
    }
   ]
  }
