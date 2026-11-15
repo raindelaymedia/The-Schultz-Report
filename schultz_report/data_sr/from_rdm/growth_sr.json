@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-13",
- "pulled": "2026-11-14T15:54+00:00",
+ "through": "2026-11-14",
+ "pulled": "2026-11-15T16:26+00:00",
  "instagram": {
-  "followers_now": 2771,
+  "followers_now": 2804,
   "windows": [
    {
     "start": "2026-08-18",
@@ -30,7 +30,7 @@
     "start": "2026-08-31",
     "end": "2026-09-06",
     "partial": false,
-    "views": 516505,
+    "views": 516511,
     "interactions": 27093,
     "follows": 532,
     "unfollows": 276,
@@ -128,13 +128,13 @@
    },
    {
     "start": "2026-11-09",
-    "end": "2026-11-13",
+    "end": "2026-11-14",
     "partial": true,
-    "views": 676227,
-    "interactions": 25586,
-    "follows": 416,
-    "unfollows": 101,
-    "net_followers": 315
+    "views": 766132,
+    "interactions": 28513,
+    "follows": 472,
+    "unfollows": 140,
+    "net_followers": 332
    }
   ],
   "posts": [
@@ -143,8 +143,8 @@
     "created": "2026-11-13",
     "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
     "type": "VIDEO",
-    "views": 2129,
-    "likes": 74,
+    "views": 2352,
+    "likes": 83,
     "comments": 0
    },
    {
@@ -152,7 +152,7 @@
     "created": "2026-11-10",
     "text": "Former Titans GM Ran Carthon walks Jordan through the process of getting Jeffery Simmons\u2019 extension done in 2023 \ud83d\udc40",
     "type": "VIDEO",
-    "views": 222,
+    "views": 223,
     "likes": 8,
     "comments": 0
    },
@@ -161,7 +161,7 @@
     "created": "2026-11-04",
     "text": "One day after Jordan previewed it on the Schultz Report, the Ravens traded for Jacoby Brissett \ud83d\udc40",
     "type": "VIDEO",
-    "views": 1387,
+    "views": 1388,
     "likes": 21,
     "comments": 1
    }
