@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T19:41:49.287522",
+  "generated": "2026-11-17T18:40:21.945390",
   "rdm_start": "2026-08-18",
   "months": [
     "2026-11",
@@ -17,7 +17,7 @@
   ],
   "yt": {
     "vids": {
-      "2026-11": 334705,
+      "2026-11": 397499,
       "2026-10": 661406,
       "2026-09": 245842,
       "2026-08": 169576,
@@ -31,7 +31,7 @@
       "2025-12": 498830
     },
     "shorts": {
-      "2026-11": 1443866,
+      "2026-11": 1595283,
       "2026-10": 2729634,
       "2026-09": 1588171,
       "2026-08": 60428,
@@ -59,7 +59,7 @@
       "2025-12": 0
     },
     "subs_gained": {
-      "2026-11": 280,
+      "2026-11": 307,
       "2026-10": 1035,
       "2026-09": 975,
       "2026-08": 355,
@@ -73,7 +73,7 @@
       "2025-12": 4775
     },
     "subs_lost": {
-      "2026-11": 89,
+      "2026-11": 94,
       "2026-10": 345,
       "2026-09": 356,
       "2026-08": 181,
@@ -133,9 +133,9 @@
   },
   "kpis": {
     "shorts_count": {
-      "2026-11": 40,
+      "2026-11": 44,
       "2026-10": 70,
-      "2026-09": 60,
+      "2026-09": 61,
       "2026-08": 19,
       "2026-07": null,
       "2026-06": null,
@@ -143,11 +143,11 @@
       "2026-04": 57,
       "2026-03": 18,
       "2026-02": 51,
-      "2026-01": 75,
-      "2025-12": 61
+      "2026-01": 73,
+      "2025-12": 62
     },
     "search_pct": {
-      "2026-11": 0.0147,
+      "2026-11": 0.0137,
       "2026-10": 0.0225,
       "2026-09": 0.0331,
       "2026-08": 0.1103,
@@ -163,7 +163,7 @@
   },
   "traffic": {
     "paid_pct": {
-      "2026-11": 0.8311,
+      "2026-11": 0.84,
       "2026-10": 0.3992,
       "2026-09": 0.073,
       "2026-08": 0.4321,
@@ -177,7 +177,7 @@
       "2025-12": 0.8748
     },
     "organic_pct": {
-      "2026-11": 0.1689,
+      "2026-11": 0.16,
       "2026-10": 0.6008,
       "2026-09": 0.927,
       "2026-08": 0.5679,
@@ -191,7 +191,7 @@
       "2025-12": 0.1252
     },
     "paid_views": {
-      "2026-11": 1478203,
+      "2026-11": 1674338,
       "2026-10": 1353703,
       "2026-09": 133948,
       "2026-08": 99387,
@@ -205,7 +205,7 @@
       "2025-12": 1549120
     },
     "organic_views": {
-      "2026-11": 300368,
+      "2026-11": 318849,
       "2026-10": 2037337,
       "2026-09": 1700065,
       "2026-08": 130617,
@@ -219,7 +219,7 @@
       "2025-12": 221797
     },
     "search_pct": {
-      "2026-11": 0.0147,
+      "2026-11": 0.0137,
       "2026-10": 0.0225,
       "2026-09": 0.0331,
       "2026-08": 0.1103,
@@ -262,20 +262,20 @@
     },
     "sources": {
       "2026-11": {
-        "NO_LINK_OTHER": 569,
-        "ADVERTISING": 1478203,
-        "SUBSCRIBER": 43558,
-        "YT_CHANNEL": 1241,
-        "YT_SEARCH": 26067,
-        "RELATED_VIDEO": 745,
-        "YT_OTHER_PAGE": 4148,
-        "EXT_URL": 4555,
-        "PLAYLIST": 167,
-        "NOTIFICATION": 134,
+        "NO_LINK_OTHER": 592,
+        "ADVERTISING": 1674338,
+        "SUBSCRIBER": 53482,
+        "YT_CHANNEL": 1501,
+        "YT_SEARCH": 27242,
+        "RELATED_VIDEO": 795,
+        "YT_OTHER_PAGE": 4273,
+        "EXT_URL": 5035,
+        "PLAYLIST": 172,
+        "NOTIFICATION": 137,
         "END_SCREEN": 29,
-        "SHORTS": 219062,
-        "SHORTS_CONTENT_LINKS": 89,
-        "SOUND_PAGE": 4,
+        "SHORTS": 225494,
+        "SHORTS_CONTENT_LINKS": 91,
+        "SOUND_PAGE": 6,
         "HASHTAGS": 0
       },
       "2026-10": {
@@ -529,7 +529,7 @@
         "title": "Xavier Hutchinson On Going to ISU For Brock Purdy + Former Titans GM Answers the Vrabel Rumors",
         "published": "2026-11-06",
         "type": "long",
-        "views": 70775,
+        "views": 70785,
         "likes": 4,
         "thumbnail": "https://i.ytimg.com/vi/pRH26adBhYE/hqdefault.jpg"
       },
@@ -538,7 +538,7 @@
         "title": "Bruce Arians: Why He Wants To Coach Again + Ben Solak\u2019s Hottest Deadline Takes",
         "published": "2026-11-13",
         "type": "long",
-        "views": 67272,
+        "views": 67300,
         "likes": 16,
         "thumbnail": "https://i.ytimg.com/vi/_NlZH32xuWY/hqdefault.jpg"
       },
@@ -547,9 +547,18 @@
         "title": "Pat Surtain II: What Bo Nix\u2019s Critics Are Missing + Jordan Schultz\u2019s Jonathan Taylor Trade Intel",
         "published": "2026-11-03",
         "type": "long",
-        "views": 52427,
+        "views": 52431,
         "likes": 99,
         "thumbnail": "https://i.ytimg.com/vi/wBFuR5doOY0/hqdefault.jpg"
+      },
+      {
+        "id": "_Gg15qsjsgI",
+        "title": "Khalil Shakir\u2019s Unreal Josh Allen Story + Why Pick 161 Still Drives Emmett Johnson",
+        "published": "2026-11-17",
+        "type": "long",
+        "views": 94,
+        "likes": 4,
+        "thumbnail": "https://i.ytimg.com/vi/_Gg15qsjsgI/hqdefault.jpg"
       }
     ],
     "mid": [
@@ -558,7 +567,7 @@
         "title": "What Playing For The Bengals Taught Jessie Bates About the NFL",
         "published": "2026-11-01",
         "type": "mid",
-        "views": 48885,
+        "views": 48888,
         "likes": 159,
         "thumbnail": "https://i.ytimg.com/vi/HpOtr2G4pEk/hqdefault.jpg"
       },
@@ -567,7 +576,7 @@
         "title": "Ben Solak: Kirk Cousins Makes The Vikings An NFC Contender",
         "published": "2026-11-14",
         "type": "mid",
-        "views": 33808,
+        "views": 33840,
         "likes": 0,
         "thumbnail": "https://i.ytimg.com/vi/FtM0mwALpEw/hqdefault.jpg"
       },
@@ -576,7 +585,7 @@
         "title": "Bruce Arians: Tom Brady Hated Losing Even In Practice",
         "published": "2026-11-13",
         "type": "mid",
-        "views": 33228,
+        "views": 33236,
         "likes": 2,
         "thumbnail": "https://i.ytimg.com/vi/cxwyYjQwAFc/hqdefault.jpg"
       },
@@ -585,7 +594,7 @@
         "title": "Xavier Hutchinson: Why Nick Caley\u2019s Offense Gives C.J. Stroud More Freedom",
         "published": "2026-11-07",
         "type": "mid",
-        "views": 31332,
+        "views": 31341,
         "likes": 5,
         "thumbnail": "https://i.ytimg.com/vi/JXWZZGF3G0A/hqdefault.jpg"
       },
@@ -594,7 +603,7 @@
         "title": "Ran Carthon: What People Missed About His Relationship With Mike Vrabel",
         "published": "2026-11-08",
         "type": "mid",
-        "views": 27432,
+        "views": 27434,
         "likes": 1,
         "thumbnail": "https://i.ytimg.com/vi/nuXv5yoKiss/hqdefault.jpg"
       }
@@ -614,8 +623,8 @@
         "title": "Amarius Mims is on a Superstar Trajectory",
         "published": "2026-11-13",
         "type": "short",
-        "views": 56472,
-        "likes": 867,
+        "views": 56953,
+        "likes": 877,
         "thumbnail": "https://i.ytimg.com/vi/BzGrFW4Apfk/hqdefault.jpg"
       },
       {
@@ -641,7 +650,7 @@
         "title": "Dolphins WR Caleb Douglas thinks there is a big misconception that Malik Willis is a \u201crun-first\u201d QB\u2026",
         "published": "2026-11-04",
         "type": "short",
-        "views": 49053,
+        "views": 49074,
         "likes": 342,
         "thumbnail": "https://i.ytimg.com/vi/YaPKfjbxtKc/hqdefault.jpg"
       }
@@ -701,7 +710,7 @@
           "month": "2026-11",
           "type": "long",
           "duration_sec": 5086,
-          "views": 70775,
+          "views": 70785,
           "likes": 4,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/pRH26adBhYE/hqdefault.jpg"
@@ -713,7 +722,7 @@
           "month": "2026-11",
           "type": "long",
           "duration_sec": 5405,
-          "views": 67269,
+          "views": 67300,
           "likes": 16,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/_NlZH32xuWY/hqdefault.jpg"
@@ -725,10 +734,22 @@
           "month": "2026-11",
           "type": "long",
           "duration_sec": 2364,
-          "views": 52427,
+          "views": 52431,
           "likes": 99,
           "comments": 21,
           "thumbnail": "https://i.ytimg.com/vi/wBFuR5doOY0/hqdefault.jpg"
+        },
+        {
+          "id": "_Gg15qsjsgI",
+          "title": "Khalil Shakir\u2019s Unreal Josh Allen Story + Why Pick 161 Still Drives Emmett Johnson",
+          "published": "2026-11-17",
+          "month": "2026-11",
+          "type": "long",
+          "duration_sec": 4347,
+          "views": 94,
+          "likes": 4,
+          "comments": 0,
+          "thumbnail": "https://i.ytimg.com/vi/_Gg15qsjsgI/hqdefault.jpg"
         }
       ],
       "mid": [
@@ -739,7 +760,7 @@
           "month": "2026-11",
           "type": "mid",
           "duration_sec": 235,
-          "views": 48885,
+          "views": 48888,
           "likes": 159,
           "comments": 42,
           "thumbnail": "https://i.ytimg.com/vi/HpOtr2G4pEk/hqdefault.jpg"
@@ -751,7 +772,7 @@
           "month": "2026-11",
           "type": "mid",
           "duration_sec": 278,
-          "views": 33802,
+          "views": 33840,
           "likes": 0,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/FtM0mwALpEw/hqdefault.jpg"
@@ -763,7 +784,7 @@
           "month": "2026-11",
           "type": "mid",
           "duration_sec": 257,
-          "views": 33228,
+          "views": 33236,
           "likes": 2,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/cxwyYjQwAFc/hqdefault.jpg"
@@ -775,7 +796,7 @@
           "month": "2026-11",
           "type": "mid",
           "duration_sec": 285,
-          "views": 31331,
+          "views": 31341,
           "likes": 5,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/JXWZZGF3G0A/hqdefault.jpg"
@@ -787,10 +808,22 @@
           "month": "2026-11",
           "type": "mid",
           "duration_sec": 339,
-          "views": 27432,
+          "views": 27434,
           "likes": 1,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/nuXv5yoKiss/hqdefault.jpg"
+        },
+        {
+          "id": "WUWTqv_6xTU",
+          "title": "Dorian Williams On How Josh Allen Deceives A Defense",
+          "published": "2026-11-15",
+          "month": "2026-11",
+          "type": "mid",
+          "duration_sec": 284,
+          "views": 27204,
+          "likes": 82,
+          "comments": 5,
+          "thumbnail": "https://i.ytimg.com/vi/WUWTqv_6xTU/hqdefault.jpg"
         },
         {
           "id": "WHuzEPCy6Yw",
@@ -811,7 +844,7 @@
           "month": "2026-11",
           "type": "mid",
           "duration_sec": 380,
-          "views": 19271,
+          "views": 19272,
           "likes": 1,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/ClcF1YTQGaA/hqdefault.jpg"
@@ -823,22 +856,22 @@
           "month": "2026-11",
           "type": "mid",
           "duration_sec": 647,
-          "views": 17683,
+          "views": 17684,
           "likes": 0,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/CAJwifX5lLs/hqdefault.jpg"
         },
         {
-          "id": "WUWTqv_6xTU",
-          "title": "Dorian Williams On How Josh Allen Deceives A Defense",
-          "published": "2026-11-15",
+          "id": "siFCUH8MU1c",
+          "title": "20261116 EP22 mid Shakir",
+          "published": "2026-11-17",
           "month": "2026-11",
           "type": "mid",
-          "duration_sec": 284,
-          "views": 4831,
-          "likes": 3,
-          "comments": 1,
-          "thumbnail": "https://i.ytimg.com/vi/WUWTqv_6xTU/hqdefault.jpg"
+          "duration_sec": 262,
+          "views": 0,
+          "likes": 0,
+          "comments": 0,
+          "thumbnail": "https://i9.ytimg.com/vi/siFCUH8MU1c/hqdefault.jpg?sqp=CIC_8tcG&rs=AOn4CLAAK0L0n_rnl5IDLUFMBrZ-AVoqxA"
         }
       ],
       "short": [
@@ -861,9 +894,9 @@
           "month": "2026-11",
           "type": "short",
           "duration_sec": 128,
-          "views": 56472,
-          "likes": 867,
-          "comments": 62,
+          "views": 56953,
+          "likes": 877,
+          "comments": 63,
           "thumbnail": "https://i.ytimg.com/vi/BzGrFW4Apfk/hqdefault.jpg"
         },
         {
@@ -885,7 +918,7 @@
           "month": "2026-11",
           "type": "short",
           "duration_sec": 112,
-          "views": 50374,
+          "views": 50376,
           "likes": 361,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/5pfbxDSYKJk/hqdefault.jpg"
@@ -897,7 +930,7 @@
           "month": "2026-11",
           "type": "short",
           "duration_sec": 24,
-          "views": 49053,
+          "views": 49074,
           "likes": 342,
           "comments": 1,
           "thumbnail": "https://i.ytimg.com/vi/YaPKfjbxtKc/hqdefault.jpg"
@@ -909,10 +942,22 @@
           "month": "2026-11",
           "type": "short",
           "duration_sec": 95,
-          "views": 46655,
+          "views": 46654,
           "likes": 291,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/A_FAxflOD2Y/hqdefault.jpg"
+        },
+        {
+          "id": "9ea9o7zyAwo",
+          "title": "Ben Solak Tells Me That Kirk Cousins Makes The Vikings a Tier 1 NFC Contender",
+          "published": "2026-11-13",
+          "month": "2026-11",
+          "type": "short",
+          "duration_sec": 88,
+          "views": 45368,
+          "likes": 377,
+          "comments": 2,
+          "thumbnail": "https://i.ytimg.com/vi/9ea9o7zyAwo/hqdefault.jpg"
         },
         {
           "id": "bF4Pj_rxk5I",
@@ -933,8 +978,8 @@
           "month": "2026-11",
           "type": "short",
           "duration_sec": 107,
-          "views": 44906,
-          "likes": 368,
+          "views": 45038,
+          "likes": 372,
           "comments": 3,
           "thumbnail": "https://i.ytimg.com/vi/_ytWHIt257o/hqdefault.jpg"
         },
@@ -949,18 +994,6 @@
           "likes": 254,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/Vj6MZR96pPo/hqdefault.jpg"
-        },
-        {
-          "id": "TW6bfhp6m7c",
-          "title": "Former NFL GM Ran Carthon believes Jeffery Simmons is a key piece in unlocking the Bears defense \ud83d\udcaa",
-          "published": "2026-11-06",
-          "month": "2026-11",
-          "type": "short",
-          "duration_sec": 62,
-          "views": 44596,
-          "likes": 429,
-          "comments": 1,
-          "thumbnail": "https://i.ytimg.com/vi/TW6bfhp6m7c/hqdefault.jpg"
         }
       ]
     },
@@ -973,7 +1006,7 @@
           "month": "2026-10",
           "type": "long",
           "duration_sec": 3399,
-          "views": 111641,
+          "views": 111642,
           "likes": 9,
           "comments": 1,
           "thumbnail": "https://i.ytimg.com/vi/lau_rIF85J0/hqdefault.jpg"
@@ -985,7 +1018,7 @@
           "month": "2026-10",
           "type": "long",
           "duration_sec": 2109,
-          "views": 69704,
+          "views": 69706,
           "likes": 3,
           "comments": 1,
           "thumbnail": "https://i.ytimg.com/vi/cW3qhNKcOOM/hqdefault.jpg"
@@ -997,7 +1030,7 @@
           "month": "2026-10",
           "type": "long",
           "duration_sec": 3257,
-          "views": 65416,
+          "views": 65418,
           "likes": 17,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/msLaWEymGp8/hqdefault.jpg"
@@ -1071,8 +1104,8 @@
           "month": "2026-10",
           "type": "mid",
           "duration_sec": 886,
-          "views": 39107,
-          "likes": 228,
+          "views": 39139,
+          "likes": 229,
           "comments": 18,
           "thumbnail": "https://i.ytimg.com/vi/_w1qEA8Gnds/hqdefault.jpg"
         },
@@ -1083,7 +1116,7 @@
           "month": "2026-10",
           "type": "mid",
           "duration_sec": 366,
-          "views": 36647,
+          "views": 36648,
           "likes": 5,
           "comments": 6,
           "thumbnail": "https://i.ytimg.com/vi/afGxwE29mIc/hqdefault.jpg"
@@ -1119,7 +1152,7 @@
           "month": "2026-10",
           "type": "mid",
           "duration_sec": 225,
-          "views": 29060,
+          "views": 29061,
           "likes": 3,
           "comments": 1,
           "thumbnail": "https://i.ytimg.com/vi/iKDi8BBoGxk/hqdefault.jpg"
@@ -1155,7 +1188,7 @@
           "month": "2026-10",
           "type": "mid",
           "duration_sec": 344,
-          "views": 24670,
+          "views": 24671,
           "likes": 24,
           "comments": 3,
           "thumbnail": "https://i.ytimg.com/vi/SU50f3hvveU/hqdefault.jpg"
@@ -1179,7 +1212,7 @@
           "month": "2026-10",
           "type": "mid",
           "duration_sec": 668,
-          "views": 18751,
+          "views": 18752,
           "likes": 17,
           "comments": 1,
           "thumbnail": "https://i.ytimg.com/vi/5W-xjMgV33Y/hqdefault.jpg"
@@ -1193,8 +1226,8 @@
           "month": "2026-10",
           "type": "short",
           "duration_sec": 64,
-          "views": 339356,
-          "likes": 11134,
+          "views": 339891,
+          "likes": 11147,
           "comments": 256,
           "thumbnail": "https://i.ytimg.com/vi/tebEnEooSjo/hqdefault.jpg"
         },
@@ -1205,7 +1238,7 @@
           "month": "2026-10",
           "type": "short",
           "duration_sec": 47,
-          "views": 237684,
+          "views": 237694,
           "likes": 2691,
           "comments": 311,
           "thumbnail": "https://i.ytimg.com/vi/2XbzvRtAmYw/hqdefault.jpg"
@@ -1217,8 +1250,8 @@
           "month": "2026-10",
           "type": "short",
           "duration_sec": 32,
-          "views": 149400,
-          "likes": 2954,
+          "views": 149464,
+          "likes": 2955,
           "comments": 107,
           "thumbnail": "https://i.ytimg.com/vi/BpMNMbWvNh4/hqdefault.jpg"
         },
@@ -1229,7 +1262,7 @@
           "month": "2026-10",
           "type": "short",
           "duration_sec": 90,
-          "views": 126755,
+          "views": 126758,
           "likes": 3959,
           "comments": 90,
           "thumbnail": "https://i.ytimg.com/vi/Um7BDizPUH4/hqdefault.jpg"
@@ -1241,8 +1274,8 @@
           "month": "2026-10",
           "type": "short",
           "duration_sec": 80,
-          "views": 116727,
-          "likes": 3732,
+          "views": 116765,
+          "likes": 3733,
           "comments": 476,
           "thumbnail": "https://i.ytimg.com/vi/XXTGDhRWv1U/hqdefault.jpg"
         },
@@ -1253,7 +1286,7 @@
           "month": "2026-10",
           "type": "short",
           "duration_sec": 120,
-          "views": 63240,
+          "views": 63241,
           "likes": 1322,
           "comments": 66,
           "thumbnail": "https://i.ytimg.com/vi/5s1Ew-tPu10/hqdefault.jpg"
@@ -1265,7 +1298,7 @@
           "month": "2026-10",
           "type": "short",
           "duration_sec": 95,
-          "views": 48141,
+          "views": 48143,
           "likes": 326,
           "comments": 3,
           "thumbnail": "https://i.ytimg.com/vi/Ft4CN0gdopw/hqdefault.jpg"
@@ -1439,22 +1472,22 @@
           "month": "2026-09",
           "type": "mid",
           "duration_sec": 341,
-          "views": 21527,
+          "views": 21529,
           "likes": 201,
           "comments": 28,
           "thumbnail": "https://i.ytimg.com/vi/mzai_Jj7odk/hqdefault.jpg"
         },
         {
-          "id": "b__09rRTnv0",
-          "title": "What Aaron Donald Told Me Before Coming Out of Retirement",
-          "published": "2026-09-02",
+          "id": "TLYaMXGSK50",
+          "title": "Braden Fiske\u2019s Honest Reaction to the Rams\u2019 Myles Garrett Trade",
+          "published": "2026-09-03",
           "month": "2026-09",
           "type": "mid",
-          "duration_sec": 335,
-          "views": 21507,
-          "likes": 6,
+          "duration_sec": 400,
+          "views": 20917,
+          "likes": 1,
           "comments": 0,
-          "thumbnail": "https://i.ytimg.com/vi/b__09rRTnv0/hqdefault.jpg"
+          "thumbnail": "https://i.ytimg.com/vi/TLYaMXGSK50/hqdefault.jpg"
         },
         {
           "id": "TLYaMXGSK50",
@@ -1493,25 +1526,13 @@
           "thumbnail": "https://i.ytimg.com/vi/hU2DCLKIL6k/hqdefault.jpg"
         },
         {
-          "id": "hU2DCLKIL6k",
-          "title": "Gray Zabel Gives Sam Darnold & His Seahawks Teammates Farm Jobs",
-          "published": "2026-09-17",
-          "month": "2026-09",
-          "type": "mid",
-          "duration_sec": 811,
-          "views": 10058,
-          "likes": 127,
-          "comments": 20,
-          "thumbnail": "https://i.ytimg.com/vi/hU2DCLKIL6k/hqdefault.jpg"
-        },
-        {
           "id": "CkZCJXdwqSo",
           "title": "Greg Rousseau Explains What Changed in Buffalo\u2019s Defense",
           "published": "2026-09-29",
           "month": "2026-09",
           "type": "mid",
           "duration_sec": 331,
-          "views": 5702,
+          "views": 5703,
           "likes": 35,
           "comments": 9,
           "thumbnail": "https://i.ytimg.com/vi/CkZCJXdwqSo/hqdefault.jpg"
@@ -1523,7 +1544,7 @@
           "month": "2026-09",
           "type": "mid",
           "duration_sec": 823,
-          "views": 4060,
+          "views": 4061,
           "likes": 57,
           "comments": 6,
           "thumbnail": "https://i.ytimg.com/vi/w6XG1PCSuCw/hqdefault.jpg"
@@ -1539,6 +1560,18 @@
           "likes": 5,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/XNqWYw-lCMg/hqdefault.jpg"
+        },
+        {
+          "id": "iw96xZSicpU",
+          "title": "Keyshawn: Vikings Should MOVE ON From J.J. McCarthy",
+          "published": "2026-09-12",
+          "month": "2026-09",
+          "type": "mid",
+          "duration_sec": 589,
+          "views": 772,
+          "likes": 2,
+          "comments": 2,
+          "thumbnail": "https://i.ytimg.com/vi/iw96xZSicpU/hqdefault.jpg"
         }
       ],
       "short": [
@@ -1549,8 +1582,8 @@
           "month": "2026-09",
           "type": "short",
           "duration_sec": 108,
-          "views": 2161491,
-          "likes": 68058,
+          "views": 2162145,
+          "likes": 68073,
           "comments": 598,
           "thumbnail": "https://i.ytimg.com/vi/3yuqHB3KtDg/hqdefault.jpg"
         },
@@ -1673,7 +1706,7 @@
           "month": "2026-08",
           "type": "long",
           "duration_sec": 2727,
-          "views": 42188,
+          "views": 42189,
           "likes": 402,
           "comments": 52,
           "thumbnail": "https://i.ytimg.com/vi/T1waul7OsiE/hqdefault.jpg"
@@ -1685,7 +1718,7 @@
           "month": "2026-08",
           "type": "long",
           "duration_sec": 2568,
-          "views": 29769,
+          "views": 29778,
           "likes": 366,
           "comments": 45,
           "thumbnail": "https://i.ytimg.com/vi/h-8r_cWNTCY/hqdefault.jpg"
@@ -1711,7 +1744,7 @@
           "month": "2026-08",
           "type": "mid",
           "duration_sec": 1703,
-          "views": 33101,
+          "views": 33119,
           "likes": 403,
           "comments": 47,
           "thumbnail": "https://i.ytimg.com/vi/4mt70foszEg/hqdefault.jpg"
@@ -1749,7 +1782,7 @@
           "month": "2026-08",
           "type": "short",
           "duration_sec": 78,
-          "views": 11798,
+          "views": 11813,
           "likes": 296,
           "comments": 24,
           "thumbnail": "https://i.ytimg.com/vi/Un15Cd0COp8/hqdefault.jpg"
@@ -1773,7 +1806,7 @@
           "month": "2026-08",
           "type": "short",
           "duration_sec": 40,
-          "views": 4399,
+          "views": 4400,
           "likes": 88,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/9mzXtoGMysI/hqdefault.jpg"
@@ -1785,7 +1818,7 @@
           "month": "2026-08",
           "type": "short",
           "duration_sec": 35,
-          "views": 3173,
+          "views": 3174,
           "likes": 41,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/Ps5SyCCL87g/hqdefault.jpg"
@@ -1821,7 +1854,7 @@
           "month": "2026-08",
           "type": "short",
           "duration_sec": 27,
-          "views": 2800,
+          "views": 2801,
           "likes": 30,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/Eo-WH598z0c/hqdefault.jpg"
@@ -1833,7 +1866,7 @@
           "month": "2026-08",
           "type": "short",
           "duration_sec": 29,
-          "views": 2416,
+          "views": 2417,
           "likes": 29,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/8TDAqd1OCAY/hqdefault.jpg"
@@ -1939,7 +1972,7 @@
           "month": "2026-04",
           "type": "mid",
           "duration_sec": 1199,
-          "views": 29600,
+          "views": 29604,
           "likes": 22,
           "comments": 22,
           "thumbnail": "https://i.ytimg.com/vi/wWsTtazHcbI/hqdefault.jpg"
@@ -2013,7 +2046,7 @@
           "month": "2026-04",
           "type": "short",
           "duration_sec": 36,
-          "views": 35271,
+          "views": 35272,
           "likes": 41,
           "comments": 1,
           "thumbnail": "https://i.ytimg.com/vi/dWusPOI8lF0/hqdefault.jpg"
@@ -2165,7 +2198,7 @@
           "month": "2026-03",
           "type": "short",
           "duration_sec": 42,
-          "views": 35253,
+          "views": 35254,
           "likes": 33,
           "comments": 3,
           "thumbnail": "https://i.ytimg.com/vi/AIkb0vbXj8o/hqdefault.jpg"
@@ -2177,7 +2210,7 @@
           "month": "2026-03",
           "type": "short",
           "duration_sec": 51,
-          "views": 34602,
+          "views": 34603,
           "likes": 23,
           "comments": 0,
           "thumbnail": "https://i.ytimg.com/vi/u9sqI3kzVNs/hqdefault.jpg"
@@ -2277,7 +2310,7 @@
           "month": "2026-02",
           "type": "long",
           "duration_sec": 3140,
-          "views": 74321,
+          "views": 74322,
           "likes": 10,
           "comments": 1,
           "thumbnail": "https://i.ytimg.com/vi/4NfcbWKF5yM/hqdefault.jpg"
@@ -2291,7 +2324,7 @@
           "month": "2026-02",
           "type": "mid",
           "duration_sec": 1117,
-          "views": 132123,
+          "views": 132125,
           "likes": 183,
           "comments": 64,
           "thumbnail": "https://i.ytimg.com/vi/Q4i8MvsRmeA/hqdefault.jpg"
@@ -2389,7 +2422,7 @@
           "month": "2026-02",
           "type": "short",
           "duration_sec": 57,
-          "views": 43065,
+          "views": 43073,
           "likes": 39,
           "comments": 3,
           "thumbnail": "https://i.ytimg.com/vi/_mmWAXHHCOI/hqdefault.jpg"
@@ -2489,7 +2522,7 @@
           "month": "2026-01",
           "type": "long",
           "duration_sec": 2681,
-          "views": 111043,
+          "views": 111045,
           "likes": 127,
           "comments": 42,
           "thumbnail": "https://i.ytimg.com/vi/n09ziMvzPsE/hqdefault.jpg"
@@ -2513,7 +2546,7 @@
           "month": "2026-01",
           "type": "long",
           "duration_sec": 1991,
-          "views": 97313,
+          "views": 97314,
           "likes": 19,
           "comments": 2,
           "thumbnail": "https://i.ytimg.com/vi/2cTw6ku1UzE/hqdefault.jpg"
@@ -2525,7 +2558,7 @@
           "month": "2026-01",
           "type": "long",
           "duration_sec": 3289,
-          "views": 96321,
+          "views": 96322,
           "likes": 208,
           "comments": 53,
           "thumbnail": "https://i.ytimg.com/vi/1pLFaSzbxNA/hqdefault.jpg"
@@ -2563,7 +2596,7 @@
           "month": "2026-01",
           "type": "mid",
           "duration_sec": 805,
-          "views": 42905,
+          "views": 42904,
           "likes": 48,
           "comments": 18,
           "thumbnail": "https://i.ytimg.com/vi/JAECYbjJOHc/hqdefault.jpg"
@@ -2587,7 +2620,7 @@
           "month": "2026-01",
           "type": "mid",
           "duration_sec": 1133,
-          "views": 32795,
+          "views": 32798,
           "likes": 16,
           "comments": 6,
           "thumbnail": "https://i.ytimg.com/vi/5A0ZDb9aYyU/hqdefault.jpg"
@@ -2829,13 +2862,25 @@
           "thumbnail": "https://i.ytimg.com/vi/_zrM-OC9MhQ/hqdefault.jpg"
         },
         {
+          "id": "_zrM-OC9MhQ",
+          "title": "2 Top Running Backs Talk 2025 NFL Season, Playoff Hunt, Head Coaches",
+          "published": "2025-12-12",
+          "month": "2025-12",
+          "type": "mid",
+          "duration_sec": 1529,
+          "views": 19301,
+          "likes": 13,
+          "comments": 1,
+          "thumbnail": "https://i.ytimg.com/vi/_zrM-OC9MhQ/hqdefault.jpg"
+        },
+        {
           "id": "11XjdVkoqH4",
           "title": "Steelers Special Teams Ace Explains What's Special About Aaron Rodgers",
           "published": "2025-12-26",
           "month": "2025-12",
           "type": "mid",
           "duration_sec": 1138,
-          "views": 17775,
+          "views": 17777,
           "likes": 101,
           "comments": 32,
           "thumbnail": "https://i.ytimg.com/vi/11XjdVkoqH4/hqdefault.jpg"
@@ -3003,14 +3048,110 @@
   },
   "all_videos": [
     {
+      "id": "siFCUH8MU1c",
+      "title": "20261116 EP22 mid Shakir",
+      "published": "2026-11-17",
+      "month": "2026-11",
+      "type": "mid",
+      "duration_sec": 262,
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "thumbnail": "https://i9.ytimg.com/vi/siFCUH8MU1c/hqdefault.jpg?sqp=CIC_8tcG&rs=AOn4CLAAK0L0n_rnl5IDLUFMBrZ-AVoqxA"
+    },
+    {
+      "id": "WgT64ix24J0",
+      "title": "20261116 EP22 mid Jalon",
+      "published": "2026-11-17",
+      "month": "2026-11",
+      "type": "mid",
+      "duration_sec": 359,
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "thumbnail": "https://i9.ytimg.com/vi/WgT64ix24J0/hqdefault.jpg?sqp=CIC_8tcG&rs=AOn4CLAei9owB2p-BCAnLA9pppxK7_A5_Q"
+    },
+    {
+      "id": "Dh8zpsx6WDc",
+      "title": "20261116 EP22 mid Emmett",
+      "published": "2026-11-17",
+      "month": "2026-11",
+      "type": "mid",
+      "duration_sec": 306,
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "thumbnail": "https://i9.ytimg.com/vi/Dh8zpsx6WDc/hqdefault.jpg?sqp=CIC_8tcG&rs=AOn4CLCBNjltVAQDkR_pAMUF-CHDM5xAUA"
+    },
+    {
+      "id": "FkWWBXkzimk",
+      "title": "Emmett Johnson wears a hat with \u201c161\u201d on it because that\u2019s the spot where he was drafted. \u2764\ufe0f\ud83d\ude4f",
+      "published": "2026-11-17",
+      "month": "2026-11",
+      "type": "short",
+      "duration_sec": 79,
+      "views": 254,
+      "likes": 13,
+      "comments": 0,
+      "thumbnail": "https://i.ytimg.com/vi/FkWWBXkzimk/hqdefault.jpg"
+    },
+    {
+      "id": "_Gg15qsjsgI",
+      "title": "Khalil Shakir\u2019s Unreal Josh Allen Story + Why Pick 161 Still Drives Emmett Johnson",
+      "published": "2026-11-17",
+      "month": "2026-11",
+      "type": "long",
+      "duration_sec": 4347,
+      "views": 94,
+      "likes": 4,
+      "comments": 0,
+      "thumbnail": "https://i.ytimg.com/vi/_Gg15qsjsgI/hqdefault.jpg"
+    },
+    {
+      "id": "A4mBw8oE_6Y",
+      "title": "Emmett Johnson has an incredible story of perseverance and self-belief! \ud83d\ude4c\ud83d\ude4f",
+      "published": "2026-11-17",
+      "month": "2026-11",
+      "type": "short",
+      "duration_sec": 80,
+      "views": 1381,
+      "likes": 53,
+      "comments": 1,
+      "thumbnail": "https://i.ytimg.com/vi/A4mBw8oE_6Y/hqdefault.jpg"
+    },
+    {
+      "id": "Y68XSdt--1I",
+      "title": "Jordan asked Patrick Surtain II to build the ultimate CB\u2026 Here\u2019s his standard \ud83d\udc40",
+      "published": "2026-11-16",
+      "month": "2026-11",
+      "type": "short",
+      "duration_sec": 64,
+      "views": 2201,
+      "likes": 41,
+      "comments": 2,
+      "thumbnail": "https://i.ytimg.com/vi/Y68XSdt--1I/hqdefault.jpg"
+    },
+    {
+      "id": "sXPdjrzSM2U",
+      "title": "I discussed with Ryan Clark on The Pivot Sports \ud83d\udc46\ud83d\udc46",
+      "published": "2026-11-16",
+      "month": "2026-11",
+      "type": "short",
+      "duration_sec": 118,
+      "views": 1047,
+      "likes": 26,
+      "comments": 3,
+      "thumbnail": "https://i.ytimg.com/vi/sXPdjrzSM2U/hqdefault.jpg"
+    },
+    {
       "id": "TQhgb6XSMiw",
       "title": "Bills LB Dorian Williams explains what it\u2019s like going up against Josh Allen in practice all year \ud83d\ude02\ud83d\udcaa",
       "published": "2026-11-16",
       "month": "2026-11",
       "type": "short",
       "duration_sec": 47,
-      "views": 241,
-      "likes": 6,
+      "views": 35459,
+      "likes": 191,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/TQhgb6XSMiw/hqdefault.jpg"
     },
@@ -3021,9 +3162,9 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 116,
-      "views": 780,
-      "likes": 29,
-      "comments": 0,
+      "views": 37611,
+      "likes": 189,
+      "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/dJiEWDz0vOg/hqdefault.jpg"
     },
     {
@@ -3033,9 +3174,9 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 284,
-      "views": 4831,
-      "likes": 3,
-      "comments": 1,
+      "views": 27204,
+      "likes": 82,
+      "comments": 5,
       "thumbnail": "https://i.ytimg.com/vi/WUWTqv_6xTU/hqdefault.jpg"
     },
     {
@@ -3045,8 +3186,8 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 75,
-      "views": 29791,
-      "likes": 298,
+      "views": 29836,
+      "likes": 301,
       "comments": 4,
       "thumbnail": "https://i.ytimg.com/vi/WMHULdB0AEk/hqdefault.jpg"
     },
@@ -3057,7 +3198,7 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 278,
-      "views": 33802,
+      "views": 33840,
       "likes": 0,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/FtM0mwALpEw/hqdefault.jpg"
@@ -3069,9 +3210,9 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 128,
-      "views": 56472,
-      "likes": 867,
-      "comments": 62,
+      "views": 56953,
+      "likes": 877,
+      "comments": 63,
       "thumbnail": "https://i.ytimg.com/vi/BzGrFW4Apfk/hqdefault.jpg"
     },
     {
@@ -3081,7 +3222,7 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 257,
-      "views": 33228,
+      "views": 33236,
       "likes": 2,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/cxwyYjQwAFc/hqdefault.jpg"
@@ -3093,8 +3234,8 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 107,
-      "views": 44906,
-      "likes": 368,
+      "views": 45038,
+      "likes": 372,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/_ytWHIt257o/hqdefault.jpg"
     },
@@ -3105,8 +3246,8 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 88,
-      "views": 44454,
-      "likes": 359,
+      "views": 45368,
+      "likes": 377,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/9ea9o7zyAwo/hqdefault.jpg"
     },
@@ -3117,8 +3258,8 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 94,
-      "views": 42031,
-      "likes": 352,
+      "views": 42131,
+      "likes": 365,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/sHy1onZBitg/hqdefault.jpg"
     },
@@ -3129,7 +3270,7 @@
       "month": "2026-11",
       "type": "long",
       "duration_sec": 5405,
-      "views": 67269,
+      "views": 67300,
       "likes": 16,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/_NlZH32xuWY/hqdefault.jpg"
@@ -3141,8 +3282,8 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 87,
-      "views": 42462,
-      "likes": 298,
+      "views": 42477,
+      "likes": 300,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/8xHg5gcJQpI/hqdefault.jpg"
     },
@@ -3153,7 +3294,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 95,
-      "views": 42833,
+      "views": 42799,
       "likes": 281,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/MJ-FegZfqCE/hqdefault.jpg"
@@ -3165,7 +3306,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 118,
-      "views": 37446,
+      "views": 37432,
       "likes": 303,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/f5HxIAFe4Yo/hqdefault.jpg"
@@ -3177,7 +3318,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 91,
-      "views": 27228,
+      "views": 27171,
       "likes": 134,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/P5iuAO4L4ks/hqdefault.jpg"
@@ -3189,7 +3330,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 105,
-      "views": 35084,
+      "views": 35085,
       "likes": 196,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/UV_qqHADwok/hqdefault.jpg"
@@ -3201,7 +3342,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 95,
-      "views": 46655,
+      "views": 46654,
       "likes": 291,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/A_FAxflOD2Y/hqdefault.jpg"
@@ -3213,7 +3354,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 92,
-      "views": 41536,
+      "views": 41528,
       "likes": 292,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/QplEi_dXkMU/hqdefault.jpg"
@@ -3225,7 +3366,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 98,
-      "views": 42337,
+      "views": 42339,
       "likes": 337,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/08CMzE96xZs/hqdefault.jpg"
@@ -3237,7 +3378,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 112,
-      "views": 50374,
+      "views": 50376,
       "likes": 361,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/5pfbxDSYKJk/hqdefault.jpg"
@@ -3285,7 +3426,7 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 339,
-      "views": 27432,
+      "views": 27434,
       "likes": 1,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/nuXv5yoKiss/hqdefault.jpg"
@@ -3297,7 +3438,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 52,
-      "views": 41646,
+      "views": 41650,
       "likes": 316,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/9fiJ12Cr5zE/hqdefault.jpg"
@@ -3309,7 +3450,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 96,
-      "views": 44112,
+      "views": 44128,
       "likes": 345,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/am-6RrMmqvk/hqdefault.jpg"
@@ -3321,7 +3462,7 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 285,
-      "views": 31331,
+      "views": 31341,
       "likes": 5,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/JXWZZGF3G0A/hqdefault.jpg"
@@ -3333,7 +3474,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 82,
-      "views": 42240,
+      "views": 42254,
       "likes": 281,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/0WUan7GoeJA/hqdefault.jpg"
@@ -3345,7 +3486,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 106,
-      "views": 36287,
+      "views": 36291,
       "likes": 283,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/qdtAazZd6Wk/hqdefault.jpg"
@@ -3357,7 +3498,7 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 647,
-      "views": 17683,
+      "views": 17684,
       "likes": 0,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/CAJwifX5lLs/hqdefault.jpg"
@@ -3369,7 +3510,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 121,
-      "views": 38325,
+      "views": 38327,
       "likes": 266,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/Sm2QM8YgWKY/hqdefault.jpg"
@@ -3381,7 +3522,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 62,
-      "views": 44596,
+      "views": 44597,
       "likes": 429,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/TW6bfhp6m7c/hqdefault.jpg"
@@ -3393,7 +3534,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 79,
-      "views": 41872,
+      "views": 41877,
       "likes": 369,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/8evFfTQk0No/hqdefault.jpg"
@@ -3405,7 +3546,7 @@
       "month": "2026-11",
       "type": "long",
       "duration_sec": 5086,
-      "views": 70775,
+      "views": 70785,
       "likes": 4,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/pRH26adBhYE/hqdefault.jpg"
@@ -3429,7 +3570,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 80,
-      "views": 32623,
+      "views": 32625,
       "likes": 249,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/MyW1X12B39I/hqdefault.jpg"
@@ -3453,7 +3594,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 73,
-      "views": 34602,
+      "views": 34603,
       "likes": 260,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/InzEObMpcWk/hqdefault.jpg"
@@ -3465,7 +3606,7 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 380,
-      "views": 19271,
+      "views": 19272,
       "likes": 1,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/ClcF1YTQGaA/hqdefault.jpg"
@@ -3489,7 +3630,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 24,
-      "views": 49053,
+      "views": 49074,
       "likes": 342,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/YaPKfjbxtKc/hqdefault.jpg"
@@ -3525,7 +3666,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 63,
-      "views": 15335,
+      "views": 15344,
       "likes": 587,
       "comments": 38,
       "thumbnail": "https://i.ytimg.com/vi/LJzy7jNW87A/hqdefault.jpg"
@@ -3537,7 +3678,7 @@
       "month": "2026-11",
       "type": "long",
       "duration_sec": 2364,
-      "views": 52427,
+      "views": 52431,
       "likes": 99,
       "comments": 21,
       "thumbnail": "https://i.ytimg.com/vi/wBFuR5doOY0/hqdefault.jpg"
@@ -3573,7 +3714,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 93,
-      "views": 40034,
+      "views": 40035,
       "likes": 253,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/Z3oqcOJkFxs/hqdefault.jpg"
@@ -3585,7 +3726,7 @@
       "month": "2026-11",
       "type": "short",
       "duration_sec": 97,
-      "views": 14371,
+      "views": 14372,
       "likes": 77,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/XNN5XGn3DXA/hqdefault.jpg"
@@ -3621,7 +3762,7 @@
       "month": "2026-11",
       "type": "mid",
       "duration_sec": 235,
-      "views": 48885,
+      "views": 48888,
       "likes": 159,
       "comments": 42,
       "thumbnail": "https://i.ytimg.com/vi/HpOtr2G4pEk/hqdefault.jpg"
@@ -3633,7 +3774,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 78,
-      "views": 38071,
+      "views": 38073,
       "likes": 387,
       "comments": 12,
       "thumbnail": "https://i.ytimg.com/vi/KJa3aWIvHug/hqdefault.jpg"
@@ -3645,7 +3786,7 @@
       "month": "2026-10",
       "type": "mid",
       "duration_sec": 225,
-      "views": 29060,
+      "views": 29061,
       "likes": 3,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/iKDi8BBoGxk/hqdefault.jpg"
@@ -3657,7 +3798,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 120,
-      "views": 63240,
+      "views": 63241,
       "likes": 1322,
       "comments": 66,
       "thumbnail": "https://i.ytimg.com/vi/5s1Ew-tPu10/hqdefault.jpg"
@@ -3681,7 +3822,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 70,
-      "views": 10572,
+      "views": 10573,
       "likes": 34,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/nwkoCa1DYYo/hqdefault.jpg"
@@ -3705,7 +3846,7 @@
       "month": "2026-10",
       "type": "long",
       "duration_sec": 3399,
-      "views": 111641,
+      "views": 111642,
       "likes": 9,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/lau_rIF85J0/hqdefault.jpg"
@@ -3741,7 +3882,7 @@
       "month": "2026-10",
       "type": "mid",
       "duration_sec": 344,
-      "views": 24670,
+      "views": 24671,
       "likes": 24,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/SU50f3hvveU/hqdefault.jpg"
@@ -3753,7 +3894,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 95,
-      "views": 48141,
+      "views": 48143,
       "likes": 326,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/Ft4CN0gdopw/hqdefault.jpg"
@@ -3777,7 +3918,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 64,
-      "views": 35723,
+      "views": 35725,
       "likes": 312,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/ta6e0Z6qrTk/hqdefault.jpg"
@@ -3801,7 +3942,7 @@
       "month": "2026-10",
       "type": "mid",
       "duration_sec": 668,
-      "views": 18751,
+      "views": 18752,
       "likes": 17,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/5W-xjMgV33Y/hqdefault.jpg"
@@ -3825,7 +3966,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 64,
-      "views": 20592,
+      "views": 20593,
       "likes": 214,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/w-o2Q7yKVGI/hqdefault.jpg"
@@ -3849,7 +3990,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 77,
-      "views": 26072,
+      "views": 26077,
       "likes": 190,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/2yBAoUufCkQ/hqdefault.jpg"
@@ -3945,7 +4086,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 87,
-      "views": 31609,
+      "views": 31610,
       "likes": 255,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/ayOOKT-RyFU/hqdefault.jpg"
@@ -3957,7 +4098,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 102,
-      "views": 33809,
+      "views": 33810,
       "likes": 193,
       "comments": 6,
       "thumbnail": "https://i.ytimg.com/vi/PZS9k3Db0io/hqdefault.jpg"
@@ -3972,7 +4113,7 @@
       "views": 900,
       "likes": 17,
       "comments": 0,
-      "thumbnail": "https://i9.ytimg.com/vi/OuFDbAxQXB0/hqdefault.jpg?sqp=CJC47dcG&rs=AOn4CLC_EhL3VCXpZ5FnXmlN5A36g-FoZw"
+      "thumbnail": "https://i9.ytimg.com/vi/OuFDbAxQXB0/hqdefault.jpg?sqp=CIC_8tcG&rs=AOn4CLBavCOBGO8W_NcAj89iHdNEA_FSIQ"
     },
     {
       "id": "cW3qhNKcOOM",
@@ -3981,7 +4122,7 @@
       "month": "2026-10",
       "type": "long",
       "duration_sec": 2109,
-      "views": 69704,
+      "views": 69706,
       "likes": 3,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/cW3qhNKcOOM/hqdefault.jpg"
@@ -4005,7 +4146,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 69,
-      "views": 27152,
+      "views": 27155,
       "likes": 99,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/Gf9ycyE9LPk/hqdefault.jpg"
@@ -4041,8 +4182,8 @@
       "month": "2026-10",
       "type": "mid",
       "duration_sec": 886,
-      "views": 39107,
-      "likes": 228,
+      "views": 39139,
+      "likes": 229,
       "comments": 18,
       "thumbnail": "https://i.ytimg.com/vi/_w1qEA8Gnds/hqdefault.jpg"
     },
@@ -4077,7 +4218,7 @@
       "month": "2026-10",
       "type": "long",
       "duration_sec": 3257,
-      "views": 65416,
+      "views": 65418,
       "likes": 17,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/msLaWEymGp8/hqdefault.jpg"
@@ -4101,7 +4242,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 31,
-      "views": 35213,
+      "views": 35214,
       "likes": 273,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/n_04d9qMo9I/hqdefault.jpg"
@@ -4137,7 +4278,7 @@
       "month": "2026-10",
       "type": "mid",
       "duration_sec": 366,
-      "views": 36647,
+      "views": 36648,
       "likes": 5,
       "comments": 6,
       "thumbnail": "https://i.ytimg.com/vi/afGxwE29mIc/hqdefault.jpg"
@@ -4209,7 +4350,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 52,
-      "views": 7861,
+      "views": 7862,
       "likes": 315,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/QbQmMRRRgJA/hqdefault.jpg"
@@ -4221,7 +4362,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 28,
-      "views": 1672,
+      "views": 1676,
       "likes": 14,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/Ciy4iAFmkpE/hqdefault.jpg"
@@ -4269,7 +4410,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 67,
-      "views": 6475,
+      "views": 6477,
       "likes": 168,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/goGctcpP9HQ/hqdefault.jpg"
@@ -4281,7 +4422,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 28,
-      "views": 5282,
+      "views": 5284,
       "likes": 88,
       "comments": 8,
       "thumbnail": "https://i.ytimg.com/vi/BpMYFOm5LKo/hqdefault.jpg"
@@ -4293,7 +4434,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 60,
-      "views": 1898,
+      "views": 1901,
       "likes": 38,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/WQrnjCJwgVA/hqdefault.jpg"
@@ -4317,7 +4458,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 86,
-      "views": 5259,
+      "views": 5265,
       "likes": 155,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/lzUxpNmowMQ/hqdefault.jpg"
@@ -4329,7 +4470,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 53,
-      "views": 7123,
+      "views": 7126,
       "likes": 182,
       "comments": 6,
       "thumbnail": "https://i.ytimg.com/vi/581ZeSxAf2w/hqdefault.jpg"
@@ -4425,7 +4566,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 52,
-      "views": 18933,
+      "views": 18936,
       "likes": 494,
       "comments": 8,
       "thumbnail": "https://i.ytimg.com/vi/V5IZEy1C6x4/hqdefault.jpg"
@@ -4449,7 +4590,7 @@
       "month": "2026-10",
       "type": "mid",
       "duration_sec": 336,
-      "views": 1934,
+      "views": 1935,
       "likes": 9,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/38bnaRCNB5A/hqdefault.jpg"
@@ -4461,7 +4602,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 47,
-      "views": 237684,
+      "views": 237694,
       "likes": 2691,
       "comments": 311,
       "thumbnail": "https://i.ytimg.com/vi/2XbzvRtAmYw/hqdefault.jpg"
@@ -4497,7 +4638,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 68,
-      "views": 4796,
+      "views": 4798,
       "likes": 114,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/erO4D3rkyl4/hqdefault.jpg"
@@ -4509,8 +4650,8 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 80,
-      "views": 116727,
-      "likes": 3732,
+      "views": 116765,
+      "likes": 3733,
       "comments": 476,
       "thumbnail": "https://i.ytimg.com/vi/XXTGDhRWv1U/hqdefault.jpg"
     },
@@ -4533,7 +4674,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 37,
-      "views": 9432,
+      "views": 9433,
       "likes": 197,
       "comments": 4,
       "thumbnail": "https://i.ytimg.com/vi/_pS353FtJL4/hqdefault.jpg"
@@ -4557,7 +4698,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 46,
-      "views": 2788,
+      "views": 2789,
       "likes": 59,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/iZvDKKwHqg4/hqdefault.jpg"
@@ -4593,7 +4734,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 38,
-      "views": 7558,
+      "views": 7560,
       "likes": 187,
       "comments": 4,
       "thumbnail": "https://i.ytimg.com/vi/lj8jCS-wIGA/hqdefault.jpg"
@@ -4629,8 +4770,8 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 32,
-      "views": 149400,
-      "likes": 2954,
+      "views": 149464,
+      "likes": 2955,
       "comments": 107,
       "thumbnail": "https://i.ytimg.com/vi/BpMNMbWvNh4/hqdefault.jpg"
     },
@@ -4653,7 +4794,7 @@
       "month": "2026-10",
       "type": "mid",
       "duration_sec": 1469,
-      "views": 5193,
+      "views": 5197,
       "likes": 59,
       "comments": 10,
       "thumbnail": "https://i.ytimg.com/vi/cfVm4bJ_558/hqdefault.jpg"
@@ -4677,7 +4818,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 41,
-      "views": 30430,
+      "views": 30432,
       "likes": 931,
       "comments": 40,
       "thumbnail": "https://i.ytimg.com/vi/aIaAlGP7QJk/hqdefault.jpg"
@@ -4689,7 +4830,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 90,
-      "views": 126755,
+      "views": 126758,
       "likes": 3959,
       "comments": 90,
       "thumbnail": "https://i.ytimg.com/vi/Um7BDizPUH4/hqdefault.jpg"
@@ -4701,7 +4842,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 74,
-      "views": 19494,
+      "views": 19496,
       "likes": 673,
       "comments": 17,
       "thumbnail": "https://i.ytimg.com/vi/W9MbPdw5oLk/hqdefault.jpg"
@@ -4773,7 +4914,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 72,
-      "views": 5947,
+      "views": 5948,
       "likes": 145,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/fNW-NSILelA/hqdefault.jpg"
@@ -4785,8 +4926,8 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 64,
-      "views": 339356,
-      "likes": 11134,
+      "views": 339891,
+      "likes": 11147,
       "comments": 256,
       "thumbnail": "https://i.ytimg.com/vi/tebEnEooSjo/hqdefault.jpg"
     },
@@ -4821,7 +4962,7 @@
       "month": "2026-10",
       "type": "short",
       "duration_sec": 35,
-      "views": 2623,
+      "views": 2626,
       "likes": 62,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/J_XCPcxga1g/hqdefault.jpg"
@@ -4893,7 +5034,7 @@
       "month": "2026-09",
       "type": "mid",
       "duration_sec": 331,
-      "views": 5702,
+      "views": 5703,
       "likes": 35,
       "comments": 9,
       "thumbnail": "https://i.ytimg.com/vi/CkZCJXdwqSo/hqdefault.jpg"
@@ -4905,7 +5046,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 52,
-      "views": 1824,
+      "views": 1822,
       "likes": 61,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/Q31JWMoDvcI/hqdefault.jpg"
@@ -4941,7 +5082,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 37,
-      "views": 1703,
+      "views": 1704,
       "likes": 43,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/-BhrxuO4YUI/hqdefault.jpg"
@@ -4965,7 +5106,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 48,
-      "views": 1536,
+      "views": 1538,
       "likes": 36,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/6SMmoeuuCwY/hqdefault.jpg"
@@ -5097,7 +5238,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 44,
-      "views": 2413,
+      "views": 2414,
       "likes": 58,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/Z9KVKTqc5Kw/hqdefault.jpg"
@@ -5109,7 +5250,7 @@
       "month": "2026-09",
       "type": "mid",
       "duration_sec": 303,
-      "views": 357,
+      "views": 358,
       "likes": 5,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/BFbmQVRAdV0/hqdefault.jpg"
@@ -5121,7 +5262,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 39,
-      "views": 1647,
+      "views": 1649,
       "likes": 30,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/5sKDUdKDvBI/hqdefault.jpg"
@@ -5181,7 +5322,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 57,
-      "views": 2379,
+      "views": 2388,
       "likes": 67,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/XmqifAEgUbI/hqdefault.jpg"
@@ -5217,7 +5358,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 30,
-      "views": 1300,
+      "views": 1301,
       "likes": 6,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/yYzN2SjWcg0/hqdefault.jpg"
@@ -5289,7 +5430,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 51,
-      "views": 1289,
+      "views": 1290,
       "likes": 25,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/fGBsqMHKUHc/hqdefault.jpg"
@@ -5307,16 +5448,16 @@
       "thumbnail": "https://i.ytimg.com/vi/mea2aQ4cHXI/hqdefault.jpg"
     },
     {
-      "id": "hCy75NJoXC0",
-      "title": "Bears vs. Vikings: Why Ben Johnson Is the Key",
-      "published": "2026-09-18",
+      "id": "bb8NkO0uXbo",
+      "title": "Do NFL Players Know When Their Team Can\u2019t Win a Super Bowl?",
+      "published": "2026-09-20",
       "month": "2026-09",
       "type": "mid",
-      "duration_sec": 248,
-      "views": 601,
-      "likes": 1,
+      "duration_sec": 339,
+      "views": 324,
+      "likes": 0,
       "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/hCy75NJoXC0/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/bb8NkO0uXbo/hqdefault.jpg"
     },
     {
       "id": "gk5M4WM2qE4",
@@ -5403,16 +5544,16 @@
       "thumbnail": "https://i.ytimg.com/vi/BWDMQ_Dm2-8/hqdefault.jpg"
     },
     {
-      "id": "hU2DCLKIL6k",
-      "title": "Gray Zabel Gives Sam Darnold & His Seahawks Teammates Farm Jobs",
-      "published": "2026-09-17",
+      "id": "vcMnUrVEpcY",
+      "title": "We\u2019re only one week into the season\u2026but it\u2019s looking like a new era for New York football! \ud83d\uddfd",
+      "published": "2026-09-15",
       "month": "2026-09",
-      "type": "mid",
-      "duration_sec": 811,
-      "views": 10058,
-      "likes": 127,
-      "comments": 20,
-      "thumbnail": "https://i.ytimg.com/vi/hU2DCLKIL6k/hqdefault.jpg"
+      "type": "short",
+      "duration_sec": 145,
+      "views": 1197,
+      "likes": 35,
+      "comments": 4,
+      "thumbnail": "https://i.ytimg.com/vi/vcMnUrVEpcY/hqdefault.jpg"
     },
     {
       "id": "PFC0mw125zE",
@@ -5529,7 +5670,7 @@
       "month": "2026-09",
       "type": "mid",
       "duration_sec": 823,
-      "views": 4060,
+      "views": 4061,
       "likes": 57,
       "comments": 6,
       "thumbnail": "https://i.ytimg.com/vi/w6XG1PCSuCw/hqdefault.jpg"
@@ -5565,7 +5706,7 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 53,
-      "views": 3286,
+      "views": 3287,
       "likes": 58,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/S1iFwCleouk/hqdefault.jpg"
@@ -5625,7 +5766,7 @@
       "month": "2026-09",
       "type": "mid",
       "duration_sec": 237,
-      "views": 300,
+      "views": 301,
       "likes": 5,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/miYBeRfnHdc/hqdefault.jpg"
@@ -5745,7 +5886,7 @@
       "month": "2026-09",
       "type": "mid",
       "duration_sec": 341,
-      "views": 21527,
+      "views": 21529,
       "likes": 201,
       "comments": 28,
       "thumbnail": "https://i.ytimg.com/vi/mzai_Jj7odk/hqdefault.jpg"
@@ -5829,8 +5970,8 @@
       "month": "2026-09",
       "type": "short",
       "duration_sec": 108,
-      "views": 2161491,
-      "likes": 68058,
+      "views": 2162145,
+      "likes": 68073,
       "comments": 598,
       "thumbnail": "https://i.ytimg.com/vi/3yuqHB3KtDg/hqdefault.jpg"
     },
@@ -5907,16 +6048,16 @@
       "thumbnail": "https://i.ytimg.com/vi/Ugc6BTwMNZk/hqdefault.jpg"
     },
     {
-      "id": "b__09rRTnv0",
-      "title": "What Aaron Donald Told Me Before Coming Out of Retirement",
-      "published": "2026-09-02",
+      "id": "TLYaMXGSK50",
+      "title": "Braden Fiske\u2019s Honest Reaction to the Rams\u2019 Myles Garrett Trade",
+      "published": "2026-09-03",
       "month": "2026-09",
       "type": "mid",
-      "duration_sec": 335,
-      "views": 21507,
-      "likes": 6,
+      "duration_sec": 400,
+      "views": 20917,
+      "likes": 1,
       "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/b__09rRTnv0/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/TLYaMXGSK50/hqdefault.jpg"
     },
     {
       "id": "536O63ZahPc",
@@ -5949,8 +6090,8 @@
       "month": "2026-08",
       "type": "short",
       "duration_sec": 27,
-      "views": 2152,
-      "likes": 43,
+      "views": 2158,
+      "likes": 44,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/rheH6U7uBJs/hqdefault.jpg"
     },
@@ -5973,7 +6114,7 @@
       "month": "2026-08",
       "type": "short",
       "duration_sec": 27,
-      "views": 2800,
+      "views": 2801,
       "likes": 30,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/Eo-WH598z0c/hqdefault.jpg"
@@ -6057,7 +6198,7 @@
       "month": "2026-08",
       "type": "short",
       "duration_sec": 40,
-      "views": 4399,
+      "views": 4400,
       "likes": 88,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/9mzXtoGMysI/hqdefault.jpg"
@@ -6081,7 +6222,7 @@
       "month": "2026-08",
       "type": "long",
       "duration_sec": 2727,
-      "views": 42188,
+      "views": 42189,
       "likes": 402,
       "comments": 52,
       "thumbnail": "https://i.ytimg.com/vi/T1waul7OsiE/hqdefault.jpg"
@@ -6093,7 +6234,7 @@
       "month": "2026-08",
       "type": "short",
       "duration_sec": 77,
-      "views": 1726,
+      "views": 1728,
       "likes": 42,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/lBtQj-TZfyE/hqdefault.jpg"
@@ -6105,7 +6246,7 @@
       "month": "2026-08",
       "type": "short",
       "duration_sec": 29,
-      "views": 2416,
+      "views": 2417,
       "likes": 29,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/8TDAqd1OCAY/hqdefault.jpg"
@@ -6153,7 +6294,7 @@
       "month": "2026-08",
       "type": "short",
       "duration_sec": 35,
-      "views": 3173,
+      "views": 3174,
       "likes": 41,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/Ps5SyCCL87g/hqdefault.jpg"
@@ -6165,7 +6306,7 @@
       "month": "2026-08",
       "type": "mid",
       "duration_sec": 1703,
-      "views": 33101,
+      "views": 33119,
       "likes": 403,
       "comments": 47,
       "thumbnail": "https://i.ytimg.com/vi/4mt70foszEg/hqdefault.jpg"
@@ -6213,7 +6354,7 @@
       "month": "2026-08",
       "type": "short",
       "duration_sec": 78,
-      "views": 11798,
+      "views": 11813,
       "likes": 296,
       "comments": 24,
       "thumbnail": "https://i.ytimg.com/vi/Un15Cd0COp8/hqdefault.jpg"
@@ -6237,7 +6378,7 @@
       "month": "2026-08",
       "type": "long",
       "duration_sec": 2568,
-      "views": 29769,
+      "views": 29778,
       "likes": 366,
       "comments": 45,
       "thumbnail": "https://i.ytimg.com/vi/h-8r_cWNTCY/hqdefault.jpg"
@@ -6369,7 +6510,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 74,
-      "views": 26603,
+      "views": 26604,
       "likes": 6,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/zhKhLRcAV9I/hqdefault.jpg"
@@ -6429,7 +6570,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 36,
-      "views": 35271,
+      "views": 35272,
       "likes": 41,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/dWusPOI8lF0/hqdefault.jpg"
@@ -6507,16 +6648,16 @@
       "thumbnail": "https://i.ytimg.com/vi/lXCxRpAB5ws/hqdefault.jpg"
     },
     {
-      "id": "gLaegJ_eALQ",
-      "title": "NFL Prospect Jalen Kilgore Comes From a Football Family",
-      "published": "2026-04-22",
+      "id": "0EdOdRNzz2I",
+      "title": "Your Insider Access to the Latest NFL News",
+      "published": "2026-04-26",
       "month": "2026-04",
       "type": "short",
-      "duration_sec": 66,
-      "views": 28029,
-      "likes": 8,
-      "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/gLaegJ_eALQ/hqdefault.jpg"
+      "duration_sec": 12,
+      "views": 75785,
+      "likes": 1377,
+      "comments": 2,
+      "thumbnail": "https://i.ytimg.com/vi/0EdOdRNzz2I/hqdefault.jpg"
     },
     {
       "id": "pFAHBau72UE",
@@ -6603,16 +6744,16 @@
       "thumbnail": "https://i.ytimg.com/vi/8UNVBjD6X3E/hqdefault.jpg"
     },
     {
-      "id": "0EdOdRNzz2I",
-      "title": "Your Insider Access to the Latest NFL News",
-      "published": "2026-04-26",
+      "id": "erHs-r0el78",
+      "title": "Could Zavion Thomas Land with the New Orleans Saints?",
+      "published": "2026-04-20",
       "month": "2026-04",
       "type": "short",
-      "duration_sec": 12,
-      "views": 75785,
-      "likes": 1377,
-      "comments": 2,
-      "thumbnail": "https://i.ytimg.com/vi/0EdOdRNzz2I/hqdefault.jpg"
+      "duration_sec": 122,
+      "views": 28921,
+      "likes": 53,
+      "comments": 1,
+      "thumbnail": "https://i.ytimg.com/vi/erHs-r0el78/hqdefault.jpg"
     },
     {
       "id": "ZgZT0tjSsP8",
@@ -6729,7 +6870,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 72,
-      "views": 26233,
+      "views": 26255,
       "likes": 37,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/VJlrYhjJfbo/hqdefault.jpg"
@@ -6753,7 +6894,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 53,
-      "views": 27794,
+      "views": 27796,
       "likes": 15,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/OcaWMDDUHEE/hqdefault.jpg"
@@ -6789,7 +6930,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 80,
-      "views": 28460,
+      "views": 28472,
       "likes": 66,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/KxwtDO7apY8/hqdefault.jpg"
@@ -6873,7 +7014,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 29,
-      "views": 30906,
+      "views": 30910,
       "likes": 21,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/_JMRyMYzNCY/hqdefault.jpg"
@@ -6909,7 +7050,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 26,
-      "views": 31392,
+      "views": 31393,
       "likes": 9,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/FMRqqGPml1Q/hqdefault.jpg"
@@ -6921,7 +7062,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 37,
-      "views": 28253,
+      "views": 28254,
       "likes": 15,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/fYeIbcbOink/hqdefault.jpg"
@@ -6957,7 +7098,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 44,
-      "views": 28772,
+      "views": 28773,
       "likes": 6,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/gTzQgZMeKEM/hqdefault.jpg"
@@ -6981,7 +7122,7 @@
       "month": "2026-04",
       "type": "short",
       "duration_sec": 62,
-      "views": 23532,
+      "views": 23533,
       "likes": 28,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/TIR0sYyc3Ms/hqdefault.jpg"
@@ -6993,7 +7134,7 @@
       "month": "2026-04",
       "type": "mid",
       "duration_sec": 1199,
-      "views": 29600,
+      "views": 29604,
       "likes": 22,
       "comments": 22,
       "thumbnail": "https://i.ytimg.com/vi/wWsTtazHcbI/hqdefault.jpg"
@@ -7041,7 +7182,7 @@
       "month": "2026-03",
       "type": "short",
       "duration_sec": 51,
-      "views": 34602,
+      "views": 34603,
       "likes": 23,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/u9sqI3kzVNs/hqdefault.jpg"
@@ -7101,7 +7242,7 @@
       "month": "2026-03",
       "type": "short",
       "duration_sec": 42,
-      "views": 35253,
+      "views": 35254,
       "likes": 33,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/AIkb0vbXj8o/hqdefault.jpg"
@@ -7284,7 +7425,7 @@
       "views": 73,
       "likes": 3,
       "comments": 0,
-      "thumbnail": "https://i9.ytimg.com/vi/4eDPwbsFUPo/hqdefault.jpg?sqp=CJC47dcG&rs=AOn4CLA2F4IwVWWVmT1GGwlKzLhAMIxUpg"
+      "thumbnail": "https://i9.ytimg.com/vi/4eDPwbsFUPo/hqdefault.jpg?sqp=CIC_8tcG&rs=AOn4CLAx0md8qGAkFQRQkH0kECyZzlZ0bw"
     },
     {
       "id": "3Wgyrk4lKhM",
@@ -7305,7 +7446,7 @@
       "month": "2026-02",
       "type": "mid",
       "duration_sec": 1117,
-      "views": 132123,
+      "views": 132125,
       "likes": 183,
       "comments": 64,
       "thumbnail": "https://i.ytimg.com/vi/Q4i8MvsRmeA/hqdefault.jpg"
@@ -7485,7 +7626,7 @@
       "month": "2026-02",
       "type": "short",
       "duration_sec": 57,
-      "views": 43065,
+      "views": 43073,
       "likes": 39,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/_mmWAXHHCOI/hqdefault.jpg"
@@ -7557,7 +7698,7 @@
       "month": "2026-02",
       "type": "short",
       "duration_sec": 53,
-      "views": 39582,
+      "views": 39584,
       "likes": 3,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/mw1x8-A7SCs/hqdefault.jpg"
@@ -7707,16 +7848,16 @@
       "thumbnail": "https://i.ytimg.com/vi/enUPKLlPfBY/hqdefault.jpg"
     },
     {
-      "id": "csJIEHDhSjo",
-      "title": "Panthers WR's Passion for Horses",
-      "published": "2026-02-07",
+      "id": "ZeusvOaZpmg",
+      "title": "Draymond & Jordan's Super Bowl Picks \ud83c\udfc6 | WIDGTAF",
+      "published": "2026-02-08",
       "month": "2026-02",
       "type": "short",
-      "duration_sec": 71,
-      "views": 34749,
-      "likes": 2,
+      "duration_sec": 58,
+      "views": 127,
+      "likes": 1,
       "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/csJIEHDhSjo/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/ZeusvOaZpmg/hqdefault.jpg"
     },
     {
       "id": "4NfcbWKF5yM",
@@ -7725,7 +7866,7 @@
       "month": "2026-02",
       "type": "long",
       "duration_sec": 3140,
-      "views": 74321,
+      "views": 74322,
       "likes": 10,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/4NfcbWKF5yM/hqdefault.jpg"
@@ -7803,16 +7944,16 @@
       "thumbnail": "https://i.ytimg.com/vi/Yc2lnnH-S5A/hqdefault.jpg"
     },
     {
-      "id": "ZeusvOaZpmg",
-      "title": "Draymond & Jordan's Super Bowl Picks \ud83c\udfc6 | WIDGTAF",
-      "published": "2026-02-08",
+      "id": "qWi-QOCzo5w",
+      "title": "Snoop Dogg was a Huge Part of Jack Jones's Journey | WIDGTAF",
+      "published": "2026-02-07",
       "month": "2026-02",
       "type": "short",
-      "duration_sec": 58,
-      "views": 127,
-      "likes": 1,
+      "duration_sec": 64,
+      "views": 10806,
+      "likes": 72,
       "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/ZeusvOaZpmg/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/qWi-QOCzo5w/hqdefault.jpg"
     },
     {
       "id": "J5b0Kf4WVIg",
@@ -7941,7 +8082,7 @@
       "month": "2026-01",
       "type": "short",
       "duration_sec": 31,
-      "views": 53399,
+      "views": 53402,
       "likes": 32,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/_QIFGEHy9b4/hqdefault.jpg"
@@ -8013,7 +8154,7 @@
       "month": "2026-01",
       "type": "mid",
       "duration_sec": 1133,
-      "views": 32795,
+      "views": 32798,
       "likes": 16,
       "comments": 6,
       "thumbnail": "https://i.ytimg.com/vi/5A0ZDb9aYyU/hqdefault.jpg"
@@ -8025,7 +8166,7 @@
       "month": "2026-01",
       "type": "short",
       "duration_sec": 108,
-      "views": 40851,
+      "views": 40857,
       "likes": 44,
       "comments": 17,
       "thumbnail": "https://i.ytimg.com/vi/XKPBHTnN-w8/hqdefault.jpg"
@@ -8049,7 +8190,7 @@
       "month": "2026-01",
       "type": "short",
       "duration_sec": 44,
-      "views": 53153,
+      "views": 53155,
       "likes": 35,
       "comments": 3,
       "thumbnail": "https://i.ytimg.com/vi/kK2fXbc52uc/hqdefault.jpg"
@@ -8085,7 +8226,7 @@
       "month": "2026-01",
       "type": "short",
       "duration_sec": 54,
-      "views": 42955,
+      "views": 42956,
       "likes": 14,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/6WBffLNzq1I/hqdefault.jpg"
@@ -8097,7 +8238,7 @@
       "month": "2026-01",
       "type": "long",
       "duration_sec": 2681,
-      "views": 111043,
+      "views": 111045,
       "likes": 127,
       "comments": 42,
       "thumbnail": "https://i.ytimg.com/vi/n09ziMvzPsE/hqdefault.jpg"
@@ -8307,16 +8448,16 @@
       "thumbnail": "https://i.ytimg.com/vi/fufeAq5oX9Q/hqdefault.jpg"
     },
     {
-      "id": "Q_Qdyai2KnM",
-      "title": "Why the Bills Fired Head Coach Sean McDermott",
+      "id": "B89P0CjyPzU",
+      "title": "Why Falcons Are Excited About Kevin Stefanski Hiring",
       "published": "2026-01-22",
       "month": "2026-01",
       "type": "short",
-      "duration_sec": 104,
-      "views": 39847,
-      "likes": 2,
+      "duration_sec": 54,
+      "views": 46709,
+      "likes": 1,
       "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/Q_Qdyai2KnM/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/B89P0CjyPzU/hqdefault.jpg"
     },
     {
       "id": "i3ZtQIhvomo",
@@ -8403,18 +8544,6 @@
       "thumbnail": "https://i.ytimg.com/vi/xMu7G64F1ws/hqdefault.jpg"
     },
     {
-      "id": "qIeK68G9UmY",
-      "title": "Cam Jordan got stranded during his cycling workout!",
-      "published": "2026-01-20",
-      "month": "2026-01",
-      "type": "short",
-      "duration_sec": 50,
-      "views": 8718,
-      "likes": 32,
-      "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/qIeK68G9UmY/hqdefault.jpg"
-    },
-    {
       "id": "micBwXLUfAI",
       "title": "NFL Divisional Round: Playoff Parlays",
       "published": "2026-01-17",
@@ -8425,6 +8554,18 @@
       "likes": 4,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/micBwXLUfAI/hqdefault.jpg"
+    },
+    {
+      "id": "87Y25LXcf0g",
+      "title": "Super Bowl Ring Would Mean EVERYTHING For Bears LB",
+      "published": "2026-01-17",
+      "month": "2026-01",
+      "type": "short",
+      "duration_sec": 44,
+      "views": 41729,
+      "likes": 1,
+      "comments": 0,
+      "thumbnail": "https://i.ytimg.com/vi/87Y25LXcf0g/hqdefault.jpg"
     },
     {
       "id": "OjVeOzzue-c",
@@ -8493,7 +8634,7 @@
       "month": "2026-01",
       "type": "short",
       "duration_sec": 64,
-      "views": 24627,
+      "views": 24629,
       "likes": 132,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/qNIC5MnbCsU/hqdefault.jpg"
@@ -8757,7 +8898,7 @@
       "month": "2026-01",
       "type": "long",
       "duration_sec": 3289,
-      "views": 96321,
+      "views": 96322,
       "likes": 208,
       "comments": 53,
       "thumbnail": "https://i.ytimg.com/vi/1pLFaSzbxNA/hqdefault.jpg"
@@ -8769,7 +8910,7 @@
       "month": "2026-01",
       "type": "short",
       "duration_sec": 46,
-      "views": 48219,
+      "views": 48225,
       "likes": 14,
       "comments": 1,
       "thumbnail": "https://i.ytimg.com/vi/Bd6rP37M6N0/hqdefault.jpg"
@@ -8817,7 +8958,7 @@
       "month": "2026-01",
       "type": "mid",
       "duration_sec": 805,
-      "views": 42905,
+      "views": 42904,
       "likes": 48,
       "comments": 18,
       "thumbnail": "https://i.ytimg.com/vi/JAECYbjJOHc/hqdefault.jpg"
@@ -8907,13 +9048,25 @@
       "thumbnail": "https://i.ytimg.com/vi/bHcGNrGnLBU/hqdefault.jpg"
     },
     {
+      "id": "bHcGNrGnLBU",
+      "title": "Oronde Gadsen turned down a lucrative NIL deal to stay loyal at Syracuse. | WIDGTAF",
+      "published": "2026-01-04",
+      "month": "2026-01",
+      "type": "short",
+      "duration_sec": 69,
+      "views": 22010,
+      "likes": 110,
+      "comments": 6,
+      "thumbnail": "https://i.ytimg.com/vi/bHcGNrGnLBU/hqdefault.jpg"
+    },
+    {
       "id": "2cTw6ku1UzE",
       "title": "Oronde Gadsden II on His NFL Rise, NIL & Playing with Justin Herbert",
       "published": "2026-01-03",
       "month": "2026-01",
       "type": "long",
       "duration_sec": 1991,
-      "views": 97313,
+      "views": 97314,
       "likes": 19,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/2cTw6ku1UzE/hqdefault.jpg"
@@ -8929,18 +9082,6 @@
       "likes": 89,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/-2aPT8zpbbI/hqdefault.jpg"
-    },
-    {
-      "id": "AKuUSSSEKbA",
-      "title": "Best Bet of NFL Week 18",
-      "published": "2026-01-03",
-      "month": "2026-01",
-      "type": "short",
-      "duration_sec": 112,
-      "views": 26742,
-      "likes": 2,
-      "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/AKuUSSSEKbA/hqdefault.jpg"
     },
     {
       "id": "xqmQr9jx7Ak",
@@ -9003,28 +9144,28 @@
       "thumbnail": "https://i.ytimg.com/vi/5X4IIwiLjDA/hqdefault.jpg"
     },
     {
-      "id": "bHcGNrGnLBU",
-      "title": "Oronde Gadsen turned down a lucrative NIL deal to stay loyal at Syracuse. | WIDGTAF",
-      "published": "2026-01-04",
-      "month": "2026-01",
+      "id": "cwgT2_6TcxE",
+      "title": "Kevin Durant Compliments Steelers WR's Jump Shot",
+      "published": "2025-12-26",
+      "month": "2025-12",
       "type": "short",
-      "duration_sec": 69,
-      "views": 22010,
-      "likes": 110,
-      "comments": 6,
-      "thumbnail": "https://i.ytimg.com/vi/bHcGNrGnLBU/hqdefault.jpg"
+      "duration_sec": 45,
+      "views": 11681,
+      "likes": 5,
+      "comments": 0,
+      "thumbnail": "https://i.ytimg.com/vi/cwgT2_6TcxE/hqdefault.jpg"
     },
     {
-      "id": "xqmQr9jx7Ak",
-      "title": "What's it been like for Rookie TE Oronde Gadsden to play with Justin Herbert? | WIDGTAF",
-      "published": "2026-01-02",
-      "month": "2026-01",
+      "id": "m3n__ihBVEg",
+      "title": "Steelers WR Shares Most Surprising Things About Aaron Rodgers",
+      "published": "2025-12-26",
+      "month": "2025-12",
       "type": "short",
-      "duration_sec": 58,
-      "views": 13614,
-      "likes": 34,
-      "comments": 0,
-      "thumbnail": "https://i.ytimg.com/vi/xqmQr9jx7Ak/hqdefault.jpg"
+      "duration_sec": 29,
+      "views": 15643,
+      "likes": 41,
+      "comments": 2,
+      "thumbnail": "https://i.ytimg.com/vi/m3n__ihBVEg/hqdefault.jpg"
     },
     {
       "id": "lf-9NLD1UKM",
@@ -9045,7 +9186,7 @@
       "month": "2025-12",
       "type": "mid",
       "duration_sec": 1138,
-      "views": 17775,
+      "views": 17777,
       "likes": 101,
       "comments": 32,
       "thumbnail": "https://i.ytimg.com/vi/11XjdVkoqH4/hqdefault.jpg"
@@ -9105,7 +9246,7 @@
       "month": "2025-12",
       "type": "short",
       "duration_sec": 32,
-      "views": 10431,
+      "views": 10436,
       "likes": 2,
       "comments": 0,
       "thumbnail": "https://i.ytimg.com/vi/Z-3t7aa7aa4/hqdefault.jpg"
@@ -9507,28 +9648,28 @@
       "thumbnail": "https://i.ytimg.com/vi/_sg2-O2Ppqg/hqdefault.jpg"
     },
     {
-      "id": "BzEgSgb5c4M",
-      "title": "Kittle Shouts Out Tight Ends | WIDGTAF",
-      "published": "2025-12-11",
+      "id": "_zrM-OC9MhQ",
+      "title": "2 Top Running Backs Talk 2025 NFL Season, Playoff Hunt, Head Coaches",
+      "published": "2025-12-12",
       "month": "2025-12",
-      "type": "short",
-      "duration_sec": 51,
-      "views": 44131,
-      "likes": 231,
-      "comments": 2,
-      "thumbnail": "https://i.ytimg.com/vi/BzEgSgb5c4M/hqdefault.jpg"
+      "type": "mid",
+      "duration_sec": 1529,
+      "views": 19301,
+      "likes": 13,
+      "comments": 1,
+      "thumbnail": "https://i.ytimg.com/vi/_zrM-OC9MhQ/hqdefault.jpg"
     },
     {
-      "id": "NAxAZBIE2xs",
-      "title": "George Kittle's Tight End U is Legendary | WIDGTAF",
-      "published": "2025-12-11",
+      "id": "qMjjS-yaF_M",
+      "title": "Why Dolphins RB Achane is So Hard To Defend",
+      "published": "2025-12-12",
       "month": "2025-12",
       "type": "short",
-      "duration_sec": 84,
-      "views": 11016,
-      "likes": 269,
-      "comments": 3,
-      "thumbnail": "https://i.ytimg.com/vi/NAxAZBIE2xs/hqdefault.jpg"
+      "duration_sec": 31,
+      "views": 11294,
+      "likes": 7,
+      "comments": 0,
+      "thumbnail": "https://i.ytimg.com/vi/qMjjS-yaF_M/hqdefault.jpg"
     },
     {
       "id": "98fYAmApq08",
@@ -9633,7 +9774,7 @@
       "month": "2025-12",
       "type": "short",
       "duration_sec": 31,
-      "views": 8948,
+      "views": 8950,
       "likes": 21,
       "comments": 2,
       "thumbnail": "https://i.ytimg.com/vi/GJPqGYhqvMg/hqdefault.jpg"
@@ -9840,7 +9981,7 @@
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "thumbnail": "https://i9.ytimg.com/vi/pQzqvBMNQPU/hqdefault.jpg?sqp=CJC47dcG&rs=AOn4CLDTvada6mvqaLpoqtwp9XEdDhs1aA"
+      "thumbnail": "https://i9.ytimg.com/vi/pQzqvBMNQPU/hqdefault.jpg?sqp=CIC_8tcG&rs=AOn4CLAdIPRcoKPDoFbe-5SnXil9updepw"
     },
     {
       "id": "PWiEo2hzLHo",
@@ -9867,16 +10008,8 @@
       "thumbnail": "https://i.ytimg.com/vi/nr46zRwxWUc/hqdefault.jpg"
     }
   ],
-  "current_subs": 36500,
+  "current_subs": 36600,
   "daily_yt": {
-    "2026-08-17": {
-      "total_views": 559,
-      "watch_hrs": 3.6,
-      "subs_gained": 3,
-      "subs_lost": 3,
-      "shorts_views": 536,
-      "vod_views": 23
-    },
     "2026-08-18": {
       "total_views": 8782,
       "watch_hrs": 1095.0,
@@ -10222,8 +10355,8 @@
       "vod_views": 737
     },
     "2026-09-30": {
-      "total_views": 51206,
-      "watch_hrs": 711.3,
+      "total_views": 51180,
+      "watch_hrs": 712.1,
       "subs_gained": 18,
       "subs_lost": 13,
       "shorts_views": 50309,
@@ -10254,16 +10387,16 @@
       "vod_views": 954
     },
     "2026-10-04": {
-      "total_views": 29759,
-      "watch_hrs": 375.0,
+      "total_views": 29538,
+      "watch_hrs": 373.4,
       "subs_gained": 12,
       "subs_lost": 5,
       "shorts_views": 28970,
       "vod_views": 568
     },
     "2026-10-05": {
-      "total_views": 53439,
-      "watch_hrs": 580.9,
+      "total_views": 53404,
+      "watch_hrs": 581.1,
       "subs_gained": 31,
       "subs_lost": 9,
       "shorts_views": 52987,
@@ -10294,8 +10427,8 @@
       "vod_views": 1522
     },
     "2026-10-09": {
-      "total_views": 136488,
-      "watch_hrs": 1338.8,
+      "total_views": 136396,
+      "watch_hrs": 1339.1,
       "subs_gained": 56,
       "subs_lost": 12,
       "shorts_views": 133445,
@@ -10350,8 +10483,8 @@
       "vod_views": 688
     },
     "2026-10-16": {
-      "total_views": 45824,
-      "watch_hrs": 763.5,
+      "total_views": 45547,
+      "watch_hrs": 755.4,
       "subs_gained": 18,
       "subs_lost": 7,
       "shorts_views": 38348,
@@ -10374,8 +10507,8 @@
       "vod_views": 89535
     },
     "2026-10-19": {
-      "total_views": 26852,
-      "watch_hrs": 284.4,
+      "total_views": 26752,
+      "watch_hrs": 284.0,
       "subs_gained": 12,
       "subs_lost": 5,
       "shorts_views": 26458,
@@ -10414,8 +10547,8 @@
       "vod_views": 47411
     },
     "2026-10-24": {
-      "total_views": 153271,
-      "watch_hrs": 5731.4,
+      "total_views": 152696,
+      "watch_hrs": 5701.6,
       "subs_gained": 13,
       "subs_lost": 10,
       "shorts_views": 78434,
@@ -10580,6 +10713,14 @@
       "subs_lost": 6,
       "shorts_views": 94001,
       "vod_views": 14371
+    },
+    "2026-11-14": {
+      "total_views": 214211,
+      "watch_hrs": 9303.5,
+      "subs_gained": 27,
+      "subs_lost": 5,
+      "shorts_views": 151417,
+      "vod_views": 62794
     }
   },
   "yt_kpis": {
@@ -11158,54 +11299,54 @@
       },
       "2026-11": {
         "VIDS": {
-          "views": 334705,
-          "engaged_views": 173915,
-          "watch_hours": 24282.3,
-          "avg_view_sec": 492,
-          "avg_pct_viewed": 24.19,
-          "likes": 299,
+          "views": 397499,
+          "engaged_views": 209263,
+          "watch_hours": 33018.9,
+          "avg_view_sec": 557,
+          "avg_pct_viewed": 22.14,
+          "likes": 301,
           "comments": 50,
           "shares": 62
         },
         "SHORTS": {
-          "views": 1443866,
-          "engaged_views": 296579,
-          "watch_hours": 5787.6,
-          "avg_view_sec": 60,
-          "avg_pct_viewed": 71.02,
-          "likes": 14328,
-          "comments": 108,
-          "shares": 81
+          "views": 1595283,
+          "engaged_views": 320687,
+          "watch_hours": 6354.5,
+          "avg_view_sec": 61,
+          "avg_pct_viewed": 70.79,
+          "likes": 15867,
+          "comments": 140,
+          "shares": 100
         },
         "ALL": {
-          "views": 1778571,
-          "engaged_views": 470494,
-          "watch_hours": 30069.9,
-          "avg_view_sec": 230,
-          "avg_pct_viewed": 53.71,
-          "likes": 14627,
-          "comments": 158,
-          "shares": 143
+          "views": 1992782,
+          "engaged_views": 529950,
+          "watch_hours": 39373.4,
+          "avg_view_sec": 267,
+          "avg_pct_viewed": 51.58,
+          "likes": 16168,
+          "comments": 190,
+          "shares": 162
         },
         "EPISODES": {
-          "views": 138780,
-          "engaged_views": 78849,
-          "watch_hours": 19439.3,
-          "avg_view_sec": 888,
-          "avg_pct_viewed": 21.44,
-          "likes": 120,
+          "views": 192096,
+          "engaged_views": 110771,
+          "watch_hours": 28020.1,
+          "avg_view_sec": 911,
+          "avg_pct_viewed": 20.16,
+          "likes": 121,
           "comments": 14,
           "shares": 43
         },
         "CLIPS": {
-          "views": 195925,
-          "engaged_views": 95066,
-          "likes": 179,
+          "views": 205403,
+          "engaged_views": 98492,
+          "likes": 180,
           "comments": 36,
           "shares": 19,
-          "watch_hours": 4843.0,
+          "watch_hours": 4998.8,
           "avg_view_sec": 183,
-          "avg_pct_viewed": 26.47
+          "avg_pct_viewed": 24.37
         }
       }
     },
@@ -11301,27 +11442,27 @@
     },
     "reach_through": "2026-11-14",
     "notes": [
-      "3 new day(s) cached \u00b7 90 days total"
+      "0 new day(s) cached \u00b7 90 days total"
     ],
     "retention": {
       "2026-11": {
         "CLIPS": {
-          "r30": 0.6977,
-          "r60": 0.5
+          "r30": 0.6976,
+          "r60": 0.4986
         },
         "EPISODES": {
-          "r30": 0.843,
-          "r60": 0.5446
+          "r30": 0.8464,
+          "r60": 0.5548
         }
       },
       "2026-10": {
         "CLIPS": {
-          "r30": 0.735,
-          "r60": 0.5873
+          "r30": 0.7351,
+          "r60": 0.5874
         },
         "EPISODES": {
-          "r30": 0.7769,
-          "r60": 0.4718
+          "r30": 0.7772,
+          "r60": 0.4717
         }
       },
       "2026-09": {
@@ -11380,28 +11521,28 @@
           "r60": 0.4715
         }
       },
-      "2025-09": {
-        "EPISODES": {
-          "r30": 0.8124,
-          "r60": 0.5733
-        }
-      },
       "2025-11": {
         "EPISODES": {
           "r30": 0.8032,
           "r60": 0.3725
         }
       },
-      "2025-08": {
-        "EPISODES": {
-          "r30": 0.7024,
-          "r60": 0.6228
-        }
-      },
       "2025-10": {
         "EPISODES": {
           "r30": 0.9623,
           "r60": 0.7171
+        }
+      },
+      "2025-09": {
+        "EPISODES": {
+          "r30": 0.8124,
+          "r60": 0.5733
+        }
+      },
+      "2025-08": {
+        "EPISODES": {
+          "r30": 0.7024,
+          "r60": 0.6228
         }
       }
     }

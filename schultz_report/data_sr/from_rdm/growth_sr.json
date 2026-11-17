@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-15",
- "pulled": "2026-11-16T19:43+00:00",
+ "through": "2026-11-16",
+ "pulled": "2026-11-17T18:43+00:00",
  "instagram": {
-  "followers_now": 2776,
+  "followers_now": 2802,
   "windows": [
    {
     "start": "2026-08-18",
@@ -110,7 +110,7 @@
     "start": "2026-10-26",
     "end": "2026-11-01",
     "partial": false,
-    "views": 1856807,
+    "views": 1856808,
     "interactions": 69822,
     "follows": 295,
     "unfollows": 151,
@@ -130,11 +130,21 @@
     "start": "2026-11-09",
     "end": "2026-11-15",
     "partial": false,
-    "views": 804428,
+    "views": 825774,
     "interactions": 29384,
     "follows": 523,
     "unfollows": 183,
     "net_followers": 340
+   },
+   {
+    "start": "2026-11-16",
+    "end": "2026-11-16",
+    "partial": true,
+    "views": 115730,
+    "interactions": 5065,
+    "follows": 0,
+    "unfollows": 0,
+    "net_followers": 0
    }
   ],
   "posts": [
@@ -143,8 +153,8 @@
     "created": "2026-11-13",
     "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
     "type": "VIDEO",
-    "views": 2548,
-    "likes": 91,
+    "views": 2599,
+    "likes": 93,
     "comments": 0
    },
    {
