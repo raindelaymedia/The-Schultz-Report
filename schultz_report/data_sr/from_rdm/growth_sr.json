@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-16",
- "pulled": "2026-11-17T18:43+00:00",
+ "through": "2026-11-17",
+ "pulled": "2026-11-18T18:11+00:00",
  "instagram": {
-  "followers_now": 2802,
+  "followers_now": 2850,
   "windows": [
    {
     "start": "2026-08-18",
@@ -138,13 +138,13 @@
    },
    {
     "start": "2026-11-16",
-    "end": "2026-11-16",
+    "end": "2026-11-17",
     "partial": true,
-    "views": 115730,
-    "interactions": 5065,
-    "follows": 0,
-    "unfollows": 0,
-    "net_followers": 0
+    "views": 399588,
+    "interactions": 24762,
+    "follows": 102,
+    "unfollows": 35,
+    "net_followers": 67
    }
   ],
   "posts": [
@@ -153,8 +153,8 @@
     "created": "2026-11-13",
     "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
     "type": "VIDEO",
-    "views": 2599,
-    "likes": 93,
+    "views": 2634,
+    "likes": 95,
     "comments": 0
    },
    {
@@ -171,7 +171,7 @@
     "created": "2026-11-04",
     "text": "One day after Jordan previewed it on the Schultz Report, the Ravens traded for Jacoby Brissett \ud83d\udc40",
     "type": "VIDEO",
-    "views": 1388,
+    "views": 1389,
     "likes": 21,
     "comments": 1
    }
