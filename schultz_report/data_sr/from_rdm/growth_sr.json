@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-18",
- "pulled": "2026-11-19T18:22+00:00",
+ "through": "2026-11-19",
+ "pulled": "2026-11-20T17:55+00:00",
  "instagram": {
-  "followers_now": 2857,
+  "followers_now": 2965,
   "windows": [
    {
     "start": "2026-08-18",
@@ -120,7 +120,7 @@
     "start": "2026-11-02",
     "end": "2026-11-08",
     "partial": false,
-    "views": 621474,
+    "views": 621476,
     "interactions": 32356,
     "follows": 267,
     "unfollows": 118,
@@ -130,7 +130,7 @@
     "start": "2026-11-09",
     "end": "2026-11-15",
     "partial": false,
-    "views": 825776,
+    "views": 825778,
     "interactions": 29384,
     "follows": 523,
     "unfollows": 183,
@@ -138,13 +138,13 @@
    },
    {
     "start": "2026-11-16",
-    "end": "2026-11-18",
+    "end": "2026-11-19",
     "partial": true,
-    "views": 537749,
-    "interactions": 34075,
-    "follows": 123,
-    "unfollows": 48,
-    "net_followers": 75
+    "views": 1024712,
+    "interactions": 67375,
+    "follows": 203,
+    "unfollows": 59,
+    "net_followers": 144
    }
   ],
   "posts": [
@@ -153,8 +153,8 @@
     "created": "2026-11-19",
     "text": "Of all the deadline what-ifs, @benjamin.solak wishes the Packers had landed a RB \ud83e\uddc0",
     "type": "VIDEO",
-    "views": 1130,
-    "likes": 27,
+    "views": 1397,
+    "likes": 30,
     "comments": 1
    },
    {
@@ -162,7 +162,7 @@
     "created": "2026-11-13",
     "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
     "type": "VIDEO",
-    "views": 2655,
+    "views": 2683,
     "likes": 96,
     "comments": 0
    },
@@ -171,7 +171,7 @@
     "created": "2026-11-10",
     "text": "Former Titans GM Ran Carthon walks Jordan through the process of getting Jeffery Simmons\u2019 extension done in 2023 \ud83d\udc40",
     "type": "VIDEO",
-    "views": 225,
+    "views": 226,
     "likes": 8,
     "comments": 0
    },
