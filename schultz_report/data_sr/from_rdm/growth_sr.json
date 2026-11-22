@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-20",
- "pulled": "2026-11-21T16:54+00:00",
+ "through": "2026-11-21",
+ "pulled": "2026-11-22T17:15+00:00",
  "instagram": {
-  "followers_now": 3000,
+  "followers_now": 3007,
   "windows": [
    {
     "start": "2026-08-18",
@@ -30,7 +30,7 @@
     "start": "2026-08-31",
     "end": "2026-09-06",
     "partial": false,
-    "views": 516511,
+    "views": 516513,
     "interactions": 27093,
     "follows": 532,
     "unfollows": 276,
@@ -138,13 +138,13 @@
    },
    {
     "start": "2026-11-16",
-    "end": "2026-11-20",
+    "end": "2026-11-21",
     "partial": true,
-    "views": 1618030,
-    "interactions": 117643,
-    "follows": 203,
-    "unfollows": 59,
-    "net_followers": 144
+    "views": 1739428,
+    "interactions": 126113,
+    "follows": 288,
+    "unfollows": 68,
+    "net_followers": 220
    }
   ],
   "posts": [
@@ -153,8 +153,8 @@
     "created": "2026-11-21",
     "text": "@lacy.himself breaks down which NFL players can really game and who he thinks will be grinding GTA 6 \ud83c\udfae",
     "type": "VIDEO",
-    "views": 1373,
-    "likes": 23,
+    "views": 1421,
+    "likes": 25,
     "comments": 0
    },
    {
@@ -162,8 +162,8 @@
     "created": "2026-11-19",
     "text": "Of all the deadline what-ifs, @benjamin.solak wishes the Packers had landed a RB \ud83e\uddc0",
     "type": "VIDEO",
-    "views": 1483,
-    "likes": 30,
+    "views": 1550,
+    "likes": 32,
     "comments": 1
    },
    {
@@ -171,7 +171,7 @@
     "created": "2026-11-13",
     "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
     "type": "VIDEO",
-    "views": 2696,
+    "views": 2702,
     "likes": 97,
     "comments": 0
    },
