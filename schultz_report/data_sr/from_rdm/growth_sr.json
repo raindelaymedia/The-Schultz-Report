@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-21",
- "pulled": "2026-11-22T17:15+00:00",
+ "through": "2026-11-22",
+ "pulled": "2026-11-23T21:24+00:00",
  "instagram": {
-  "followers_now": 3007,
+  "followers_now": 3011,
   "windows": [
    {
     "start": "2026-08-18",
@@ -138,13 +138,13 @@
    },
    {
     "start": "2026-11-16",
-    "end": "2026-11-21",
-    "partial": true,
-    "views": 1739428,
-    "interactions": 126113,
-    "follows": 288,
-    "unfollows": 68,
-    "net_followers": 220
+    "end": "2026-11-22",
+    "partial": false,
+    "views": 1817629,
+    "interactions": 131319,
+    "follows": 321,
+    "unfollows": 87,
+    "net_followers": 234
    }
   ],
   "posts": [
@@ -153,8 +153,8 @@
     "created": "2026-11-21",
     "text": "@lacy.himself breaks down which NFL players can really game and who he thinks will be grinding GTA 6 \ud83c\udfae",
     "type": "VIDEO",
-    "views": 1421,
-    "likes": 25,
+    "views": 1443,
+    "likes": 26,
     "comments": 0
    },
    {
@@ -162,8 +162,8 @@
     "created": "2026-11-19",
     "text": "Of all the deadline what-ifs, @benjamin.solak wishes the Packers had landed a RB \ud83e\uddc0",
     "type": "VIDEO",
-    "views": 1550,
-    "likes": 32,
+    "views": 1612,
+    "likes": 34,
     "comments": 1
    },
    {
@@ -171,7 +171,7 @@
     "created": "2026-11-13",
     "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
     "type": "VIDEO",
-    "views": 2702,
+    "views": 2716,
     "likes": 97,
     "comments": 0
    },
@@ -180,7 +180,7 @@
     "created": "2026-11-10",
     "text": "Former Titans GM Ran Carthon walks Jordan through the process of getting Jeffery Simmons\u2019 extension done in 2023 \ud83d\udc40",
     "type": "VIDEO",
-    "views": 227,
+    "views": 228,
     "likes": 8,
     "comments": 0
    },
