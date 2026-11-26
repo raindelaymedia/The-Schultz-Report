@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-24",
- "pulled": "2026-11-25T19:23+00:00",
+ "through": "2026-11-25",
+ "pulled": "2026-11-26T19:07+00:00",
  "instagram": {
-  "followers_now": 3060,
+  "followers_now": 3089,
   "windows": [
    {
     "start": "2026-08-18",
@@ -140,7 +140,7 @@
     "start": "2026-11-16",
     "end": "2026-11-22",
     "partial": false,
-    "views": 1817645,
+    "views": 1817647,
     "interactions": 131319,
     "follows": 321,
     "unfollows": 87,
@@ -148,13 +148,13 @@
    },
    {
     "start": "2026-11-23",
-    "end": "2026-11-24",
+    "end": "2026-11-25",
     "partial": true,
-    "views": 193268,
-    "interactions": 10295,
-    "follows": 56,
-    "unfollows": 18,
-    "net_followers": 38
+    "views": 311626,
+    "interactions": 15447,
+    "follows": 97,
+    "unfollows": 26,
+    "net_followers": 71
    }
   ],
   "posts": [
@@ -163,7 +163,7 @@
     "created": "2026-11-21",
     "text": "@lacy.himself breaks down which NFL players can really game and who he thinks will be grinding GTA 6 \ud83c\udfae",
     "type": "VIDEO",
-    "views": 1462,
+    "views": 1466,
     "likes": 27,
     "comments": 0
    },
@@ -172,7 +172,7 @@
     "created": "2026-11-19",
     "text": "Of all the deadline what-ifs, @benjamin.solak wishes the Packers had landed a RB \ud83e\uddc0",
     "type": "VIDEO",
-    "views": 1700,
+    "views": 1714,
     "likes": 36,
     "comments": 1
    },
@@ -181,7 +181,7 @@
     "created": "2026-11-13",
     "text": "@benjamin.solak believes Kirk Cousins could be the missing piece that takes Minnesota to the next level. \ud83d\udc40\n\nWith an elite defense and Justin",
     "type": "VIDEO",
-    "views": 2726,
+    "views": 2729,
     "likes": 97,
     "comments": 0
    },
@@ -193,15 +193,6 @@
     "views": 228,
     "likes": 8,
     "comments": 0
-   },
-   {
-    "url": "https://www.instagram.com/reel/DfVS7kUhUR3/",
-    "created": "2026-11-04",
-    "text": "One day after Jordan previewed it on the Schultz Report, the Ravens traded for Jacoby Brissett \ud83d\udc40",
-    "type": "VIDEO",
-    "views": 1389,
-    "likes": 21,
-    "comments": 1
    }
   ]
  }
