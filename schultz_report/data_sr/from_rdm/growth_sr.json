@@ -1,10 +1,10 @@
 {
  "start": "2026-08-18",
  "window_days": 7,
- "through": "2026-11-26",
- "pulled": "2026-11-27T19:04+00:00",
+ "through": "2026-11-27",
+ "pulled": "2026-11-28T17:39+00:00",
  "instagram": {
-  "followers_now": 3097,
+  "followers_now": 3094,
   "windows": [
    {
     "start": "2026-08-18",
@@ -140,7 +140,7 @@
     "start": "2026-11-16",
     "end": "2026-11-22",
     "partial": false,
-    "views": 1817647,
+    "views": 1817648,
     "interactions": 131319,
     "follows": 321,
     "unfollows": 87,
@@ -148,13 +148,13 @@
    },
    {
     "start": "2026-11-23",
-    "end": "2026-11-26",
+    "end": "2026-11-27",
     "partial": true,
-    "views": 407563,
-    "interactions": 18995,
-    "follows": 120,
-    "unfollows": 37,
-    "net_followers": 83
+    "views": 469820,
+    "interactions": 23014,
+    "follows": 131,
+    "unfollows": 46,
+    "net_followers": 85
    }
   ],
   "posts": [
@@ -172,7 +172,7 @@
     "created": "2026-11-19",
     "text": "Of all the deadline what-ifs, @benjamin.solak wishes the Packers had landed a RB \ud83e\uddc0",
     "type": "VIDEO",
-    "views": 1732,
+    "views": 1744,
     "likes": 38,
     "comments": 1
    },
